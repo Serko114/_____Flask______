@@ -1,0 +1,11 @@
+# экранирование HTML-ссылки
+# в данном варианте текст при запуске отразится, как Ссылка
+from jinja2 import Template
+#------------------------------------
+text = '''HTML-ссылка
+<a href="#">Ссылка</a>'''
+
+tm = Template(text)
+msg = tm.render()
+
+print(msg)
