@@ -1,0 +1,14 @@
+p {
+	color: red; width: 500px; text-align: justify
+}
+/* width ширина поля текста
+text-align выравнивание по краю типа */
+h1 {
+	color: rgb(17, 46, 14);
+}
+ol {
+	color: rgb(40, 26, 234);
+}
+h2 {
+	color: #d8005f;
+}

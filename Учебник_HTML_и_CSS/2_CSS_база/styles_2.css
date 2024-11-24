@@ -1,0 +1,14 @@
+th {
+	text-align: center;
+}
+
+td {
+	text-align: ;
+}
+/* justify - растянуть */
+table {
+	width: 300px;
+}
+p {
+	width: 300px; text-align: justify;
+}
