@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The display property - how the browser displays an element | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The display property - sets how the browser displays an element.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>167 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>display property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>display</code> property - sets the way
+	an element is displayed by the browser.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	display: value;
+}</code>
+</div>
+
+<h2>Values</h2>
+<table data-w="cont/desc">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>block</code></th>
+		<td>Block element.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>inline</code></th>
+		<td>Inline element.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>inline-block</code></th>
+		<td>Inline-block element.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>list-item</code></th>
+		<td>
+			An element will become a list item and
+			a list marker will appear in front of it.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>flex</code></th>
+		<td>
+			Sets an element to be a block element, and
+			its children will become flex elements.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>inline-flex</code></th>
+		<td>
+			Sets an element to be an inline-block element,
+			and its children will become flex elements.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>grid</code></th>
+		<td>Creates a grid element.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>none</code></th>
+		<td>
+			An element will disappear altogether and
+			all other elements will behave as if
+			this element does not exist.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table</code></th>
+		<td>An element will behave like a table.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-cell</code></th>
+		<td>An element will behave like a table cell.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>inline-table</code></th>
+		<td>
+			An element will behave like a table,
+			whereas a table is an inline element
+			and other elements, such as text,
+			will wrap around it.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-caption</code></th>
+		<td>An element will behave like the <code data-gs="comd/c" data-x>caption</code> tag.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-column</code></th>
+		<td>An element will behave like a table column.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-row</code></th>
+		<td>An element will behave like a table row.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-column-group</code></th>
+		<td>An element will behave like the <code data-gs="comd/c" data-x>colgroup</code> tag.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-footer-group</code></th>
+		<td>An element will behave like the <code data-gs="comd/c" data-x>tfoot</code> tag.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-header-group</code></th>
+		<td>An element will behave like the <code data-gs="comd/c" data-x>thead</code> tag.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>table-row-group</code></th>
+		<td>An element will behave like the <code data-gs="comd/c" data-x>tbody</code> tag.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>run-in</code></th>
+		<td>
+			Sets an element to be block or inline depending on context.
+		</td>
+	</tr>
+</table>
+<p>
+	By default, elements can have different ​​<code data-gs="comd/c" data-x>display</code> values.
+</p>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/property/box-sizing.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/resize.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/display.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/display.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

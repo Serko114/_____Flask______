@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Converting CommonJS modules to ES in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to convert legacy CommonJS modules to newer ES in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpMdCC</span>
+				<span data-e="lofo" data-x>220 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Converting CommonJS modules to ES in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Still in various documentation, you can 
+	find importing in the CommonJS modules 
+	style. You need to learn how to convert 
+	such an import into standard ES modules.
+</p>
+<p>
+	In CommonJS, import is performed using 
+	the <code data-gs="comd/c" data-x>require</code> command, the parameter 
+	of which is a path to module. The result 
+	of the command is written to a variable:
+</p>
+<div data-p="bock/pane" data-p-file="src/index.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let math = require('./math');</code>
+</div>
+<p>
+	Let's rewrite this code in ES style. First 
+	of all, pay attention to the fact that in 
+	CommonJS the <code data-gs="comd/p" data-x>.js</code> extension is not 
+	set for files, but in ES it is.
+</p>
+<p>
+	Further, it all depends on whether export 
+	from a module is by default or regular. There 
+	is no difference in CommonJS, but there 
+	is in ES modules. As a rule, the difference 
+	is visible by code examples, or you can 
+	simply try both import options.
+</p>
+<p>
+	In our case, the above import will be 
+	rewritten either in this form:
+</p>
+<div data-p="bock/pane" data-p-file="src/index.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">import math from './math.js';</code>
+</div>
+<p>
+	Or in this one:
+</p>
+<div data-p="bock/pane" data-p-file="src/index.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">import * as math from './math.js';</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rewrite the following code in 
+		the ES module style:
+	</p>
+	<div data-p="bock/pane" data-p-file="src/index.js">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let {square, cube} = require('./math');</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rewrite the following code in 
+		the ES module style:
+	</p>
+	<div data-p="bock/pane" data-p-file="src/index.js">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let math = require('./math');
+let res  = math.square(2) + math.cube(3);</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rewrite the following code in 
+		the ES module style:
+	</p>
+	<div data-p="bock/pane" data-p-file="src/index.js">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let sum = require('./sum');
+let res = sum([1, 2, 3]);</code>
+	</div>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/modules/dynamical-multiple-import.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/http/book.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/modules/commonjs-convertion.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/modules/commonjs-convertion.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

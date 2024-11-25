@@ -1,0 +1,29 @@
+/* #elem { */
+		/* border-radius: 20px;
+		width: 100px;
+		height: 100px;
+		background-color: #92ea4f; */
+		/* border-width: 5px;
+		border-style: solid;
+		border-color: rgb(22, 22, 248);
+		width: 200px;
+		height: 200px; */
+		/* background-image: url("okean-panoramma-ostrov-korabli.jpg"); */
+		/* background-color: orange;
+		background-repeat: no-repeat;
+		width: 1024px;
+		height: 768px;
+		border: 3px solid black; */
+
+		body {
+			background-attachment: fixed;
+			background-image: url("bg.png");
+		}
+		
+		#elem {
+			width: 400px;
+			margin: 0 auto;
+			text-align: justify;
+			font-weight: bold;
+			font-size: 20px;
+		}

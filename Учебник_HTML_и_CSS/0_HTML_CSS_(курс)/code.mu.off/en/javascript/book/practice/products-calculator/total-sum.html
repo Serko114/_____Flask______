@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Total sum in a shopping calculator in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will implement the calculation of the total sum in a shopping calculator in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPrPCTS</span>
+				<span data-e="lofo" data-x>26 of 62</span>
+				<a href="../../../../../en/javascript/book/practice.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Total sum in a shopping calculator in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let's now make it so that the total sum of purchases 
+	is displayed below the table. There are nuances here.
+</p>
+<p>
+	If you think about the situation, it becomes clear 
+	that the sum should be adjusted not only when adding 
+	a new purchase, but also when deleting and editing.
+</p>
+<p>
+	I would suggest in this case to make some function, 
+	let's call it <code data-gs="comd/c" data-x>recountTotal</code>, which will perform 
+	a full recalculation of the total sum. That is, it 
+	will loop through all purchases and sum up the 
+	contents of their <code data-gs="comd/c" data-x>cost</code> column.
+</p>
+<p>
+	With such a function, we can call it anywhere where 
+	some change in the total is expected. Of course, it 
+	is a bit not optimal to calculate the total sum each 
+	time. But we get a significant simplification of 
+	the code.
+</p>
+<p>
+	Use the intended function when 
+	creating a new purchase:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">add.addEventListener('click', function() {
+	let tr = document.createElement('tr');
+	
+	createCell(tr, name.value, 'name');
+	createCell(tr, price.value, 'price');
+	createCell(tr, amount.value, 'amount');
+	createCell(tr, price.value * amount.value, 'cost');
+	createCell(tr, 'remove', 'remove');
+	
+	table.appendChild(tr);
+	recountTotal(); // recalculate the total
+});</code>
+</div>
+<p>
+	Here is a blank of the described function:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function recountTotal() {
+	let costs = table.querySelectorAll('.cost');
+	
+	if (costs) {
+		// find the total sum and write it down into #total
+	}
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Implement the <code data-gs="comd/c" data-x>recountTotal</code> 
+		function I described.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/practice/products-calculator/purchase-adding.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/practice/products-calculator/purchases-removing.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/practice/products-calculator/total-sum.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/practice/products-calculator/total-sum.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

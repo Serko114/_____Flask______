@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The grid-template-columns property - a number and width of columns in a grid | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The grid-template-columns property specifies a number and width of columns that an element will occupy in a grid.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>200 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>grid-template-columns property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>grid-template-columns</code> property
+	specifies a number and width of columns
+	that an element will occupy in a grid. The
+	property is specified on the parent element
+	and determines the width of the columns of
+	the child elements. In the property value,
+	specify the width of the columns in any
+	<a href="../../../../../en/markup/manual/css/reference/units/sizes.html">size units</a>.
+</p>
+<p>
+	When specifying values ​​in pixels in properties,
+	the sizes of the columns will correspond exactly
+	to them. If we specify the word <code data-gs="comd/s" data-x>auto</code>,
+	then the columns will fill all the available
+	space. Using the <code data-gs="comd/u" data-x>fr</code> (fraction) unit
+	means that the entire space will be divided
+	into equal parts. The advantage of <code data-gs="comd/u" data-x>fr</code>
+	is its adaptability to different containers
+	or screen resolutions, since <code data-gs="comd/u" data-x>fr</code> simply
+	divides them into the specified number of
+	fractions without reference to the exact
+	pixel size.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	grid-template-columns: column width;
+}</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's set a column width
+	for our elements in the grid:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: 50px 100px 200px 50px;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: 50px 100px 200px 50px;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's give the first and third columns
+	a fixed width in pixels, and let the
+	second column automatically fill
+	the available space:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: 100px auto 150px;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: 100px auto 150px;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now, using the <code data-gs="comd/c" data-x>grid-template-columns</code>
+	property, we’ll make sure that the first
+	and second columns take up one part of
+	the container, and the third column
+	takes up three parts:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: 1fr 1fr 3fr;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: 1fr 1fr 3fr;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Values ​​indicated in <code data-gs="comd/u" data-x>fr</code> units can take
+	a fractional form. Let's modify the previous
+	example by specifying fractional widths
+	for the second and third columns:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 2.5fr;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: 1fr 0.5fr 2.5fr;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's set the <code data-gs="comd/c" data-x>grid-template-columns</code>
+	property to the <code data-gs="comd/c" data-x>repeat()</code> function,
+	which will tell the container that all
+	three columns should have the same width:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let's change the previous example so that
+	a fourth column is added to three identical columns,
+	which will occupy two fractions of the container:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr) 2fr;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr) 2fr;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's set the first two columns to be one
+	container fraction wide, and the last two
+	columns to be two container fractions wide:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) repeat(2, 2fr);
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr) repeat(2, 2fr);
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let's set the width of the columns
+	by combining the values ​​​​specified using
+	the <code data-gs="comd/c" data-x>repeat()</code> function and <code data-gs="comd/u" data-x>fr</code>
+	units:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div&gt;5&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) 3fr repeat(2, 2fr);
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr) 3fr repeat(2, 2fr);
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Also in the <code data-gs="comd/c" data-x>repeat()</code> function you
+	can specify the <code data-gs="comd/c" data-x>auto-fill</code> value, which
+	will fill our container with identical columns
+	with the width we need:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	border: 2px solid #696989;
+	padding: 10px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, 200px);
+			border: 2px solid #696989;
+			padding: 10px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	It is very convenient, together with <code data-gs="comd/c" data-x>auto-fill</code>,
+	to specify the <code data-gs="comd/c" data-x>minmax</code> function, which specifies
+	the range of column widths from the minimum to the
+	maximum value. If the width of the container does
+	not accommodate all the columns, then some of them
+	will be moved to a new row, while the columns in
+	the row will be evenly distributed in it. Let's
+	modify the previous example to include the
+	<code data-gs="comd/c" data-x>minmax</code> function. To see different
+	column layout options, change the page
+	width of your browser:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	border: 2px solid #696989;
+	padding: 10px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+			border: 2px solid #696989;
+			padding: 10px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let's specify the <code data-gs="comd/c" data-x>auto-fit</code> property,
+	which differs from <code data-gs="comd/c" data-x>auto-fill</code> in that
+	it adjusts the number of columns to the
+	available width of the container,
+	expanding or contracting them:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	border: 2px solid #696989;
+	padding: 10px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+			border: 2px solid #696989;
+			padding: 10px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Also, along with <code data-gs="comd/u" data-x>fr</code>, you can use
+	values ​​in <code data-gs="comd/s" data-x>%</code>, which also determine which part
+	of the container the column will occupy. In
+	this case, the column size will first be
+	calculated in <code data-gs="comd/s" data-x>%</code>, and the remaining
+	free space will be divided into fractions:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-columns: 50% 1fr 2fr 30%;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-columns: 50% 1fr 2fr 30%;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's use the <code data-gs="comd/c" data-x>grid-template-columns</code> and
+	<a href="../../../../../en/markup/manual/css/property/grid-template-rows.html"><code data-gs="comd/c" data-x>grid-template-rows</code></a>
+	properties together:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div&gt;5&lt;/div&gt;
+	&lt;div&gt;6&lt;/div&gt;
+	&lt;div&gt;7&lt;/div&gt;
+	&lt;div&gt;8&lt;/div&gt;
+	&lt;div&gt;9&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+	height: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-columns: 1fr 1fr 1fr;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+			height: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's use the <code data-gs="comd/c" data-x>grid-template-columns</code> and
+	<a href="../../../../../en/markup/manual/css/property/grid-template-rows.html"><code data-gs="comd/c" data-x>grid-template-rows</code></a>
+	properties. Let's create a table of nine cells
+	arranged in three rows. Moreover, the second
+	and third row will have the same width, and
+	each column will have a different width:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div&gt;5&lt;/div&gt;
+	&lt;div&gt;6&lt;/div&gt;
+	&lt;div&gt;7&lt;/div&gt;
+	&lt;div&gt;8&lt;/div&gt;
+	&lt;div&gt;9&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-rows: 60px 1fr 60px;
+	grid-template-columns: 20% 1fr 15%;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+	height: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-rows: 60px 1fr 60px;
+			grid-template-columns: 20% 1fr 15%;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+			height: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now in the table from the previous example,
+	let’s make the top row two fractions wide,
+	and the first column half a fraction wide:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;div&gt;1&lt;/div&gt;
+	&lt;div&gt;2&lt;/div&gt;
+	&lt;div&gt;3&lt;/div&gt;
+	&lt;div&gt;4&lt;/div&gt;
+	&lt;div&gt;5&lt;/div&gt;
+	&lt;div&gt;6&lt;/div&gt;
+	&lt;div&gt;7&lt;/div&gt;
+	&lt;div&gt;8&lt;/div&gt;
+	&lt;div&gt;9&lt;/div&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	display: grid;
+	grid-template-rows: 2fr 1fr 1fr;
+	grid-template-columns: 0.5fr 1fr 1fr;
+	border: 2px solid #696989;
+	padding: 10px;
+	width: 400px;
+	height: 400px;
+}
+#parent &gt; div {
+	padding: 10px;
+	border: 1px solid #696989;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			display: grid;
+			grid-template-rows: 2fr 1fr 1fr;
+			grid-template-columns: 0.5fr 1fr 1fr;
+			border: 2px solid #696989;
+			padding: 10px;
+			width: 400px;
+			height: 400px;
+		}
+		#parent > div {
+			padding: 10px;
+			border: 1px solid #696989;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/grid-template-rows.html"><code data-gs="comd/c" data-x>grid-template-rows</code></a> property <br>
+			that specifies a number and width of rows in a grid
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/grid-auto-columns.html"><code data-gs="comd/c" data-x>grid-auto-columns</code></a> property <br>
+			that specifies a number and width of columns in an implicitly-created grid
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/property/grid-row.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/grid-auto-columns.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/grid-template-columns.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/grid-template-columns.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

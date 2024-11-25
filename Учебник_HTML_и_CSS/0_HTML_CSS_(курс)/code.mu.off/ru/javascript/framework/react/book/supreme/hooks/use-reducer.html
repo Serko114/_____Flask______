@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Хук состояния useReducer в React | </title>
+		
+		<link rel="stylesheet" href="../../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="В данном уроке мы поработаем с хуком состояния useReducer в React.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<div data-w="nict/adv">
+			<a href="https://mentor.code.mu">
+			Запись на курсы по HTML, CSS, JavaScript, PHP, фреймворкам и CMS,<br>
+			<b>а также</b>: помощь в поиске работы и заказов, стажировка
+			на реальных проектах&rarr;
+		</a>
+	</div>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+					<a href="../../../../../../../ru/javascript/framework/react/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/ru/markup/" data-e="open" data-x data-m-targ="markup">Верстка</span>
+		<span data-q-href="/ru/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+		<span data-q-href="/ru/php/" data-e="open" data-x data-m-targ="php">PHP</span>
+		<span data-q-href="/ru/javascript/typescript/" data-e="open" data-x data-m-targ="typescript">TypeScript</span>
+		<span data-q-href="/ru/javascript/nodejs/" data-e="open" data-x data-m-targ="nodejs">NodeJS</span>
+		<span data-q-href="/ru/python/" data-e="open" data-x data-m-targ="python">Python</span>
+		<span data-q-href="/ru/java/" data-e="open" data-x data-m-targ="java">Java</span>
+		<span data-q-href="/ru/cpp/" data-e="open" data-x data-m-targ="cpp">C++</span>
+		<span data-q-href="/ru/rust/" data-e="open" data-x data-m-targ="rust">Rust</span>
+		<span data-q-href="/ru/sql/" data-e="open" data-x data-m-targ="sql">SQL</span>
+		<span data-q-href="/ru/javascript/framework/vue/" data-e="open" data-x data-m-targ="vue">Vue</span>
+		<span data-q-href="/ru/javascript/framework/react/" data-e="open" data-x data-m-targ="react">React</span>
+		<span data-q-href="/ru/javascript/framework/angular/" data-e="open" data-x data-m-targ="angular">Angular</span>
+		<span data-q-href="/ru/javascript/lib/jquery/" data-e="open" data-x data-m-targ="jquery">jQuery</span>
+		<span data-q-href="/ru/php/framework/laravel/" data-e="open" data-x data-m-targ="laravel">Laravel</span>
+		<span data-q-href="/ru/git/" data-e="open" data-x data-m-targ="git">Git</span>
+		<span data-q-href="/ru/tool/webpack/" data-e="open" data-x data-m-targ="webpack">Webpack</span>
+		<span data-q-href="/ru/tool/gulp/" data-e="open" data-x data-m-targ="gulp">Gulp</span>
+		<span data-q-href="/ru/tool/terminal/" data-e="open" data-x data-m-targ="terminal">Terminal</span>
+		<span data-q-href="/ru/internet/" data-e="open" data-x data-m-targ="internet">Internet</span>
+		<span data-q-href="/ru/theory/glossary/" data-e="open" data-x data-m-targ="glossary">Глоссарий</span>
+		<span data-q-href="/ru/theory/slang/" data-e="open" data-x data-m-targ="slang">Сленг</span>
+		<span data-e="open" data-x data-m-targ="social">Соц. сети</span>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../../ru/markup/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/markup/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/markup/book/prep/less.html">Учебник LESS</a>
+		<a href="../../../../../../../ru/markup/book/prep/sass.html">Учебник SASS</a>
+		<a href="../../../../../../../ru/markup/manual/html.html">Справочник HTML</a>
+		<a href="../../../../../../../ru/markup/manual/css.html">Справочник CSS</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="php">
+		<a href="../../../../../../../ru/php/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/php/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/php/book/oop.html">Учебник ООП и MVC</a>
+		<a href="../../../../../../../ru/php/book/parsing.html">Учебник парсинга</a>
+		<a href="../../../../../../../ru/php/tasker/stager.html">Задачник по уровням</a>
+		<a href="../../../../../../../ru/php/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/php/video/lesson.html">Видеоуроки</a>
+		<a href="../../../../../../../ru/php/faq.html">FAQ</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../../ru/javascript/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/book/practice.html">Учебник практики</a>
+		<a href="../../../../../../../ru/javascript/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/javascript/book/oop.html">Учебник ООП</a>
+		<a href="../../../../../../../ru/javascript/tasker/stager.html">Задачник по уровням</a>
+		<a href="../../../../../../../ru/javascript/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/javascript/video/lesson.html">Видеоуроки</a>
+		<a href="../../../../../../../ru/javascript/mistake.html">Ошибки</a>
+		<a href="../../../../../../../ru/javascript/faq.html">FAQ</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="nodejs">
+		<a href="../../../../../../../ru/javascript/nodejs/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/nodejs/book/express.html">Express</a>
+		<a href="../../../../../../../ru/javascript/nodejs/book/mongo.html">Mongo</a>
+		<a href="../../../../../../../ru/javascript/nodejs/book/hosting.html">Хостинг</a>
+		<a href="../../../../../../../ru/javascript/nodejs/manual.html">Справочник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="python">
+		<a href="../../../../../../../ru/python/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/python/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/python/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/python/faq.html">FAQ</a>
+		<a href="../../../../../../../ru/python/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="java">
+		<a href="../../../../../../../ru/java/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="cpp">
+		<a href="../../../../../../../ru/cpp/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="rust">
+		<a href="../../../../../../../ru/rust/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="sql">
+		<a href="../../../../../../../ru/sql/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/sql/tasker/stager.html">Задачник по уровням</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="typescript">
+		<a href="../../../../../../../ru/javascript/typescript/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/typescript/book/supreme.html">Высший учебник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="vue">
+		<a href="../../../../../../../ru/javascript/framework/vue/book/prime.html">Основной учебник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="react">
+		<a href="../../../../../../../ru/javascript/framework/react/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/framework/react/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/javascript/framework/react/book/redux.html">Учебник Redux</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="angular">
+		<a href="../../../../../../../ru/javascript/framework/angular/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="jquery">
+		<a href="../../../../../../../ru/javascript/lib/jquery/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/lib/jquery/manual.html">Справочник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="laravel">
+		<a href="../../../../../../../ru/php/framework/laravel/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="git">
+		<a href="../../../../../../../ru/git/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="terminal">
+		<a href="../../../../../../../ru/tool/terminal.html">Учебник по командной строке</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="webpack">
+		<a href="../../../../../../../ru/tool/webpack.html">Учебник Webpack</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="gulp">
+		<a href="../../../../../../../ru/tool/gulp.html">Учебник Gulp</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="internet">
+		<a href="../../../../../../../ru/internet/protocol/http.html">Протокол HTTP</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="glossary">
+		<a href="../../../../../../../ru/theory/glossary.html">Глоссарий программистских терминов</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="slang">
+		<a href="../../../../../../../ru/theory/slang.html">Сленг программиста</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="social">
+		<a href="https://vk.com/codemu">Паблик сайта code.mu</a>
+		<a href="https://t.me/javascript_tricker">Занимательные задачи JavaScript</a>
+		<a href="https://t.me/php_tricker">Занимательные задачи PHP</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Хук состояния useReducer в React</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Хук <code data-gs="comd/c" data-x>useReducer</code> работает со
+	стейтами. Это своего рода альтернатива
+	<a href="../../../../../../../ru/javascript/framework/react/book/prime/states/intro.html"><code data-gs="comd/c" data-x>useState</code></a>.
+	Хук <code data-gs="comd/c" data-x>useReducer</code> позволяет нам добавлять в
+	компонент функцию, называемую <dfn data-gs="comd/d" data-x>редьюсер</dfn>.
+</p>
+<p>
+	Редьюсер - это такой тип простых,
+	чистых функций, которые принимают объект
+	предыдущего стейта и объект действия и
+	возвращают объект нового стейта.
+</p>
+<p>
+	В хуке <code data-gs="comd/c" data-x>useReducer</code> эта функция
+	работает подобно <code data-gs="comd/c" data-x>reducer</code> в Redux,
+	она возвращает тот или иной результат
+	в зависимости от определенного типа
+	действия. 
+</p>
+<p>
+	Давайте перейдем к реализации.
+	Для примера сделаем счетчик с двумя
+	кнопками. По клику на одну значение
+	счетчика будет увеличиваться,
+	на другую уменьшаться.
+</p>
+<p>
+	Для начала импортируем функцию нашего
+	хука <code data-gs="comd/c" data-x>useReducer</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">import { useReducer } from 'react';</code>
+</div>
+<p>
+	Давайте теперь в функции компонента <code data-gs="comd/c" data-x>App</code>
+	обозначим стейт <code data-gs="comd/c" data-x>count</code> и функцию
+	<code data-gs="comd/c" data-x>dispatch</code>, которая будет обновлять
+	стейт:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">function App() {
+	const [count, dispatch];
+}</code>
+</div>
+<p>
+	В хук <code data-gs="comd/c" data-x>useReducer</code> нам нужно передать
+	функцию <code data-gs="comd/c" data-x>reducer</code>, которую мы напишем
+	позже и начальное значение стейта
+	<code data-gs="comd/c" data-x>count</code>, пусть оно будет <code data-gs="comd/n" data-x>10</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">function App() {
+	const [count, dispatch] = useReducer(reducer, 10);
+}</code>
+</div>
+<p>
+	Давайте будем выводить <code data-gs="comd/c" data-x>count</code>
+	в абзац:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">return (
+	&lt;p&gt;count: {count}&lt;/p&gt;
+);</code>
+</div>
+<p>
+	Теперь под абзацем добавим две кнопки. По клику
+	на первую мы будем вызывать <code data-gs="comd/c" data-x>reducer</code>,
+	передавая ему тип действия <code data-gs="comd/v" data-x>increase</code>,
+	другими словами, по которому значение
+	счетчика будет увеличиваться. По клику
+	на вторую мы будем уменьшать значение
+	счетчика, передавая в <code data-gs="comd/c" data-x>reducer</code>
+	тип действия <code data-gs="comd/v" data-x>decrease</code>: 
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">return (
+	&lt;&gt;
+		&lt;p&gt;count: {count}&lt;/p&gt;
+		&lt;button onClick={() =&gt; dispatch({ type: 'increase' })}&gt;+&lt;/button&gt;
+		&lt;button onClick={() =&gt; dispatch({ type: 'decrease' })}&gt;-&lt;/button&gt;
+	&lt;/&gt;
+);</code>
+</div>
+<p>
+	И наконец, нам остается написать наш
+	<code data-gs="comd/c" data-x>reducer</code>, который будет вычислять
+	и возвращать следующее значение стейта,
+	в зависимости от действия, которое мы
+	передали в функцию <code data-gs="comd/c" data-x>dispatch</code>.
+</p>
+<p>
+	Давайте разместим функцию <code data-gs="comd/c" data-x>reducer</code>
+	сразу после строки импорта, но перед функцией
+	компонента <code data-gs="comd/c" data-x>App</code>. Функция <code data-gs="comd/c" data-x>reducer</code>
+	принимает параметрами наш стейт и объект
+	<code data-gs="comd/c" data-x>action</code>, у которого нас интересует
+	свойство <code data-gs="comd/c" data-x>type</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">function reducer(count, action) {
+	switch (action.type) {
+
+	}
+}</code>
+</div>
+<p>
+	Оформим этот кусочек кода,
+	придерживаясь соглашения в React, в виде
+	конструкции
+	<a href="../../../../../../../ru/javascript/book/prime/conditions/switch-case.html"><code data-gs="comd/c" data-x>switch-case</code></a>.
+	Если значение <code data-gs="comd/c" data-x>type</code> было в <code data-gs="comd/v" data-x>increase</code>,
+	то значение стейта увеличится на <code data-gs="comd/n" data-x>1</code>,
+	если <code data-gs="comd/v" data-x>decrease</code>, то уменьшится на
+	<code data-gs="comd/n" data-x>1</code>. По умолчанию <code data-gs="comd/c" data-x>reducer</code> вернет
+	неизмененный стейт. 
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">function reducer(count, action) {
+	switch (action.type) {
+		case 'increase':
+			return count + 1;
+		case 'decrease':
+			return count - 1;
+		default:
+			return count;
+	}
+}</code>
+</div>
+<p>
+	Соберем все вместе и получим следующий код:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">import { useReducer } from 'react';
+
+function reducer(count, action) {
+	switch (action.type) {
+		case 'increase':
+			return count + 1;
+		case 'decrease':
+			return count - 1;
+		default:
+			return count;
+	}
+}
+
+function App() {
+	const [count, dispatch] = useReducer(reducer, 10);
+	return (
+		&lt;&gt;
+			&lt;p&gt;count: {count}&lt;/p&gt;
+			&lt;button onClick={() =&gt; dispatch({ type: 'increase' })}&gt;+&lt;/button&gt;
+			&lt;button onClick={() =&gt; dispatch({ type: 'decrease' })}&gt;-&lt;/button&gt;
+		&lt;/&gt;
+	);
+}
+
+export default App;</code>
+</div>
+<p>
+	Нужно отметить, что этот хук идеален для
+	компонентов со сложной логикой
+	обновления стейтов.
+</p>
+<div data-w="cont/task">
+	<p>
+		Пусть у вас на экране отображается
+		какое-то слово (например <code data-gs="comd/s" data-x>'React'</code>).
+		Заведите для этого соответствующий
+		стейт с начальным значением. Пусть у вас
+		будет две кнопки. По нажатию на первую
+		в конец вашего слова каждый раз будет
+		дописываться восклицательный знак, а
+		на вторую - вопросительный. Для решения
+		задачи используйте хук <code data-gs="comd/c" data-x>useReducer</code>.
+	</p>
+</div>
+</div>			</main>
+						<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Трепачёв Дмитрий &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	</div>					</div>
+		
+		<script src="../../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

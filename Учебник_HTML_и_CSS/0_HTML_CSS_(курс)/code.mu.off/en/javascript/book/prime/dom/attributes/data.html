@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Custom attributes in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will look at working with data- attributes in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmAtDt</span>
+				<span data-e="lofo" data-x>369 of 502</span>
+				<a href="../../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Custom attributes in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	HTML allows you to add your own custom attributes 
+	to tags. Such attributes should start with <code data-gs="comd/c" data-x>data-</code> 
+	followed by whatever attribute name you like.
+</p>
+<p>
+	Custom attributes can be used in a huge number 
+	of different ways. We will explore many of these 
+	methods later in the tutorial, and there are many 
+	more you can invent yourself later on.
+</p>
+<p>
+	Access to such attributes is not arranged in a 
+	standard way. You can't just refer to the element's 
+	property of the same name, as we did before, but 
+	you should use the special property <code data-gs="comd/c" data-x>dataset</code>, 
+	after which the attribute name is written using a 
+	dot without <code data-gs="comd/c" data-x>data-</code>. For example, if our 
+	attribute is called <code data-gs="comd/c" data-x>data-test</code>, then to 
+	refer to it we will write <code data-gs="comd/c" data-x>elem.dataset.test</code>, 
+	where <code data-gs="comd/c" data-x>elem</code> is a variable with our element.
+</p>
+<p>
+	Let's look at an example. Let's say we 
+	have the following element:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem" data-num="1000"&gt;&lt;/div&gt;</code>
+</div>
+<p>
+	Let's display the value of its 
+	<code data-gs="comd/c" data-x>data-num</code> attribute:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elem = document.querySelector('#elem');
+console.log(elem.dataset.num); // shows 1000</code>
+</div>
+<p>
+	Now let's assign this attribute 
+	a different value:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elem = document.querySelector('#elem');
+elem.dataset.num = 123;</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given the following code:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem" data-text="str"&gt;text&lt;/div&gt;</code>
+	</div>
+	<p>
+		Make it so that when you click on the 
+		div, the content of its <code data-gs="comd/c" data-x>data-text</code> 
+		attribute is added to the end of its text.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given divs that contain their ordinal 
+		number in the <code data-gs="comd/c" data-x>data-num</code> attribute:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div data-num="1"&gt;text&lt;/div&gt;
+&lt;div data-num="2"&gt;text&lt;/div&gt;
+&lt;div data-num="3"&gt;text&lt;/div&gt;
+&lt;div data-num="4"&gt;text&lt;/div&gt;
+&lt;div data-num="5"&gt;text&lt;/div&gt;</code>
+	</div>
+	<p>
+		Make it so that when you click on any of 
+		the divs, its ordinal number is written 
+		to the end.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a button. Make it so that this button 
+		counts the number of clicks on it, writing 
+		them to some custom attribute.
+		Let on click on another button on
+		the screen displays how many clicks were
+		done on the first button.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given an input:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;input id="elem" data-nL"5"&gt;</code>
+	</div>
+	<p>
+		In this input, the <code data-gs="comd/c" data-x>data-length</code> attribute 
+		contains the number of characters to be entered 
+		into the input. Make it so that when focus is 
+		lost, if the number of characters entered does 
+		not match the specified one, a message is 
+		displayed about this.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given an input:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;input id="elem" data-min="5" data-max="10"&gt;</code>
+	</div>
+	<p>
+		In this input, the attributes <code data-gs="comd/c" data-x>data-min</code> 
+		and <code data-gs="comd/c" data-x>data-max</code> contain a range. Make it 
+		so that when focus is lost, if the number of 
+		characters entered does not fall within this 
+		range, a message is displayed about this.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../en/javascript/book/prime/dom/attributes/checking-method.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../en/javascript/book/prime/dom/attributes/data-hyphenated-names.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../../en/javascript/book/prime/dom/attributes/data.html" data-m-curr="T">en</a><a href="../../../../../../ru/javascript/book/prime/dom/attributes/data.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

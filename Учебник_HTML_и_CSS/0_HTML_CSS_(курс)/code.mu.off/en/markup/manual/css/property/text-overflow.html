@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The text-overflow property - adding an ellipsis to the end of trimmed text | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The text-overflow property adds an ellipsis to the end of trimmed text.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>36 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>text-overflow property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>text-overflow</code> property adds an
+	ellipsis to the end of trimmed text to
+	indicate that the text did not fit in a
+	block and was trimmed.
+</p>
+<p>
+	For the property to work, the text must be
+	trimmed via the
+	<a href="../../../../../en/markup/manual/css/property/overflow.html"><code data-gs="comd/c" data-x>overflow</code></a>
+	or the
+	<a href="../../../../../en/markup/manual/css/property/overflow-x.html"><code data-gs="comd/c" data-x>overflow-x</code></a>
+	property in the <code data-gs="comd/v" data-x>hidden</code>, <code data-gs="comd/v" data-x>auto</code> or <code data-gs="comd/v" data-x>scroll</code>
+	value. If <code data-gs="comd/v" data-x>visible</code> is set (and it is by
+	default) - <code data-gs="comd/c" data-x>text-overflow</code> will not work.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	text-overflow: ellipsis | clip;
+}</code>
+</div>
+
+<h2>Values</h2>
+<table data-w="cont/desc">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>ellipsis</code></th>
+		<td>Adds an ellipsis to the end of a trimmed text.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>clip</code></th>
+		<td>
+			Does not add an ellipsis at the end (this is
+			the default, needed to override the property
+			if necessary).
+		</td>
+	</tr>
+</table>
+<p>
+	Default value: <code data-gs="comd/v" data-x>clip</code>.
+</p>
+
+<h2>Example <span data-gn="sect"></span>. Overflowing text</h2>
+<p>
+	In this example, a very long word will not
+	fit into the container and will fall outside
+	its boundaries. No cut off occurs:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet
+	vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+	consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+	adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 200px;
+	overflow: visible;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 200px;
+			overflow: visible;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet
+			vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+			consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+			adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Let's add the overflow property</h2>
+<p>
+	Now everything that has gone beyond the
+	boundaries of the container will simply
+	be cut off:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet
+	vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+	consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+	adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 200px;
+	overflow: hidden;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 200px;
+			overflow: hidden;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet
+			vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+			consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+			adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. The ellipsis value</h2>
+<p>
+	Now, in addition to the
+	<a href="../../../../../en/markup/manual/css/property/overflow.html"><code data-gs="comd/c" data-x>overflow</code></a>
+	property, let’s also add <code data-gs="comd/c" data-x>text-overflow</code> in the
+	<code data-gs="comd/v" data-x>ellipsis</code> value. An ellipsis will be added
+	to the end of the trimmed text:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet
+	vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+	consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+	adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 200px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet
+			vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+			consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+			adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. With scroll bars</h2>
+<p>
+	If you set <b>overflow: auto</b> and
+	<b>text-overflow: ellipsis</b>, the scrollbar
+	will appear, but the ellipses will still
+	be added. Try scrolling the scrollbar in
+	the example:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet
+	vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+	consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+	adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 200px;
+	overflow: auto;
+	text-overflow: ellipsis;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 200px;
+			overflow: auto;
+			text-overflow: ellipsis;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet
+			vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+			consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+			adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. If there are no very long words</h2>
+<p>
+	If there are no words so long that they
+	extend beyond the borders of the container,
+	then trimming will not occur (nothing will
+	extend). Look at the following example:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 200px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. One line text</h2>
+<p>
+	However, there are situations when we want text
+	to be cut off if it is too long (text in general,
+	not individual words) and not wrap to the next
+	line. This is done by adding the
+	<a href="../../../../../en/markup/manual/css/property/white-space.html"><code data-gs="comd/c" data-x>white-space</code></a>
+	property in the <code data-gs="comd/v" data-x>nowrap</code> value, which will
+	prevent text wrapping to another line. Look at
+	the example, now the text is cut off:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 200px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 200px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Width in percentage</h2>
+<p>
+	If you set a block width in %, then
+	cropping will also work correctly:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;
+	Lorem ipsum dolor sit amet
+	vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+	consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+	adipiscing elit.
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border: 1px solid red;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/open" data-m-type="W">
+						<a href="" data-e="link" data-x>
+							<span data-e="text" data-x data-lo="torc" data-m-kest="open-window"></span>
+							<div data-e="code" data-x data-v-code="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			width: 80%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			border: 1px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;>
+			Lorem ipsum dolor sit amet
+			vvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword,
+			consectetur anothervvvvvvvvvvvvvvvvvvvvvveeeeeeeeeeeeeerrrrylongword
+			adipiscing elit.
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></div>
+						</a>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the
+			<a href="../../../../../en/markup/manual/css/property/word-break.html"><code data-gs="comd/c" data-x>word-break</code></a> and
+			<a href="../../../../../en/markup/manual/css/property/overflow-wrap.html"><code data-gs="comd/c" data-x>overflow-wrap</code></a>
+			properties <br>
+			that allow you to move the letters of a long word to a new line
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/hyphens.html"><code data-gs="comd/c" data-x>hyphens</code></a> property <br>
+			that enables hyphenation of words by syllables
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/overflow.html"><code data-gs="comd/c" data-x>overflow</code></a> property <br>
+			that cuts off content parts that extend beyond block boundaries
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/property/tab-size.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/hyphens.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/text-overflow.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/text-overflow.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

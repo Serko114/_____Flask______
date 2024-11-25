@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>DOM Coding Tips in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will look at a number of tips to help you write code correctly when working with the DOM in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmDmCdg</span>
+				<span data-e="lofo" data-x>362 of 502</span>
+				<a href="../../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>DOM Coding Tips in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Suppose you are faced with a task of sufficient 
+	complexity, for the implementation of which you 
+	need to write a certain number of code lines.
+</p>
+<p>
+	The wrong approach would be to try to write the 
+	entire code of the solution as a whole, and then 
+	start testing it. In this case, there is a high 
+	probability that nothing will work for you, and 
+	you will have to look for the error in a large 
+	amount of code.
+</p>
+<p>
+	The correct approach is to break the task into 
+	small elementary steps that you will implement 
+	and immediately check their correctness. In this 
+	case, even if you make a mistake somewhere, you 
+	will immediately notice the problem and fix it.
+</p>
+<p>
+	Let's try it in practice. Let's say you 
+	have paragraphs:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;2&lt;/p&gt;
+&lt;p&gt;3&lt;/p&gt;
+&lt;p&gt;4&lt;/p&gt;
+&lt;p&gt;5&lt;/p&gt;
+&lt;p&gt;6&lt;/p&gt;</code>
+</div>
+<p>
+	Let your task be to find paragraphs with numbers 
+	divisible by <code data-gs="comd/n" data-x>3</code> and find a sum of those numbers.
+</p>
+<p>
+	As a first small step, I would suggest getting 
+	our paragraphs as an array and printing this 
+	array to the console to see if we got everything 
+	right. Let's do it:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elems = document.querySelectorAll('p');
+console.log(elems);</code>
+</div>
+<p>
+	The next small step is to loop through our 
+	paragraphs and output each of them to the 
+	console individually:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	console.log(elem);
+}</code>
+</div>
+<p>
+	And now in a loop we will display the texts 
+	of our paragraphs:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	console.log(elem.textContent);
+}</code>
+</div>
+<p>
+	Now let's display the texts of those paragraphs 
+	whose number is divisible by <code data-gs="comd/c" data-x>3</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elems = document.querySelectorAll('p');
+
+for (let elem of elems) {
+	let text = +elem.textContent;
+	
+	if (text % 3 === 0) {
+		console.log(text);
+	}
+}</code>
+</div>
+<p>
+	After making sure that we get the correct 
+	paragraphs, we can proceed to sum their 
+	numbers:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elems = document.querySelectorAll('p');
+let sum = 0;
+
+for (let elem of elems) {
+	let text = +elem.textContent;
+	
+	if (text % 3 === 0) {
+		sum += text;
+	}
+}
+
+console.log(sum);</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a list containing the years:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;ul&gt;
+	&lt;li&gt;2000&lt;/li&gt;
+	&lt;li&gt;2004&lt;/li&gt;
+	&lt;li&gt;2021&lt;/li&gt;
+	&lt;li&gt;2022&lt;/li&gt;
+	&lt;li&gt;2025&lt;/li&gt;
+	&lt;li&gt;2031&lt;/li&gt;
+&lt;/ul&gt;</code>
+	</div>
+	<p>
+		Get years whose sum of digits is <code data-gs="comd/n" data-x>6</code>. 
+		Find the sum of the years obtained.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../en/javascript/book/prime/dom/basis/anonymous-handlers-unbinding.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../en/javascript/book/prime/dom/basis/mistakes.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../../en/javascript/book/prime/dom/basis/coding.html" data-m-curr="T">en</a><a href="../../../../../../ru/javascript/book/prime/dom/basis/coding.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

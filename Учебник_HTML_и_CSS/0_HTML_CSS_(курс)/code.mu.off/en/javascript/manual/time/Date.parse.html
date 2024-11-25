@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Date.parse method - string to date conversion in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The Date.parse method returns the number of milliseconds before the date passed in the parameter as an ISO format string in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>132 of 264</span>
+				<a href="../../../../en/javascript/manual.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Date.parse method</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>Date.parse</code> method returns
+	the number of milliseconds before the
+	date passed in the parameter as an ISO
+	format string. ISO format looks like
+	this: <span data-gs="comd/f" data-x>'YYYY-MM-DDTHH:mm:ss.sssZ'</span>,
+	where: <span data-gs="comd/f" data-x>'YYYY-MM-DD'</span> - date;
+	<span data-gs="comd/f" data-x>'Т'</span> - separator; <span data-gs="comd/f" data-x>'HH:mm:ss.sss'</span>
+	- time; <span data-gs="comd/f" data-x>'Z'</span> - time zone. It is
+	not necessary to send the full format,
+	just send <span data-gs="comd/f" data-x>'YYYY-MM-DD'</span> or
+	just <span data-gs="comd/f" data-x>YYYY</span>.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">Date.parse('YYYY-MM-DDTHH:mm:ss.sssZ');</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's use the <code data-gs="comd/c" data-x>Date.parse</code> method
+	to find out how many milliseconds have
+	passed from <code data-gs="comd/n" data-x>1</code> January <code data-gs="comd/n" data-x>1970</code>
+	to <code data-gs="comd/n" data-x>11/16/2016</code>, <code data-gs="comd/n" data-x>12:59:59</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = Date.parse('2016-11-16T12:59:59');
+console.log(res);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">1479290399000</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	And now let's output the number of
+	milliseconds, specifying only
+	the year:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = Date.parse('2016');
+console.log(res);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">1451606400000</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's set the <code data-gs="comd/c" data-x>Date.parse</code> method
+	parameter to wrong date:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = Date.parse('20162016');
+console.log(res);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">NaN</code>
+</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../en/javascript/manual/time/getTime.html"><code data-gs="comd/c" data-x>getTime</code></a> method <br>
+			that also obtains the timestamp
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/time/Date.now.html"><code data-gs="comd/c" data-x>Date.now</code></a> method <br>
+			that also obtains the timestamp
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../en/javascript/manual/time/getTime.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../en/javascript/manual/time/setFullYear.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../en/javascript/manual/time/Date.parse.html" data-m-curr="T">en</a><a href="../../../../ru/javascript/manual/time/Date.parse.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

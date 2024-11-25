@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Remove and complete buttons for checklist in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will add buttons for removing and completing a task in the checklist in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPrChLRCB</span>
+				<span data-e="lofo" data-x>19 of 62</span>
+				<a href="../../../../../en/javascript/book/practice.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Remove and complete buttons for checklist in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	In the previous lesson, after solving the problems, 
+	you should have obtained the following code:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;input id="input"&gt;
+&lt;ul id="list"&gt;&lt;/ul&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let input = document.querySelector('#input');
+let list = document.querySelector('#list');
+
+input.addEventListener('keypress', function(event) {
+	if (event.key == 'Enter') {
+		let li = document.createElement('li');
+		li.textContent = this.value;
+		list.appendChild(li);
+		
+		this.value = '';
+	}
+});</code>
+</div>
+<p>
+	Let's now add buttons <code data-gs="comd/s" data-x>'remove'</code> and <code data-gs="comd/s" data-x>'done'</code>. 
+	Let's design these buttons as <code data-gs="comd/c" data-x>span</code> tags. We will 
+	also place the task text in the <code data-gs="comd/c" data-x>span</code> tag:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">input.addEventListener('keypress', function(event) {
+	if (event.key == 'Enter') {
+		let li = document.createElement('li');
+		
+		let task = document.createElement('span');
+		task.textContent = this.value;
+		li.appendChild(task);
+		
+		let remove = document.createElement('span');
+		remove.textContent = 'remove';
+		li.appendChild(remove);
+		
+		let mark = document.createElement('span');
+		mark.textContent = 'done';
+		li.appendChild(mark);
+		
+		list.appendChild(li);
+		
+		this.value = '';
+	}
+});</code>
+</div>
+<p>
+	Let's also assign CSS classes to each of the <code data-gs="comd/c" data-x>span</code> 
+	tags so that they can be accessed via CSS to make the 
+	beauty we need:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let input = document.querySelector('#input');
+let list = document.querySelector('#list');
+
+input.addEventListener('keypress', function(event) {
+	if (event.key == 'Enter') {
+		let li = document.createElement('li');
+		
+		let task = document.createElement('span');
+		task.classList.add('task');
+		task.textContent = this.value;
+		li.appendChild(task);
+		
+		let remove = document.createElement('span');
+		remove.classList.add('remove');
+		remove.textContent = 'remove';
+		li.appendChild(remove);
+		
+		let mark = document.createElement('span');
+		mark.classList.add('mark');
+		mark.textContent = 'done';
+		li.appendChild(mark);
+		
+		list.appendChild(li);
+		
+		this.value = '';
+	}
+});</code>
+</div>
+<p>
+	Add CSS to assigned classes:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#list span {
+	margin-right: 5px;
+}
+#list .remove, #list .mark {
+	color: blue;
+	cursor: pointer;
+}
+#list .remove:hover, #list .mark:hover {
+	text-decoration: underline;
+}</code>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/practice/checklist/task-formulation.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/practice/checklist/deal-removing.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/practice/checklist/remove-complete-buttons.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/practice/checklist/remove-complete-buttons.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

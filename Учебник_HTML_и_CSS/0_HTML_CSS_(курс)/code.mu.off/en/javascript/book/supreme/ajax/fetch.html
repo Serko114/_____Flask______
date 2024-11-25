@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>fetch basics in AJAX | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we'll cover the basics of how fetch works in AJAX.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpAXFt</span>
+				<span data-e="lofo" data-x>244 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>fetch basics in AJAX</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let's now see how to load part of a page 
+	using AJAX. Let's have a div and a button 
+	on our <code data-gs="comd/p" data-x>index.html</code> page (the content 
+	of <code data-gs="comd/c" data-x>body</code> is shown here):
+</p>
+<div data-p="bock/pane" data-p-file="public/index.html">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div&gt;&lt;/div&gt;
+&lt;button&gt;click me&lt;/button&gt;</code>
+</div>
+<p>
+	Let's also have the <code data-gs="comd/p" data-x>ajax.html</code> page 
+	that has three paragraphs (no page tags, 
+	just paragraphs):
+</p>
+<div data-p="bock/pane" data-p-file="public/ajax.html">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;2&lt;/p&gt;
+&lt;p&gt;3&lt;/p&gt;</code>
+</div>
+<p>
+	Let's make it so that when the button 
+	on the <code data-gs="comd/p" data-x>index.html</code> page is clicked, 
+	the content of the <code data-gs="comd/p" data-x>ajax.html</code> page 
+	is loaded into the div.
+</p>
+<p>
+	To do this, first we get references to 
+	our elements into variables:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let div    = document.querySelector('div');
+let button = document.querySelector('button');</code>
+</div>
+<p>
+	Let's add a click handler 
+	to the button:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	// here we will perform an AJAX request
+});</code>
+</div>
+<p>
+	Let's make an AJAX request now. For this, 
+	the <code data-gs="comd/c" data-x>fetch</code> function is used, which 
+	receives as a parameter the address of 
+	a page whose contents we want to get. We 
+	specify the <code data-gs="comd/p" data-x>ajax.html</code> page address 
+	on our server:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	let result = fetch('/ajax.html'); 
+});</code>
+</div>
+<p>
+	<code data-gs="comd/c" data-x>fetch</code> will return 
+	<a href="../../../../../en/javascript/book/supreme/promises/intro.html">promise</a> 
+	as its result. The fact is that requesting 
+	a page via AJAX is an asynchronous operation, 
+	because it will take some time for the page 
+	to respond to us.
+</p>
+<p>
+	Let's get a result of 
+	the promise:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	let promise = fetch('/ajax.html'); 
+	
+	promise.then(function(response) {
+		// a server's response is in the response variable
+	});
+});</code>
+</div>
+<p>
+	We simplify by getting rid 
+	of an extra variable:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(function(response) {
+		
+	});
+});</code>
+</div>
+<p>
+	Let's simplify with an arrow function:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(response =&gt; {
+		
+	});
+});</code>
+</div>
+<p>
+	And put it in a more readable way:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(
+		response =&gt; {
+			
+		}
+	);
+});</code>
+</div>
+<p>
+	The <code data-gs="comd/c" data-x>response</code> variable contains a 
+	fairly complex object of the 
+	<code data-gs="comd/c" data-x>Response</code> class:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(response =&gt; {
+		console.log(response); // an object of the Response class
+	});
+});</code>
+</div>
+<p>
+	We will study this object in depth in the 
+	next lessons, but for now we need the 
+	simplest thing - to obtain a text of 
+	the requested page. To do this, this 
+	object has the <code data-gs="comd/c" data-x>text</code> method. This 
+	method, however, doesn't return the 
+	text of the page, but a promise with 
+	its text:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(
+		response =&gt; {
+			console.log(response.text()); // shows a Promise
+		}
+	);
+});</code>
+</div>
+<p>
+	To get to the text of the page, the 
+	promise obtained from <code data-gs="comd/c" data-x>response.text</code> 
+	needs to be handled again:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(
+		response =&gt; {
+			return response.text();
+		}
+	).then(
+		text =&gt; {
+			console.log(text); // a page text
+		}
+	);
+});</code>
+</div>
+<p>
+	So, we finally got the text of the 
+	requested page and we can, for 
+	example, write it to our div:
+</p>
+<div data-p="bock/pane" data-p-file="public/client.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">button.addEventListener('click', function() {
+	fetch('/ajax.html').then(
+		response =&gt; {
+			return response.text();
+		}
+	).then(
+		text =&gt; {
+			div.innerHTML = text;
+		}
+	);
+});</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given three buttons and a div. There 
+		are three pages on a server. Make 
+		each of the buttons load the 
+		corresponding page into the div.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Suppose there are five pages on a 
+		server. Let the first click on the 
+		button load the first page, the 
+		second click - the second, and 
+		so on, until the pages run out.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/ajax/intro.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/ajax/response-code.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/ajax/fetch.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/ajax/fetch.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

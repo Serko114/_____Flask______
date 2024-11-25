@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The border-image property - a border image | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The border-image property specifies a border image.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>100 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>border-image property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>border-image</code> property specifies
+	an image for a border, it is a shorthand
+	property for the
+	<a href="../../../../../en/markup/manual/css/property/border-image-source.html"><code data-gs="comd/c" data-x>border-image-source</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/border-image-slice.html"><code data-gs="comd/c" data-x>border-image-slice</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/border-image-repeat.html"><code data-gs="comd/c" data-x>border-image-repeat</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/border-image-width.html"><code data-gs="comd/c" data-x>border-image-width</code></a>
+	and <a href="../../../../../en/markup/manual/css/property/border-image-outset.html"><code data-gs="comd/c" data-x>border-image-outset</code></a>
+	properties.
+	However, the shorthand property was introduced in CSS
+	before shorthand properties at all and is therefore
+	supported in more older browsers.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	border-image: url(path to image) slice/width/outset repeat;
+}</code>
+</div>
+
+<h2>Description</h2>
+<p>
+	An image we want to use for the border must
+	be designed in a special way: <code data-gs="comd/n" data-x>4</code> small
+	images for the corners and <code data-gs="comd/n" data-x>4</code> images
+	for the sides. An example of such an image:
+</p>
+<div data-w="cont/image">
+	<img src="../../../../../cont/markup/manual/css/property/border-image/@/image/border-image.png">
+</div>
+<p>
+	In this case, the central part is left white
+	(since we don't want it to fall into the
+	element background). An example of the
+	image with a filled central part:
+</p>
+<div data-w="cont/image">
+	<img src="../../../../../cont/markup/manual/css/property/border-image/@/image/border-image-fill.png">
+</div>
+<p>
+	The <code data-gs="comd/c" data-x>slice</code> value tells the browser which
+	parts of an image will go to the corners and
+	which to the sides (and which part will be the
+	center). <code data-gs="comd/n" data-x>4</code> parts go to the corners,
+	<code data-gs="comd/n" data-x>4</code> parts go to the sides and one part
+	(central) goes to the element background
+	(optional, the <code data-gs="comd/c" data-x>fill</code> keyword).
+</p>
+<p>
+	The image is “cut” into pieces as follows:
+	for the <code data-gs="comd/c" data-x>slice</code> value, from one to four
+	values ​​are indicated. Let's look at it with
+	an example. Let the following values ​​be specified:
+	<code data-gs="comd/n" data-x>10 20 30 40</code> (pixels <code data-gs="comd/c" data-x>px</code> are not
+	specified, this is due to the fact that the
+	image can be both raster and vector). The values
+	​​indicate the following: <code data-gs="comd/n" data-x>10</code> cut from the top,
+	<code data-gs="comd/n" data-x>20</code> cut from the right, <code data-gs="comd/n" data-x>30</code> cut from
+	the bottom, <code data-gs="comd/n" data-x>40</code> cut from the left. What part
+	of the image will fall into the top left corner?
+	This will be a piece: <code data-gs="comd/n" data-x>10</code> from the top, <code data-gs="comd/n" data-x>40</code>
+	from the left. The top right corner will contain
+	<code data-gs="comd/n" data-x>10</code> from the top, <code data-gs="comd/n" data-x>20</code> from the right. And
+	so on.
+</p>
+<p>
+	Most often the image is symmetrical (like the diamonds
+	above) and we need to cut equal pieces into corners. In
+	this case, one value is specified, which will set the
+	same slices on all sides. To cut the orange diamonds,
+	we'll set <code data-gs="comd/c" data-x>slice</code> to <code data-gs="comd/n" data-x>26</code> (since the orange
+	diamond is <code data-gs="comd/u" data-x>26px</code> by <code data-gs="comd/u" data-x>26px</code>). Yellow diamonds
+	will fall on the border lines and the following will
+	happen to them: they will either stretch across the
+	entire block or repeat along the border (depending
+	on the <code data-gs="comd/v" data-x>repeat</code> value):
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	border-image-source: url("image.png");
+	border-image-slice: 26;
+	border-image-repeat: stretch;
+	border-style: solid;
+	border-width: 26px;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			border-image-source: url(&quot;&/image/border-image.png&quot;);
+			border-image-slice: 26;
+			border-image-repeat: stretch;
+			border-style: solid;
+			border-width: 26px;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	border-image-source: url("image.png");
+	border-image-slice: 26;
+	border-image-repeat: repeat;
+	border-style: solid;
+	border-width: 26px;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			border-image-source: url(&quot;&/image/border-image.png&quot;);
+			border-image-slice: 26;
+			border-image-repeat: repeat;
+			border-style: solid;
+			border-width: 26px;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+<p>
+	The <code data-gs="comd/c" data-x>border-image</code> property does not allow
+	you to specify the width of an element's border. The
+	browser simply stretches the image along the border
+	with the existing width. Therefore, it must be set
+	via the <code data-gs="comd/c" data-x>border</code> property.
+</p>
+<p>
+	Users of older browsers (or with disabled images) will
+	see a standard border set in <code data-gs="comd/c" data-x>border</code>, so it
+	makes sense to give it a suitable style and color.
+</p>
+
+<h2>Values</h2>
+<table data-w="cont/desc">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th>url(Path to image)</th>
+		<td>
+			Path to image. For more details, see
+			<a href="../../../../../en/markup/manual/css/property/border-image-source.html"><code data-gs="comd/c" data-x>border-image-source</code></a>.
+		</td>
+	</tr>
+	<tr>
+		<th>slice</th>
+		<td>
+			Tells the browser which parts of the image will
+			go to the corners and which to the sides
+			(and which part will be the center).
+			<b>Possible values:</b> from <code data-gs="comd/n" data-x>1</code> to <code data-gs="comd/n" data-x>4</code>
+			numbers | from <code data-gs="comd/n" data-x>1</code> to <code data-gs="comd/n" data-x>4</code> percents. The
+			<code data-gs="comd/c" data-x>fill</code> keyword can be separated by spaces
+			in addition to numbers or percentages. For more
+			details, see
+			<a href="../../../../../en/markup/manual/css/property/border-image-slice.html"><code data-gs="comd/c" data-x>border-image-slice</code></a>.
+		</td>
+	</tr>
+	<tr>
+		<th>width</th>
+		<td>
+			The property controls the width of the visible part
+			of the border and scales it. If this value is greater
+			than the <code data-gs="comd/c" data-x>border-width</code>, the border image will
+			go under the content. <b>Possible values:</b>
+			CSS units | percentage | | number | <code data-gs="comd/v" data-x>auto</code>. For
+			more details, see
+			<a href="../../../../../en/markup/manual/css/property/border-image-width.html"><code data-gs="comd/c" data-x>border-image-width</code></a>.
+		</td>
+	</tr>
+	<tr>
+		<th>outset</th>
+		<td>
+			An interesting property that allows you to move
+			the border outside the element. Negative values
+			​​are not supported. <b>Possible values:</b> CSS
+			units (except % (?)) | positive number | auto. For
+			more details, see
+			<a href="../../../../../en/markup/manual/css/property/border-image-outset.html"><code data-gs="comd/c" data-x>border-image-outset</code></a>.
+		</td>
+	</tr>
+	<tr>
+		<th>repeat</th>
+		<td>
+			Indicates how to repeat an image on the borders
+			(not on the corners): tile or stretch.
+			<br><b>Possible values:</b> <code data-gs="comd/v" data-x>stretch</code> | <code data-gs="comd/v" data-x>repeat</code> | <code data-gs="comd/v" data-x>round</code> | <code data-gs="comd/v" data-x>space</code>.
+			<br>For more details, see
+			<a href="../../../../../en/markup/manual/css/property/border-image-repeat.html"><code data-gs="comd/c" data-x>border-image-repeat</code></a>.
+		</td>
+	</tr>
+</table>
+<p>
+	Default value: <code data-gs="comd/v" data-x>none 100%/1/0 stretch</code>
+	(url(path to image) slice/width/outset repeat).
+</p>
+
+<h2>Example <span data-gn="sect"></span>. border-image-repeat: repeat</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	border-style: solid;
+	border-width: 26px;
+	border-image: url("image.png") 26 repeat;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			border-style: solid;
+			border-width: 26px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 repeat;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. border-image-repeat: stretch</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	border-style: solid;
+	border-width: 26px;
+	border-image: url("image.png") 26 stretch;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			border-style: solid;
+			border-width: 26px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 stretch;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. border-image-repeat: round</h2>
+<p>
+	Now in the normal state the value is set to
+	<code data-gs="comd/v" data-x>repeat</code>, and on hover - <code data-gs="comd/v" data-x>round</code>.
+	Please note that before hovering, not a
+	whole number of diamonds are placed in the border,
+	but after hovering - a whole number. This is
+	how <code data-gs="comd/v" data-x>round</code> works:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem:hover {
+	border-image: url("image.png") 26 round;
+}
+#elem {
+	border-style: solid;
+	border-width: 42px;
+	border-image: url("image.png") 26 repeat;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem:hover {
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 round;
+		}
+		#elem {
+			border-style: solid;
+			border-width: 42px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 repeat;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. border-image-repeat: two values </h2>
+<p>
+	The <code data-gs="comd/v" data-x>repeat</code> value for width
+	and <code data-gs="comd/v" data-x>stretch</code> for height:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	border-style: solid;
+	border-width: 26px;
+	border-image: url("image.png") 26 repeat stretch;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			border-style: solid;
+			border-width: 26px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 repeat stretch;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Matching the image width with the border width </h2>
+<p>
+	Let's increase <code data-gs="comd/c" data-x>border-width</code> on mouse hover,
+	while leaving the <code data-gs="comd/c" data-x>border-image</code> width the
+	same. Diamonds will stretch across the
+	entire border:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem:hover {
+	border-width: 52px;
+}
+#elem {
+	border-style: solid;
+	border-width: 26px;
+	border-image: url("image.png") 26 repeat;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem:hover {
+			border-width: 52px;
+		}
+		#elem {
+			border-style: solid;
+			border-width: 26px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 repeat;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. border-image-slice </h2>
+<p>
+	Let's take another image in which
+	different pieces are not equal:
+</p>
+<div data-w="cont/image">
+	<img src="../../../../../cont/markup/manual/css/property/border-image/@/image/border-image-fill.png">
+</div>
+<p>
+	We will indicate which parts of the image
+	need to be cut off - <code data-gs="comd/u" data-x>25% 30% 10% 20%</code>. It
+	works like this: <code data-gs="comd/u" data-x>25%</code> - top indent,
+	<code data-gs="comd/u" data-x>30%</code> - right indent, <code data-gs="comd/u" data-x>10%</code> - bottom
+	indent, <code data-gs="comd/u" data-x>20%</code> - left indent. Essentially,
+	we cut off the corners with these pieces. The
+	top left corner will be <code data-gs="comd/u" data-x>25%</code> from the top
+	of the image, and <code data-gs="comd/u" data-x>20%</code> from the left. The
+	top right corner will be <code data-gs="comd/u" data-x>25%</code> from the top
+	of the image, and <code data-gs="comd/u" data-x>30%</code> from the right,
+	and so on.
+</p>
+<p>
+	Also, if you hover your mouse over a block, the
+	<code data-gs="comd/v" data-x>fill</code> keyword will work, and the central part
+	of the image will become the background of our block:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem:hover {
+	border-image: url("image.png") fill 25% 30% 10% 20% stretch;
+}
+#elem {
+	border-style: solid;
+	border-width: 52px;
+	border-image: url("image.png") 25% 30% 10% 20% stretch;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem:hover {
+			border-image: url(&quot;&/image/border-image-fill.png&quot;) fill 25% 30% 10% 20% stretch;
+		}
+		#elem {
+			border-style: solid;
+			border-width: 52px;
+			border-image: url(&quot;&/image/border-image-fill.png&quot;) 25% 30% 10% 20% stretch;
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's make a gradient border using
+	<a href="../../../../../en/markup/manual/css/function/linear-gradient.html">linear gradient</a>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	background: green;
+	border-image: linear-gradient(to bottom, red, blue) 30;
+	border-width: 30px;
+	border-style: solid;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			background: green;
+			border-image: linear-gradient(to bottom, red, blue) 30;
+			border-width: 30px;
+			border-style: solid;
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. border-image-width </h2>
+<p>
+	Set the value of <code data-gs="comd/c" data-x>border-image-width</code> to
+	<code data-gs="comd/n" data-x>2</code> (the border image will become <code data-gs="comd/n" data-x>2</code> times
+	larger than the border itself) when hovering the
+	mouse over the element (<code data-gs="comd/n" data-x>26/2</code> - indicated after
+	the slash, while <code data-gs="comd/n" data-x>26</code> is the value of
+	<code data-gs="comd/c" data-x>border-image-slice</code>). Please note that the
+	border itself has not increased, but the border
+	image has, since it will go under the text:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem:hover {
+	border-image: url("image.png") 26/2 repeat;
+}
+#elem {
+	border-style: solid;
+	border-width: 26px;
+	border-image: url("image.png") 26 repeat;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem:hover {
+			border-image: url(&quot;&/image/border-image.png&quot;) 26/2 repeat;
+		}
+		#elem {
+			border-style: solid;
+			border-width: 26px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 repeat;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. border-image-outset </h2>
+<p>
+	Let's set the <code data-gs="comd/c" data-x>border-image-outset</code> value to
+	<code data-gs="comd/n" data-x>3</code> when hovering over the element.
+	(<code data-gs="comd/n" data-x>26/1/2</code> - indicated after the second slash,
+	while <code data-gs="comd/n" data-x>26</code> is the value of <code data-gs="comd/c" data-x>border-image-slice</code>,
+	and - <code data-gs="comd/n" data-x>1</code> is <code data-gs="comd/c" data-x>border-image-width</code>):
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem:hover {
+	border-image: url("image.png") 26/1/3 repeat;
+}
+#elem {
+	border-style: solid;
+	border-width: 26px;
+	border-image: url("image.png") 26 repeat;
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 0 auto;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem:hover {
+			border-image: url(&quot;&/image/border-image.png&quot;) 26/1/3 repeat;
+		}
+		#elem {
+			border-style: solid;
+			border-width: 26px;
+			border-image: url(&quot;&/image/border-image.png&quot;) 26 repeat;
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin: 0 auto;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/border-image-source.html"><code data-gs="comd/c" data-x>border-image-source</code></a> property <br>
+			that specifies an image path for a border
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/border-image-slice.html"><code data-gs="comd/c" data-x>border-image-slice</code></a> property <br>
+			that specifies an image split for a border
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/border-image-repeat.html"><code data-gs="comd/c" data-x>border-image-repeat</code></a> property <br>
+			that sets an image repetition for a border
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/border-image-width.html"><code data-gs="comd/c" data-x>border-image-width</code></a> property <br>
+			that sets an image width for a border
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/border-image-outset.html"><code data-gs="comd/c" data-x>border-image-outset</code></a> property <br>
+			that sets an image outset for a border
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/function/repeating-radial-gradient.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/border-image-source.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/border-image.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/border-image.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The indexOf method - search in an array in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The indexOf method searches for elements in an array in JavaScript. It returns the number of the first found element, or -1 if there is no such element.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>95 of 264</span>
+				<a href="../../../../en/javascript/manual.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>indexOf method</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>indexOf</code> method searches for
+	an element in an array. In the first
+	parameter, specify the element text. The method
+	returns the number of the first found
+	element, or <code data-gs="comd/n" data-x>-1</code> if there is no
+	such element. The second optional
+	parameter of the method specifies
+	the position from which to start
+	searching.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">array.indexOf(element, [where to start]);</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's find the position of the first
+	three in the array:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr = [1, 2, 3, 3, 3, 4, 5];
+let res = arr.indexOf(3);
+
+console.log(res);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">2</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let now the element being checked
+	is not in the array:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr = [1, 2, 3, 4, 5];
+let res = arr.indexOf(6);
+
+console.log(res);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">-1</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's start the search from
+	a given position:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr = [1, 2, 3, 4, 5, 3];
+let res = arr.indexOf(3, 4);
+
+console.log(res);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">5</code>
+</div>
+
+<h2>Frequent mistake</h2>
+<p>
+	Sometimes the method is used to check
+	if an element is in an array. In this
+	case, it is easy to make a mistake
+	if you check as follows:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">if (arr.indexOf(3)) {
+	console.log(true);
+} else {
+	console.log(false);
+}</code>
+</div>
+<p>
+	Such a check will work for all
+	positions, except for zero - after
+	all, it is interpreted as <code data-gs="comd/c" data-x>false</code>.
+</p>
+<p>
+	Properly check for the presence
+	of an element as follows:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">if (arr.indexOf(3) !== -1) {
+	console.log(true);
+} else {
+	console.log(false);
+}</code>
+</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../en/javascript/manual/array/includes.html"><code data-gs="comd/c" data-x>includes</code></a> method <br>
+			that checks for the presence of an element in an array
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/array/lastIndexOf.html"><code data-gs="comd/c" data-x>lastIndexOf</code></a> method <br>
+			that searches for elements from the end
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/array/at.html"><code data-gs="comd/c" data-x>at</code></a> method <br>
+			that returns an array element by its index
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/regular/match.html"><code data-gs="comd/c" data-x>match</code></a> method <br>
+			that searches for matches in a string
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/regular/search.html"><code data-gs="comd/c" data-x>search</code></a> method <br>
+			that performs search
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../en/javascript/manual/array/includes.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../en/javascript/manual/array/lastIndexOf.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../en/javascript/manual/array/indexOf.html" data-m-curr="T">en</a><a href="../../../../ru/javascript/manual/array/indexOf.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

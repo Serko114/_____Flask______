@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The animation property - a shorthand for animation | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The animation property is a shorthand property for animation.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>264 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>animation property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>animation</code> property is a shorthand
+	property for an animation, allowing you to set
+	all properties for animation at once:
+	<a href="../../../../../en/markup/manual/css/property/animation-name.html"><code data-gs="comd/c" data-x>animation-name</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-duration.html"><code data-gs="comd/c" data-x>animation-duration</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-delay.html"><code data-gs="comd/c" data-x>animation-delay</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-timing-function.html"><code data-gs="comd/c" data-x>animation-timing-function</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-iteration-count.html"><code data-gs="comd/c" data-x>animation-iteration-count</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-direction.html"><code data-gs="comd/c" data-x>animation-direction</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-fill-mode.html"><code data-gs="comd/c" data-x>animation-fill-mode</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/animation-play-state.html"><code data-gs="comd/c" data-x>animation-play-state</code></a>.
+</p>
+<p>
+	The order does not matter, <code data-gs="comd/c" data-x>animation-duration</code>
+	must come before <code data-gs="comd/c" data-x>animation-delay</code>. Only
+	<code data-gs="comd/c" data-x>animation-name</code> and <code data-gs="comd/c" data-x>animation-duration</code>
+	properties are mandatory.
+</p>
+<p>
+	The property can also take the <code data-gs="comd/v" data-x>none</code> value,
+	which disables animation completely. This value
+	is the default.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	animation: value;
+}</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	In this example, there will be a delay of
+	<code data-gs="comd/n" data-x>3</code> seconds before the animation
+	(before each new play), and then the
+	animation will play for <code data-gs="comd/n" data-x>6</code> seconds:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes move {
+	from {
+		margin-left: 0px;
+	}
+	to {
+		margin-left: 400px;
+	}
+}
+
+#elem {
+	animation: move 6s infinite 3s linear;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			@keyframes move {
+			from {
+				margin-left: 0px;
+			}
+			to {
+				margin-left: 400px;
+			}
+		}
+		
+		#elem {
+			animation: move 6s infinite 3s linear;
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Possible problems</h2>
+<p>
+	An animation written in short form may
+	not work due to its name. Let's look
+	at the following animation:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes reverse {
+	from {
+		left: 0;
+	}
+	to {
+	  left: 300px;
+	}
+}</code>
+</div>
+<p>
+	Notice that I use the animation name
+	<code data-gs="comd/v" data-x>reverse</code>. At first glance, everything
+	looks fine, but the animation does not work
+	because <code data-gs="comd/v" data-x>reverse</code> is a valid keyword for the
+	<a href="../../../../../en/markup/manual/css/property/animation-direction.html"><code data-gs="comd/c" data-x>animation-direction</code></a>.
+</p>
+<p>
+	Also animation will not work when using short
+	form in the title of other keywords. But
+	everything works fine when using "full"
+	form of description.
+</p>
+<p>
+	The keywords-values
+	of ​​<a href="../../../../../en/markup/manual/css/property/animation-direction.html"><code data-gs="comd/c" data-x>animation-direction</code></a>
+	that break animations should also include keywords
+	related to anti-aliasing functions, as well as
+	<code data-gs="comd/v" data-x>infinite</code>, <code data-gs="comd/v" data-x>alternate</code>, <code data-gs="comd/v" data-x>running</code>,
+	<code data-gs="comd/v" data-x>paused</code> and so on.
+</p>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/command/keyframes.html"><code data-gs="comd/c" data-x>@keyframes</code></a> at-rule <br>
+			that set keyframes for an animation
+		</li>
+		<li>
+			a smooth <a href="../../../../../en/markup/manual/css/property/transition.html"><code data-gs="comd/c" data-x>transition</code></a>,
+			representing an animation when hovering over an element
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/property/animation-play-state.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/transform.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/animation.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/animation.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

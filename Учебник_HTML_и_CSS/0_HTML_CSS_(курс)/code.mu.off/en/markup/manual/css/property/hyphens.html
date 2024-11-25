@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The hyphens property - wrapping words on a new line | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The hyphens property enables word hyphenation in the browser using the "-" hyphen character.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>37 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>hyphens property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>hyphens</code> property enables browser
+	hyphenation using the hyphen "-". To support
+	the Russian language, you need to add the
+	<a href="../../../../../en/markup/manual/html/attr/lang.html"><code data-gs="comd/c" data-x>lang="ru"</code></a>
+	attribute to the tag to which hyphens are applied
+	(or to the parent of this tag). You can simply
+	add this attribute to the <code data-gs="comd/c" data-x>html</code> tag. Without
+	this, hyphenation will not work.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	hyphens: auto | manual | none;
+}</code>
+</div>
+
+<h2>Values</h2>
+<table data-w="cont/desc">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>auto</code></th>
+		<td>Places hyphenation marks where necessary.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>manual</code></th>
+		<td>
+			Adds hyphens only in those places where the
+			<a href="../../../../../en/markup/manual/html/tag/wbr.html"><code data-gs="comd/c" data-x>wbr</code></a>
+			tag or the special character <code data-gs="comd/c" data-x>&amp;shy;</code> is
+			added and only if necessary. Such hyphens are
+			called <dfn data-gs="comd/d" data-x>soft</dfn>.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>none</code></th>
+		<td>
+			Cancels hyphenation (words will not be
+			hyphenated, even if there are soft hyphens).
+		</td>
+	</tr>
+</table>
+<p>
+	Default value: <code data-gs="comd/v" data-x>manual</code>.
+</p>
+
+<h2>The auto value</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;p lang="en"&gt;
+	Lorem ipsum dolor sit amet, consectetur adipiscing elitorire
+	aenean a dapibus magna, ac interdum nisl. Suspendisse egetil
+	fringilla nibh, eu commodo arcu. Donec lacinia tempor velite
+	sed tincidunt. Aliquam porttitor nulla purus, vel vulputater
+	ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi
+	ante purus lacini dui, interdum fringilla massa eros ut duir
+	nullam et ipsum ex. Donec ut iaculis massa. Duis vel ulamcor
+	per dolor. Suspendisse tristique dolor risus, nec laoreet du
+	aliquet maximus. Maecenas tempus congue arcu, si amet auctor
+	dui efficitur in. Proin ac auctor nisi. Phasellus luctus eur
+	neque sollicitudin rutrum. Curabitur ipsum justo, sodales in
+	lectus non, molestie ullamcorper elit, orciro varius natoque.
+&lt;/p&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">p {
+	width: 400px;
+	hyphens: auto;
+	border: 1px solid red;
+	text-align: justify;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			p {
+			width: 400px;
+			hyphens: auto;
+			border: 1px solid red;
+			text-align: justify;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<p lang=&quot;en&quot;>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elitorire
+			aenean a dapibus magna, ac interdum nisl. Suspendisse egetil
+			fringilla nibh, eu commodo arcu. Donec lacinia tempor velite
+			sed tincidunt. Aliquam porttitor nulla purus, vel vulputater
+			ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi
+			ante purus lacini dui, interdum fringilla massa eros ut duir
+			nullam et ipsum ex. Donec ut iaculis massa. Duis vel ulamcor
+			per dolor. Suspendisse tristique dolor risus, nec laoreet du
+			aliquet maximus. Maecenas tempus congue arcu, si amet auctor
+			dui efficitur in. Proin ac auctor nisi. Phasellus luctus eur
+			neque sollicitudin rutrum. Curabitur ipsum justo, sodales in
+			lectus non, molestie ullamcorper elit, orciro varius natoque.
+		</p>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the
+			<a href="../../../../../en/markup/manual/css/property/word-break.html"><code data-gs="comd/c" data-x>word-break</code></a> and
+			<a href="../../../../../en/markup/manual/css/property/overflow-wrap.html"><code data-gs="comd/c" data-x>overflow-wrap</code></a>
+			properties <br>
+			that allow you to move the letters of a long word to a new line
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/overflow.html"><code data-gs="comd/c" data-x>overflow</code></a> property <br>
+			that cuts off content parts that extend beyond block boundaries
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/property/text-overflow.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/line-clamp.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/hyphens.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/hyphens.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

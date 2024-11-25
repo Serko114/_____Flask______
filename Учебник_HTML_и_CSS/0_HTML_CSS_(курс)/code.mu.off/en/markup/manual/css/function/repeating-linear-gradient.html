@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The repeating-linear-gradient function - a repeating linear gradient | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The repeating-linear-gradient function specifies a repeating linear gradient.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>98 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>repeating-linear-gradient function</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>repeating-linear-gradient</code> function
+	specifies a repeating linear gradient. This means
+	that we set a certain gradient pattern, for example,
+	from <code data-gs="comd/u" data-x>0px</code> to <code data-gs="comd/u" data-x>10px</code> - a gradient from red
+	to blue and this gradient will be repeated throughout
+	the entire block: <code data-gs="comd/u" data-x>0px</code> to <code data-gs="comd/u" data-x>10px</code>, from
+	<code data-gs="comd/u" data-x>10px</code> to <code data-gs="comd/u" data-x>20px</code>, from <code data-gs="comd/u" data-x>20px</code> to
+	<code data-gs="comd/u" data-x>30px</code> and so on.
+</p>
+<p>
+	This function applies to properties that specify
+	a background image:
+	<a href="../../../../../en/markup/manual/css/property/background.html"><code data-gs="comd/c" data-x>background</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/background-image.html"><code data-gs="comd/c" data-x>background-image</code></a>
+	or a border image:
+	<a href="../../../../../en/markup/manual/css/property/border-image.html"><code data-gs="comd/c" data-x>border-image</code></a>,
+	<a href="../../../../../en/markup/manual/css/property/border-image-source.html"><code data-gs="comd/c" data-x>background-image-source</code></a>.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	background: repeating-linear-gradient([direction], color1 length1, color2 length2...);
+}</code>
+</div>
+
+<h2>Values</h2>
+<table data-w="cont/desc">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th>direction</th>
+		<td>
+			Sets a specific gradient direction in any
+			<a href="../../../../../en/markup/manual/css/reference/units/angles.html">angle units</a>
+			or with the <code data-gs="comd/v" data-x>top</code>, <code data-gs="comd/v" data-x> left</code>, <code data-gs="comd/v" data-x>right</code>, <code data-gs="comd/v" data-x>bottom</code>
+			keywords, or a combination thereof. The order of
+			the words is not important. The parameter is
+			optional: if you do not write it, the gradient
+			will go from top to bottom. The direction is
+			preceded by the <code data-gs="comd/v" data-x>to</code> word.
+		</td>
+	</tr>
+	<tr>
+		<th>angle</th>
+		<td>
+			An angle in any
+			<a href="../../../../../en/markup/manual/css/reference/units/angles.html">angle units</a>.
+			Can be positive or negative. The parameter is
+			optional. Either the angle or the direction
+			(or nothing at all) can be specified at
+			the same time.
+		</td>
+	</tr>
+	<tr>
+		<th>color1</th>
+		<td>The starting color of the gradient in any <a href="../../../../../en/markup/manual/css/reference/units/colors.html">color units</a>.</td>
+	</tr>
+	<tr>
+		<th>color2</th>
+		<td>The ending color of the gradient in any <a href="../../../../../en/markup/manual/css/reference/units/colors.html">color units</a>.</td>
+	</tr>
+	<tr>
+		<th>length</th>
+		<td>
+			Sets the extent of a specific gradient color in any <a href="../../../../../en/markup/manual/css/reference/units/sizes.html">size units</a>.
+		</td>
+	</tr>
+</table>
+
+<h2>Example <span data-gn="sect"></span>. The simplest option</h2>
+<p>
+	The gradient will look like this: from <code data-gs="comd/u" data-x>0px</code>
+	to <code data-gs="comd/u" data-x>20px</code> pure red, from <code data-gs="comd/u" data-x>20px</code> to
+	<code data-gs="comd/u" data-x>40px</code> - a gradient from red to blue. And this
+	will repeat from top to bottom
+	(that’s why it’s a repeating gradient):
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	background: repeating-linear-gradient(red 20px, blue 40px);
+	width: 400px;
+	height: 200px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			background: repeating-linear-gradient(red 20px, blue 40px);
+			width: 400px;
+			height: 200px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Sharp transitions</h2>
+<p>
+	The gradient will look like this: from <code data-gs="comd/u" data-x>0px</code>
+	to <code data-gs="comd/u" data-x>20px</code> pure red, from <code data-gs="comd/u" data-x>20px</code> to
+	<code data-gs="comd/u" data-x>40px</code> - pure blue (trick is that the second
+	color begins where the first ends). And this will
+	be repeated from top to bottom:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	background: repeating-linear-gradient(red 0px, red 20px, blue 20px, blue 40px);
+	width: 400px;
+	height: 200px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			background: repeating-linear-gradient(red 0px, red 20px, blue 20px, blue 40px);
+			width: 400px;
+			height: 200px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Let's change direction</h2>
+<p>
+	Now the gradient direction
+	will be from right to left:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	background: repeating-linear-gradient(to left, red 0px, red 20px, blue 20px, blue 40px);
+	width: 400px;
+	height: 200px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			background: repeating-linear-gradient(to left, red 0px, red 20px, blue 20px, blue 40px);
+			width: 400px;
+			height: 200px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Direction in degrees</h2>
+<p>
+	As the direction, let's set the
+	angle in degrees:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	background: repeating-linear-gradient(45deg, red 0px, red 2px, white 2px, white 10px);
+	width: 400px;
+	height: 200px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			background: repeating-linear-gradient(45deg, red 0px, red 2px, white 2px, white 10px);
+			width: 400px;
+			height: 200px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span>. Negative value</h2>
+<p>
+	Let's make the direction
+	a negative value:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	background: repeating-linear-gradient(-45deg, red 0px, red 2px, white 2px, white 10px);
+	width: 400px;
+	height: 200px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#elem {
+			background: repeating-linear-gradient(-45deg, red 0px, red 2px, white 2px, white 10px);
+			width: 400px;
+			height: 200px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/function/repeating-radial-gradient.html"><code data-gs="comd/c" data-x>repeating-radial-gradient</code></a> function <br>
+			that creates a repeating radial gradient
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/function/linear-gradient.html"><code data-gs="comd/c" data-x>linear-gradient</code></a> function <br>
+			that creates a linear gradient
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/function/radial-gradient.html"><code data-gs="comd/c" data-x>radial-gradient</code></a> function <br>
+			that creates a radial gradient
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/function/radial-gradient.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/function/repeating-radial-gradient.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/function/repeating-linear-gradient.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/function/repeating-linear-gradient.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

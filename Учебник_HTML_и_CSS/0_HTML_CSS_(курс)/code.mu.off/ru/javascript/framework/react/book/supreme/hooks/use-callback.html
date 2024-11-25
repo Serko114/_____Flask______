@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Хук оптимизации производительности useCallback в React | </title>
+		
+		<link rel="stylesheet" href="../../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="В данном уроке мы проанализируем способ улучшения производительности при помощи хука useCallback в React.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<div data-w="nict/adv">
+			<a href="https://mentor.code.mu">
+			Запись на курсы по HTML, CSS, JavaScript, PHP, фреймворкам и CMS,<br>
+			<b>а также</b>: помощь в поиске работы и заказов, стажировка
+			на реальных проектах&rarr;
+		</a>
+	</div>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsrtPmHkUCb</span>
+				<span data-e="lofo" data-x>16 of 47</span>
+				<a href="../../../../../../../ru/javascript/framework/react/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/ru/markup/" data-e="open" data-x data-m-targ="markup">Верстка</span>
+		<span data-q-href="/ru/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+		<span data-q-href="/ru/php/" data-e="open" data-x data-m-targ="php">PHP</span>
+		<span data-q-href="/ru/javascript/typescript/" data-e="open" data-x data-m-targ="typescript">TypeScript</span>
+		<span data-q-href="/ru/javascript/nodejs/" data-e="open" data-x data-m-targ="nodejs">NodeJS</span>
+		<span data-q-href="/ru/python/" data-e="open" data-x data-m-targ="python">Python</span>
+		<span data-q-href="/ru/java/" data-e="open" data-x data-m-targ="java">Java</span>
+		<span data-q-href="/ru/cpp/" data-e="open" data-x data-m-targ="cpp">C++</span>
+		<span data-q-href="/ru/rust/" data-e="open" data-x data-m-targ="rust">Rust</span>
+		<span data-q-href="/ru/sql/" data-e="open" data-x data-m-targ="sql">SQL</span>
+		<span data-q-href="/ru/javascript/framework/vue/" data-e="open" data-x data-m-targ="vue">Vue</span>
+		<span data-q-href="/ru/javascript/framework/react/" data-e="open" data-x data-m-targ="react">React</span>
+		<span data-q-href="/ru/javascript/framework/angular/" data-e="open" data-x data-m-targ="angular">Angular</span>
+		<span data-q-href="/ru/javascript/lib/jquery/" data-e="open" data-x data-m-targ="jquery">jQuery</span>
+		<span data-q-href="/ru/php/framework/laravel/" data-e="open" data-x data-m-targ="laravel">Laravel</span>
+		<span data-q-href="/ru/git/" data-e="open" data-x data-m-targ="git">Git</span>
+		<span data-q-href="/ru/tool/webpack/" data-e="open" data-x data-m-targ="webpack">Webpack</span>
+		<span data-q-href="/ru/tool/gulp/" data-e="open" data-x data-m-targ="gulp">Gulp</span>
+		<span data-q-href="/ru/tool/terminal/" data-e="open" data-x data-m-targ="terminal">Terminal</span>
+		<span data-q-href="/ru/internet/" data-e="open" data-x data-m-targ="internet">Internet</span>
+		<span data-q-href="/ru/theory/glossary/" data-e="open" data-x data-m-targ="glossary">Глоссарий</span>
+		<span data-q-href="/ru/theory/slang/" data-e="open" data-x data-m-targ="slang">Сленг</span>
+		<span data-e="open" data-x data-m-targ="social">Соц. сети</span>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../../ru/markup/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/markup/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/markup/book/prep/less.html">Учебник LESS</a>
+		<a href="../../../../../../../ru/markup/book/prep/sass.html">Учебник SASS</a>
+		<a href="../../../../../../../ru/markup/manual/html.html">Справочник HTML</a>
+		<a href="../../../../../../../ru/markup/manual/css.html">Справочник CSS</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="php">
+		<a href="../../../../../../../ru/php/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/php/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/php/book/oop.html">Учебник ООП и MVC</a>
+		<a href="../../../../../../../ru/php/book/parsing.html">Учебник парсинга</a>
+		<a href="../../../../../../../ru/php/tasker/stager.html">Задачник по уровням</a>
+		<a href="../../../../../../../ru/php/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/php/video/lesson.html">Видеоуроки</a>
+		<a href="../../../../../../../ru/php/faq.html">FAQ</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../../ru/javascript/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/book/practice.html">Учебник практики</a>
+		<a href="../../../../../../../ru/javascript/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/javascript/book/oop.html">Учебник ООП</a>
+		<a href="../../../../../../../ru/javascript/tasker/stager.html">Задачник по уровням</a>
+		<a href="../../../../../../../ru/javascript/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/javascript/video/lesson.html">Видеоуроки</a>
+		<a href="../../../../../../../ru/javascript/mistake.html">Ошибки</a>
+		<a href="../../../../../../../ru/javascript/faq.html">FAQ</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="nodejs">
+		<a href="../../../../../../../ru/javascript/nodejs/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/nodejs/book/express.html">Express</a>
+		<a href="../../../../../../../ru/javascript/nodejs/book/mongo.html">Mongo</a>
+		<a href="../../../../../../../ru/javascript/nodejs/book/hosting.html">Хостинг</a>
+		<a href="../../../../../../../ru/javascript/nodejs/manual.html">Справочник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="python">
+		<a href="../../../../../../../ru/python/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/python/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/python/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/python/faq.html">FAQ</a>
+		<a href="../../../../../../../ru/python/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="java">
+		<a href="../../../../../../../ru/java/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="cpp">
+		<a href="../../../../../../../ru/cpp/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="rust">
+		<a href="../../../../../../../ru/rust/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="sql">
+		<a href="../../../../../../../ru/sql/manual.html">Справочник</a>
+		<a href="../../../../../../../ru/sql/tasker/stager.html">Задачник по уровням</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="typescript">
+		<a href="../../../../../../../ru/javascript/typescript/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/typescript/book/supreme.html">Высший учебник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="vue">
+		<a href="../../../../../../../ru/javascript/framework/vue/book/prime.html">Основной учебник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="react">
+		<a href="../../../../../../../ru/javascript/framework/react/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/framework/react/book/supreme.html">Высший учебник</a>
+		<a href="../../../../../../../ru/javascript/framework/react/book/redux.html">Учебник Redux</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="angular">
+		<a href="../../../../../../../ru/javascript/framework/angular/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="jquery">
+		<a href="../../../../../../../ru/javascript/lib/jquery/book/prime.html">Основной учебник</a>
+		<a href="../../../../../../../ru/javascript/lib/jquery/manual.html">Справочник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="laravel">
+		<a href="../../../../../../../ru/php/framework/laravel/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="git">
+		<a href="../../../../../../../ru/git/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="terminal">
+		<a href="../../../../../../../ru/tool/terminal.html">Учебник по командной строке</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="webpack">
+		<a href="../../../../../../../ru/tool/webpack.html">Учебник Webpack</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="gulp">
+		<a href="../../../../../../../ru/tool/gulp.html">Учебник Gulp</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="internet">
+		<a href="../../../../../../../ru/internet/protocol/http.html">Протокол HTTP</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="glossary">
+		<a href="../../../../../../../ru/theory/glossary.html">Глоссарий программистских терминов</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="slang">
+		<a href="../../../../../../../ru/theory/slang.html">Сленг программиста</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="social">
+		<a href="https://vk.com/codemu">Паблик сайта code.mu</a>
+		<a href="https://t.me/javascript_tricker">Занимательные задачи JavaScript</a>
+		<a href="https://t.me/php_tricker">Занимательные задачи PHP</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Хук оптимизации производительности useCallback в React</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	В этом уроке мы рассмотрим следующий
+	хук для оптимизации производительности
+	<code data-gs="comd/c" data-x>useCallback</code>.
+</p>
+<p>
+	Хук <code data-gs="comd/c" data-x>useCallback</code> подобен API <code data-gs="comd/c" data-x>useMemo</code>,
+	отличие заключается в том, что первый
+	кэширует значение между моментами перерисовки
+	экрана, а второй callback-функцию. Это
+	позволяет нам не перезапускать ресурсозатратные
+	функции, когда это не требуется и может
+	использоваться при
+	<a href="../../../../../../../ru/javascript/framework/react/book/prime/components/changing-parent-state.html">передаче функции</a>
+	в дочерние компоненты.
+</p>
+<p>
+	Давайте разберемся подробнее на примере.
+	Для начала создадим компонент <code data-gs="comd/c" data-x>App</code>
+	и заведем в нем стейт <code data-gs="comd/c" data-x>num</code>:
+</p>	
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">const [num, setNum] = useState(0);</code>
+</div>
+<p>
+	Пусть у нас будет кнопка, по клику
+	на которую <code data-gs="comd/c" data-x>num</code> увеличивается
+	на <code data-gs="comd/n" data-x>1</code> и абзац, в котором мы
+	будем выводить значение <code data-gs="comd/c" data-x>num</code>: 
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">return (
+	&lt;div&gt;
+		&lt;button onClick={() =&gt; setNum(num + 1)}&gt;click&lt;/button&gt;
+		&lt;p&gt;clicks: {num}&lt;/p&gt;
+	&lt;/div&gt;
+);</code>
+</div>
+<p>
+	А сейчас, предположим, что у нас в
+	<code data-gs="comd/c" data-x>App</code> выводится еще какой-то список
+	с элементами, который мы будем дополнять
+	по нажатию другой кнопки. Для хранения
+	элементов этого списка мы заведем
+	стейт <code data-gs="comd/c" data-x>items</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">const [items, setItems] = useState([]);</code>
+</div>
+<p>
+	И затем напишем функцию <code data-gs="comd/c" data-x>addItem</code>
+	для их добавления:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">function addItem() {
+	setItems([...items, 'new item']);
+}</code>
+</div>
+<p>
+	Теперь давайте напишем код для отображения
+	элементов списка и вынесем его в дочерний
+	компонент <code data-gs="comd/c" data-x>Items</code>, который в виде
+	пропсов будет получать массив элементов
+	и функцию для их добавления. Не забудем
+	добавить вывод в консоль, чтобы видеть
+	когда наш <code data-gs="comd/c" data-x>Items</code> будет
+	перерисовываться:
+</p>
+<div data-p="bock/pane" data-p-file="Items.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">function Items({ items, addItem }) {
+
+	const result = items.map((item, index) =&gt; {
+		return &lt;p key={index}&gt;{item}&lt;/p&gt;;
+	});
+	
+	console.log('Items render');
+	
+	return (
+		&lt;div&gt;
+			&lt;h3&gt;Our items&lt;/h3&gt;
+			{result}
+			&lt;button onClick={addItem}&gt;add item&lt;/button&gt;
+		&lt;/div&gt;
+	);
+}
+
+export default Items;</code>
+</div>
+<p>
+	Разместим <code data-gs="comd/c" data-x>Items</code> в конце компонента
+	<code data-gs="comd/c" data-x>App</code> и будем передавать ему массив
+	<code data-gs="comd/c" data-x>items</code> и функцию для добавления
+	элементов <code data-gs="comd/c" data-x>addItem</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">return (
+	&lt;&gt;
+		&lt;div&gt;
+			&lt;button onClick={() =&gt; setNum(num + 1)}&gt;click&lt;/button&gt;
+			&lt;p&gt;clicks: {num}&lt;/p&gt;
+			&lt;br /&gt;
+		&lt;/div&gt;
+		&lt;Items items={items} addItem={addItem} /&gt;
+	&lt;/&gt;
+);</code>
+</div>
+<p>
+	А теперь понажимаем на кнопочки
+	и убедимся, что <code data-gs="comd/c" data-x>num</code> растет и
+	новые элементы добавляются в список.
+	А открыв консоль, мы увидим, что
+	наш список перерисовывается каждый
+	раз, даже если мы кликаем по кнопке,
+	которая увеличивает <code data-gs="comd/c" data-x>num</code>.
+</p>
+<p>
+	Если у нас маленький списочек, то все
+	в порядке, а если предполагается, что он
+	будет объемным и там много чего еще есть?
+	Не беда - скажете вы, ведь на прошлом
+	уроке мы рассмотрели API <code data-gs="comd/c" data-x>memo</code>,
+	чтобы как раз избегать ненужных перерисовок
+	компонента.
+</p>
+<p>
+	Так давайте обернем наш компонент
+	<code data-gs="comd/c" data-x>Items</code> в <code data-gs="comd/c" data-x>memo</code> и все дела.
+	Кстати это можно сделать прямо
+	при экспорте <code data-gs="comd/c" data-x>Items</code>:
+</p>
+<div data-p="bock/pane" data-p-file="Items.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">export default memo(Items);</code>
+</div>
+<p>
+	Не забудем импортировать <code data-gs="comd/c" data-x>memo</code>:
+</p>
+<div data-p="bock/pane" data-p-file="Items.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">import { memo } from 'react';</code>
+</div>
+<p>
+	А теперь откроем консоль и понажимаем
+	на кнопочки. Все старания впустую! Мы
+	мемоизировали компонент, но при нажатии
+	на кнопку <code data-gs="comd/s" data-x>'click'</code> компонент
+	<code data-gs="comd/c" data-x>Items</code> все равно
+	перерисовывается каждый раз.
+</p>
+<p>
+	Дело все в том, что когда родительский
+	компонент перерисовывается, его функции
+	пересоздаются заново - это касается и нашей
+	функции <code data-gs="comd/c" data-x>addItem</code>, которую мы передаем в
+	<code data-gs="comd/c" data-x>Items</code>.
+</p>
+<p>
+	Именно в этот момент нам поможет хук
+	<code data-gs="comd/c" data-x>useCallback</code>. Давайте применим
+	его. Для начала импортируем его в
+	<code data-gs="comd/c" data-x>App</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">import { useCallback } from 'react';</code>
+</div>
+<p>
+	Затем переделаем простое объявление функции
+	<code data-gs="comd/c" data-x>addItem</code> в
+	<a href="../../../../../../../ru/javascript/book/prime/functions/types/declaration-types.html">
+	Function Expression</a>, укажем в качестве
+	первого параметра для <code data-gs="comd/c" data-x>useCallback</code>
+	нашу функцию в виде колбэка. Вторым
+	параметром в квадратных скобочках укажем
+	зависимости - все реактивные переменные,
+	участвующие в функции, в нашем случае
+	это массив <code data-gs="comd/c" data-x>items</code>:
+</p>
+<div data-p="bock/pane" data-p-file="App.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="jsx">const addItem = useCallback(() =&gt; {
+	setItems(() =&gt; [...items, 'New item']);
+}, [items]);</code>
+</div>
+<p>
+	Готово! Таким образом мы закэшировали
+	функцию. Нажимаем снова на кнопочки и
+	видим, что теперь при нажатии на кнопку
+	<code data-gs="comd/s" data-x>'click'</code> наш дочерний компонент не
+	перерисовывается.
+</p>
+<div data-w="cont/task">
+	<p>
+		Создайте компонент <code data-gs="comd/c" data-x>App</code>, поместите
+		в него абзац с текстом. Заведите
+		стейт с начальным значением <code data-gs="comd/s" data-x>'text'</code>
+		и выведите его в абзаце. Пусть по клику
+		на абзац ему в конец текста
+		добавляется восклицательный знак.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Создайте дочерний компонент <code data-gs="comd/c" data-x>Products</code>,
+		в котором у вас будет кнопка для добавления
+		нового продукта. Разместите его в <code data-gs="comd/c" data-x>App</code>.
+		В родительском компоненте создайте стейт
+		с массивом продуктов и функцию добавления
+		нового продукта. Передайте их в
+		качестве пропсов в дочерний, выведите в нем
+		переданный массив в виде списка <code data-gs="comd/c" data-x>ul</code>.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		В <code data-gs="comd/c" data-x>Products</code> выведите в консоль текст
+		<code data-gs="comd/s" data-x>'products render'</code>.
+		Оберните <code data-gs="comd/c" data-x>Products</code> в <code data-gs="comd/c" data-x>memo</code>.
+		Покликайте на абзац и кнопку. Убедитесь,
+		что при клике на абзац дочерний компонент
+		все равно перерисовывается.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Закэшируйте функцию для добавления
+		продуктов, обернув ее в хук <code data-gs="comd/c" data-x>useCallback</code>.
+		Покликайте на абзац и кнопку. Убедитесь,
+		что при клике на абзац, дочерний компонент
+		больше не перерисовывается.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../../ru/javascript/framework/react/book/supreme/hooks/api-memo.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../../ru/javascript/framework/react/book/supreme/hooks/use-transition.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Трепачёв Дмитрий &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	</div>					</div>
+		
+		<script src="../../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

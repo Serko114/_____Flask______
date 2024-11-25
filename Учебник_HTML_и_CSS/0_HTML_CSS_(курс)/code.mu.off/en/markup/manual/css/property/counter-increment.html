@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The counter-increment property - automatic numbering of elements | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The counter-increment property specifies automatic numbering of elements.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>285 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>counter-increment property</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>counter-increment</code> property specifies
+	automatic numbering of elements, such as paragraphs
+	or headings. It is used together with the
+	<a href="../../../../../en/markup/manual/css/property/counter-reset.html"><code data-gs="comd/c" data-x>counter-reset</code></a>
+	property,
+	<a href="../../../../../en/markup/manual/css/pseudoelement/after.html"><code data-gs="comd/c" data-x>after</code></a>
+	and
+	<a href="../../../../../en/markup/manual/css/pseudoelement/before.html"><code data-gs="comd/c" data-x>before</code></a>
+	pseudo-elements,
+	<a href="../../../../../en/markup/manual/css/property/content.html"><code data-gs="comd/c" data-x>content</code></a>
+	property, inside which the
+	<code data-gs="comd/c" data-x>counter</code> function is used. For a better understanding,
+	I recommend looking at the examples.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector {
+	counter-increment: name [step] | none;
+}</code>
+</div>
+
+<h2>Values</h2>
+<table data-w="cont/desc">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th>name</th>
+		<td>
+			A counter name. An ordinary word (like a class
+			name or id). You can specify multiple names,
+			separating them with a space. In this case,
+			several counters will change simultaneously.
+		</td>
+	</tr>
+	<tr>
+		<th>step</th>
+		<td>A positive or negative integer. Optional.</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/v" data-x>none</code></th>
+		<td>Prevents incrementing the counter for the current selector.</td>
+	</tr>
+</table>
+<p>
+	Default value: <code data-gs="comd/v" data-x>none</code>.
+</p>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's make paragraphs
+	numbered automatically:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	counter-reset: test;
+}
+#parent p::before {
+	counter-increment: test;
+	content: counter(test);
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			counter-reset: test;
+		}
+		#parent p::before {
+			counter-increment: test;
+			content: counter(test);
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's add some text in addition to the
+	numbering. In our case, <code data-gs="comd/c" data-x>№</code> before
+	a number and a dot after:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	counter-reset: test;
+}
+#parent p::before {
+	counter-increment: test;
+	content: "№" counter(test) ".";
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			counter-reset: test;
+		}
+		#parent p::before {
+			counter-increment: test;
+			content: &quot;№&quot; counter(test) &quot;.&quot;;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's start the numbering from <code data-gs="comd/n" data-x>10</code>. To do
+	this, we set the initial value of the counter
+	to nine, that is, <code data-gs="comd/n" data-x>1</code> less than we need:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	counter-reset: test 9;
+}
+#parent p::before {
+	counter-increment: test;
+	content: "№" counter(test) ".";
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			counter-reset: test 9;
+		}
+		#parent p::before {
+			counter-increment: test;
+			content: &quot;№&quot; counter(test) &quot;.&quot;;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let the numbering be with a step of
+	"<code data-gs="comd/n" data-x>2</code>". To do this, we put two
+	as the step:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	counter-reset: test;
+}
+#parent p::before {
+	counter-increment: test 2; /* we put a two */
+	content: "№" counter(test) ".";
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			counter-reset: test;
+		}
+		#parent p::before {
+			counter-increment: test 2; /* we put a two */
+			content: &quot;№&quot; counter(test) &quot;.&quot;;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	In the previous example, the numbering started
+	with two, but we wanted it to start with one. Why
+	did this happen? Because <code data-gs="comd/c" data-x>counter-reset</code>
+	resets the counter values to zero, and then
+	<code data-gs="comd/c" data-x>counter-increment</code> adds its step: one
+	by default, so before our numbering started
+	with <code data-gs="comd/n" data-x>1</code>. And now two is added - and
+	the numbering starts with two.
+</p>
+<p>
+	To fix the problem, we set the initial value
+	of the counter to <code data-gs="comd/n" data-x>-1</code> and now the
+	numbering will start from <code data-gs="comd/n" data-x>1</code> and
+	will increase by <code data-gs="comd/n" data-x>2</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+	&lt;p&gt;text&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#parent {
+	counter-reset: test -1;
+}
+p::before {
+	counter-increment: test 2;
+	content: "№" counter(test) ".";
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			#parent {
+			counter-reset: test -1;
+		}
+		p::before {
+			counter-increment: test 2;
+			content: &quot;№&quot; counter(test) &quot;.&quot;;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;parent&quot;>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+		</div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/property/counter-reset.html"><code data-gs="comd/c" data-x>counter-reset</code></a> property <br>
+			that resets a counter value to zero
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/function/attr.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/counter-reset.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/property/counter-increment.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/property/counter-increment.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

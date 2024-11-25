@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Spread operator and array merging in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will study the use of the spread operator to merge arrays in JavaScript">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmSOAM</span>
+				<span data-e="lofo" data-x>288 of 502</span>
+				<a href="../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Spread operator and array merging in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let's say we have two arrays:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = ['a', 'b', 'c'];
+let arr2 = [1, 2, 3];</code>
+</div>
+<p>
+	Let's make sure that the elements of the array 
+	<code data-gs="comd/c" data-x>arr1</code> are inserted between the first 
+	and second elements of the array <code data-gs="comd/c" data-x>arr2</code>.
+</p>
+<p>
+	In other words, we want to write code that 
+	will make the following array from the 
+	current array <code data-gs="comd/c" data-x>arr2</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">[1, 'a', 'b', 'c', 2, 3]</code>
+</div>
+<p>
+	The problem, in general, can be solved 
+	through the <code data-gs="comd/c" data-x>splice</code> method. However, 
+	this task is much easier to solve 
+	through spread:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = ['a', 'b', 'c'];
+let arr2 = [1, ...arr1, 2, 3];
+
+console.log(arr2); // shows [1, 'a', 'b', 'c', 2, 3]</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Without running the code, determine 
+		what will be output to the console:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+let arr  = ['a', ...arr1, 'b', 'c', ...arr2];
+console.log(arr);</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Without running the code, determine 
+		what will be output to the console:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+let arr  = ['a', ...arr1, ...arr1, 'b', 'c'];
+console.log(arr);</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Without running the code, determine 
+		what will be output to the console:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5, 6];
+
+let arr  = ['a', 'b', 'c', ...arr2];
+console.log(arr);</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Without running the code, determine 
+		what will be output to the console:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5, 6];
+let arr3 = [...arr2, 7, 8, 9];
+
+let arr  = [0, ...arr3];
+console.log(arr);</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Without running the code, determine 
+		what will be output to the console:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr1 = [1, 2, 3];
+let arr2 = [...arr1];
+
+console.log(arr2);</code>
+	</div>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/prime/spread/extreme-array-values.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/prime/spread/strings-splitting.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/prime/spread/array-merging.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/prime/spread/array-merging.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

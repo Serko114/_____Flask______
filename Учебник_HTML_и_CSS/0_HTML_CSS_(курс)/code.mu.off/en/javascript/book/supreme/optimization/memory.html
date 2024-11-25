@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Optimizing memory consumption in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson we will learn how to optimize the RAM consumption in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpOptMm</span>
+				<span data-e="lofo" data-x>278 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Optimizing memory consumption in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	All created variables are stored in the 
+	computer RAM. Sometimes thoughtlessly 
+	writing code can dramatically increase 
+	memory consumption.
+</p>
+<p>
+	Let's look at an example. Let us face 
+	the task of finding the sum of integers 
+	from <code data-gs="comd/n" data-x>1</code> to <code data-gs="comd/n" data-x>100000000</code>. Let's 
+	say we have a function that fills an 
+	array with integers from a given range:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function fillArr(a, b) {
+	let res = [];
+	
+	for (let i = a; i &lt;= b; i++) {
+		res.push(i);
+	}
+	
+	return res;
+}</code>
+</div>
+<p>
+	Let's also have a function that finds 
+	the sum of the array elements:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function getSum(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += elem
+	}
+	
+	return sum;
+}</code>
+</div>
+<p>
+	With a combination of these functions, 
+	you can easily solve the problem:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let sum = getSum(fillArr(1, 100000000));</code>
+</div>
+<p>
+	It turned out to be an elegant 
+	solution. However, it has a problem: 
+	it consumes a huge amount of RAM.
+</p>
+<p>
+	Let's count. The <code data-gs="comd/c" data-x>fillArr</code> function 
+	creates an array with <code data-gs="comd/n" data-x>100000000</code> 
+	numbers. Let JavaScript allocate <code data-gs="comd/n" data-x>2</code> 
+	bytes per number - then our array will 
+	need <code data-gs="comd/n" data-x>200000000</code> bytes to store, 
+	which is something like <code data-gs="comd/n" data-x>200</code> 
+	megabytes of RAM.
+</p>
+<p>
+	But in fact, much more RAM will be needed 
+	due to the fact that JavaScript has a very 
+	large overhead when storing an array.
+</p>
+<p>
+	Understanding the problem, it is easy 
+	to make a function that solves the 
+	problem and practically doesn't 
+	consume RAM:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function getNumsSum(max) {
+	let sum = 0;
+	
+	for (let i = 1; i &lt;= max; i++) {
+		sum += i;
+	}
+	
+	return sum;
+}</code>
+</div>
+<p>
+	Let's solve the problem 
+	using our function:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let sum = getNumsSum(100000000);</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		A certain programmer was faced with 
+		the task of finding the number of 
+		numbers divisible by <code data-gs="comd/n" data-x>7</code> without 
+		a remainder that are in a given range. 
+		He solved it like this:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr = [];
+
+for (let i = 0; i &lt;= 1000; i++) {
+	if (i % 7 == 0) {
+		arr.push(i);
+	}
+}
+
+console.log(arr.length);</code>
+	</div>
+	<p>
+		Explain what is wrong with this 
+		code. Modify the code to a better one.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		A certain programmer was faced with 
+		the task of finding the sum of the 
+		divisors of a number. He solved it 
+		like this:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function getDivisors(num) {
+	let res = [];
+	
+	for (let i = 1; i &lt;= num; i++) {
+		if (num % i === 0) {
+			res.push(i);
+		}
+	}
+	
+	return res;
+}
+
+function getSum(arr) {
+	let sum = 0;
+	
+	for (let elem of arr) {
+		sum += elem
+	}
+	
+	return sum;
+}
+
+let sum = getSum(getDivisors(320));
+console.log(sum);</code>
+	</div>
+	<p>
+		Explain what is wrong with this 
+		code. Modify the code to a better one.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/optimization/dom.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/optimization/array-convertion.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/optimization/memory.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/optimization/memory.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

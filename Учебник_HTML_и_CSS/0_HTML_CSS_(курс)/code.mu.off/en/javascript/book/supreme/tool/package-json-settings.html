@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The package.json file settings in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will analyze the most important package.json file settings in npm in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpTlPJS</span>
+				<span data-e="lofo" data-x>189 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>The package.json file settings in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	When a programmer wants to make his 
+	library available to everyone, he must 
+	place it in the npm <dfn data-gs="comd/d" data-x>registry</dfn>. To 
+	do this, he must format a 
+	<code data-gs="comd/p" data-x>package.json</code> file of this 
+	library in a special way, adding 
+	some important settings.
+</p>
+<p>
+	These settings apply specifically to 
+	public libraries that you download 
+	from npm. In your projects for 
+	private use, you can choose not 
+	to install them.
+</p>
+<p>
+	So here is a list of the most 
+	popular settings:
+</p>
+<table data-w="cont/desc">
+	<tr>
+		<th>Field</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>name</code></th>
+		<td>
+			project name, must be 
+			written in lower case
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>version</code></th>
+		<td>
+			version number, according 
+			to semantic versioning
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>description</code></th>
+		<td>
+			project description
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>main</code></th>
+		<td>
+			primary entry point to project
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>keywords</code></th>
+		<td>
+			this is an array to help 
+			find a module in the npm 
+			registry
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>author</code></th>
+		<td>
+			this field accepts an object with 
+			the keys <code data-gs="comd/s" data-x>name</code>, <code data-gs="comd/s" data-x>email</code> 
+			and <code data-gs="comd/s" data-x>url</code>, which makes it easy 
+			for people to contact the project author.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>license</code></th>
+		<td>
+			accepts a license name using the 
+			SPDX identifier. The default license 
+			is ISC, another popular choice is 
+			MIT. You can also use UNLICENSED 
+			for private and closed source projects.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>private</code></th>
+		<td>
+			if this key is set to true, the 
+			project will not be able to be 
+			public in the npm registry. This 
+			prevents accidental publication of 
+			the project.
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>homepage</code></th>
+		<td>
+			Project home page URL
+		</td>
+	</tr>
+	<tr>
+		<th><code data-gs="comd/s" data-x>bugs</code></th>
+		<td>
+			URL address where issues and 
+			bugs can be reported. Often 
+			this is the address of the 
+			project page on Github.
+		</td>
+	</tr>
+	
+</table>
+<div data-w="cont/task">
+	<p>
+		Install the 
+		<a href="https://jquery.com/download/">jQuery</a> 
+		library. Find a folder with the library 
+		in <code data-gs="comd/p" data-x>node_modules</code> and then a 
+		<code data-gs="comd/p" data-x>package.json</code> file in it. 
+		Study it.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Install the 
+		<a href="http://underscorejs.org/">underscorejs</a> 
+		library. Find the folder with the library 
+		in <code data-gs="comd/p" data-x>node_modules</code> and then a 
+		<code data-gs="comd/p" data-x>package.json</code> file in it. 
+		Study it.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Study the <code data-gs="comd/p" data-x>package.json</code> file settings in 
+		<a href="https://docs.npmjs.com/cli/v8/configuring-npm/package-json">official documentation</a>.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/tool/dependencies-versions.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/tool/package-json-creation.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/tool/package-json-settings.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/tool/package-json-settings.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

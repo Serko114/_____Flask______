@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The insertBefore method - inserting an element into a page in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The insertBefore method allows you to insert an element at an arbitrary position of an element (before the passed child element) in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>174 of 264</span>
+				<a href="../../../../en/javascript/manual.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>insertBefore method</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>insertBefore</code> method allows
+	you to insert an element before another
+	element. It most commonly used after
+	creating an element with
+	<a href="../../../../en/javascript/manual/dom/createElement.html"><code data-gs="comd/c" data-x>createElement</code></a>.
+	The method is applied to the parent
+	of the element before which the
+	insertion will occur.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">parent.insertBefore(element, node before which to insert);</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Create a paragraph and place it
+	before the second paragraph:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;elem 1&lt;/p&gt;
+	&lt;p id="before"&gt;elem 2&lt;/p&gt;
+	&lt;p&gt;elem 3&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('#parent');
+let before = document.querySelector('#before');
+
+let p = document.createElement('p');
+p.textContent = '!';
+
+parent.insertBefore(p, before);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;elem 1&lt;/p&gt;
+	&lt;p&gt;!&lt;/p&gt;
+	&lt;p&gt;elem 2&lt;/p&gt;
+	&lt;p&gt;elem 3&lt;/p&gt;
+&lt;/div&gt;</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	We add a paragraph to the beginning of
+	the <code data-gs="comd/z" data-x>#parent</code> element. To do this,
+	we insert our paragraph before the first
+	child of the <code data-gs="comd/z" data-x>#parent</code>. This child
+	can be found with
+	<a href="../../../../en/javascript/manual/dom/firstElementChild.html"><code data-gs="comd/c" data-x>firstElementChild</code></a>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;elem 1&lt;/p&gt;
+	&lt;p&gt;elem 2&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('#parent');
+
+let p = document.createElement('p');
+p.textContent = '!';
+
+parent.insertBefore(p, parent.firstElementChild);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;!&lt;/p&gt;
+	&lt;p&gt;elem 1&lt;/p&gt;
+	&lt;p&gt;elem 2&lt;/p&gt;
+&lt;/div&gt;</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	When passing <code data-gs="comd/c" data-x>null</code> as the second
+	parameter, the <code data-gs="comd/c" data-x>insertBefore</code> method
+	works like
+	<a href="../../../../en/javascript/manual/dom/appendChild.html"><code data-gs="comd/c" data-x>appendChild</code></a>.
+	At the same time, if the element has no
+	children, <code data-gs="comd/c" data-x>firstElementChild</code> returns
+	<code data-gs="comd/c" data-x>null</code>. Therefore, you can add to
+	the beginning of an element even when
+	it has no child elements:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('#parent');
+
+let p = document.createElement('p');
+p.textContent = '!';
+
+parent.insertBefore(p, parent.firstChild);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;!&lt;/p&gt;
+&lt;/div&gt;</code>
+</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/prepend.html"><code data-gs="comd/c" data-x>prepend</code></a> method <br>
+			that inserts elements at the start
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/appendChild.html"><code data-gs="comd/c" data-x>appendChild</code></a> method <br>
+			that inserts elements at the end of a parent
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/insertAdjacentElement.html"><code data-gs="comd/c" data-x>insertAdjacentElement</code></a> method <br>
+			that inserts an element at the given location
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/insertAdjacentHTML.html"><code data-gs="comd/c" data-x>insertAdjacentHTML</code></a>, <br>
+			that inserts tags at the given location
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../en/javascript/manual/dom/appendChild.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../en/javascript/manual/dom/insertAdjacentElement.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../en/javascript/manual/dom/insertBefore.html" data-m-curr="T">en</a><a href="../../../../ru/javascript/manual/dom/insertBefore.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

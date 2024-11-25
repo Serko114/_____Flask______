@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Difference between pseudo-array types in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will analyze the difference between NodeList and HTMLCollection in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpPATD</span>
+				<span data-e="lofo" data-x>50 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Difference between pseudo-array types in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The difference between the two types of 
+	pseudo-arrays is the different behavior when 
+	changing DOM elements. Let, for example, we 
+	obtained a collection of paragraphs in the 
+	form of <code data-gs="comd/c" data-x>HTMLCollection</code> and in the 
+	form of <code data-gs="comd/c" data-x>NodeList</code>. We will then create 
+	and add another paragraph to our DOM. In this 
+	case, it will automatically appear in 
+	<code data-gs="comd/c" data-x>HTMLCollection</code>, but the <code data-gs="comd/c" data-x>NodeList</code> 
+	collection will remain unchanged.
+</p>
+<p>
+	Let's look at an example. Let's have a div 
+	with paragraphs in it. Let's get our div and 
+	the same paragraphs as collections of two 
+	different types:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('div');
+let elems1 = document.getElementsByTagName('p'); // HTMLCollection
+let elems2 = document.querySelectorAll('p');     // NodeList</code>
+</div>
+<p>
+	Let's add one more paragraph 
+	to our div:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let p = document.createElement('p');
+parent.append(p);</code>
+</div>
+<p>
+	As a result, one of the collections 
+	will change, and the second one 
+	will not:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">console.log(elems1); // 4 paragraphs - with new one
+console.log(elems2); // 3 original paragraphs</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Check how the 
+		<a href="../../../../../en/javascript/manual/dom/children.html"><code data-gs="comd/c" data-x>children</code></a> 
+		property will behave when adding 
+		a new element.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+            Check how the 
+            <a href="../../../../../en/javascript/manual/dom/childNodes.html"><code data-gs="comd/c" data-x>childNodes</code></a> 
+            property will behave when adding 
+            a new element.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/pseudoarrays/types.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/symbol/intro.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/pseudoarrays/types-difference.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/pseudoarrays/types-difference.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

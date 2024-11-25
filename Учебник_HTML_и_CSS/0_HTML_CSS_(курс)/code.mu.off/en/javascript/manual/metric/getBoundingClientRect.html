@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The getBoundingClientRect method - getting element coordinates in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The getBoundingClientRect method contains the element coordinate object in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>207 of 264</span>
+				<a href="../../../../en/javascript/manual.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>getBoundingClientRect method</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>getBoundingClientRect</code> method
+	contains an element coordinate object.
+	Coordinates are calculated relative to
+	the visible part of the page without
+	scrolling (relative to the window). That
+	is, as with the
+	<a href="../../../../en/markup/manual/css/property/position.html"><code data-gs="comd/c" data-x>position</code></a>
+	property in the value <code data-gs="comd/v" data-x>fixed</code>.
+</p>
+<p>
+	The returned object contains the following
+	properties: <code data-gs="comd/s" data-x>left</code>, <code data-gs="comd/s" data-x>top</code>,
+	<code data-gs="comd/s" data-x>right</code>, <code data-gs="comd/s" data-x>bottom</code>, <code data-gs="comd/s" data-x>width</code>,
+	<code data-gs="comd/s" data-x>height</code>. It's worth noting that these
+	properties have nothing to do with CSS
+	properties. They contain the distances
+	to the corresponding sides of the element.
+	For <code data-gs="comd/s" data-x>left/right</code> - from the left border
+	of the visible area of a page, and for
+	<code data-gs="comd/s" data-x>top/bottom</code> - from the top.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">element.getBoundingClientRect();</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	We get element coordinates:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">#elem {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+}</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let elem = document.querySelector('#elem');
+console.log(elem.getBoundingClientRect());</code>
+</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../en/javascript/manual/metric/offsetParent.html"><code data-gs="comd/c" data-x>offsetParent</code></a> property <br>
+			that contains a parent with positioning
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/metric/offsetTop.html"><code data-gs="comd/c" data-x>offsetTop</code></a> property <br>
+			that contains the top offset of an element
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/metric/offsetLeft.html"><code data-gs="comd/c" data-x>offsetLeft</code></a> property <br>
+			that contains the left offset of an element
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/metric/elementFromPoint.html"><code data-gs="comd/c" data-x>elementFromPoint</code></a> method <br>
+			that returns an element by coordinates
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../en/javascript/manual/metric/offsetLeft.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../en/javascript/manual/metric/elementFromPoint.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../en/javascript/manual/metric/getBoundingClientRect.html" data-m-curr="T">en</a><a href="../../../../ru/javascript/manual/metric/getBoundingClientRect.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Использование классов внутри других классов в ООП в PHP | </title>
+		
+		<link rel="stylesheet" href="../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="В данном уроке мы с вами разберем использование одних классов внутри других в ООП в PHP.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<div data-w="nict/adv">
+			<a href="https://mentor.code.mu">
+			Запись на курсы по HTML, CSS, JavaScript, PHP, фреймворкам и CMS,<br>
+			<b>а также</b>: помощь в поиске работы и заказов, стажировка
+			на реальных проектах&rarr;
+		</a>
+	</div>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗ppOpBsUOIC</span>
+				<span data-e="lofo" data-x>39 of 179</span>
+				<a href="../../../../ru/php/book/oop.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/ru/markup/" data-e="open" data-x data-m-targ="markup">Верстка</span>
+		<span data-q-href="/ru/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+		<span data-q-href="/ru/php/" data-e="open" data-x data-m-targ="php">PHP</span>
+		<span data-q-href="/ru/javascript/typescript/" data-e="open" data-x data-m-targ="typescript">TypeScript</span>
+		<span data-q-href="/ru/javascript/nodejs/" data-e="open" data-x data-m-targ="nodejs">NodeJS</span>
+		<span data-q-href="/ru/python/" data-e="open" data-x data-m-targ="python">Python</span>
+		<span data-q-href="/ru/java/" data-e="open" data-x data-m-targ="java">Java</span>
+		<span data-q-href="/ru/cpp/" data-e="open" data-x data-m-targ="cpp">C++</span>
+		<span data-q-href="/ru/rust/" data-e="open" data-x data-m-targ="rust">Rust</span>
+		<span data-q-href="/ru/sql/" data-e="open" data-x data-m-targ="sql">SQL</span>
+		<span data-q-href="/ru/javascript/framework/vue/" data-e="open" data-x data-m-targ="vue">Vue</span>
+		<span data-q-href="/ru/javascript/framework/react/" data-e="open" data-x data-m-targ="react">React</span>
+		<span data-q-href="/ru/javascript/framework/angular/" data-e="open" data-x data-m-targ="angular">Angular</span>
+		<span data-q-href="/ru/javascript/lib/jquery/" data-e="open" data-x data-m-targ="jquery">jQuery</span>
+		<span data-q-href="/ru/php/framework/laravel/" data-e="open" data-x data-m-targ="laravel">Laravel</span>
+		<span data-q-href="/ru/git/" data-e="open" data-x data-m-targ="git">Git</span>
+		<span data-q-href="/ru/tool/webpack/" data-e="open" data-x data-m-targ="webpack">Webpack</span>
+		<span data-q-href="/ru/tool/gulp/" data-e="open" data-x data-m-targ="gulp">Gulp</span>
+		<span data-q-href="/ru/tool/terminal/" data-e="open" data-x data-m-targ="terminal">Terminal</span>
+		<span data-q-href="/ru/internet/" data-e="open" data-x data-m-targ="internet">Internet</span>
+		<span data-q-href="/ru/theory/glossary/" data-e="open" data-x data-m-targ="glossary">Глоссарий</span>
+		<span data-q-href="/ru/theory/slang/" data-e="open" data-x data-m-targ="slang">Сленг</span>
+		<span data-e="open" data-x data-m-targ="social">Соц. сети</span>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../ru/markup/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/markup/book/supreme.html">Высший учебник</a>
+		<a href="../../../../ru/markup/book/prep/less.html">Учебник LESS</a>
+		<a href="../../../../ru/markup/book/prep/sass.html">Учебник SASS</a>
+		<a href="../../../../ru/markup/manual/html.html">Справочник HTML</a>
+		<a href="../../../../ru/markup/manual/css.html">Справочник CSS</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="php">
+		<a href="../../../../ru/php/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/php/book/supreme.html">Высший учебник</a>
+		<a href="../../../../ru/php/book/oop.html">Учебник ООП и MVC</a>
+		<a href="../../../../ru/php/book/parsing.html">Учебник парсинга</a>
+		<a href="../../../../ru/php/tasker/stager.html">Задачник по уровням</a>
+		<a href="../../../../ru/php/manual.html">Справочник</a>
+		<a href="../../../../ru/php/video/lesson.html">Видеоуроки</a>
+		<a href="../../../../ru/php/faq.html">FAQ</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../ru/javascript/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/javascript/book/practice.html">Учебник практики</a>
+		<a href="../../../../ru/javascript/book/supreme.html">Высший учебник</a>
+		<a href="../../../../ru/javascript/book/oop.html">Учебник ООП</a>
+		<a href="../../../../ru/javascript/tasker/stager.html">Задачник по уровням</a>
+		<a href="../../../../ru/javascript/manual.html">Справочник</a>
+		<a href="../../../../ru/javascript/video/lesson.html">Видеоуроки</a>
+		<a href="../../../../ru/javascript/mistake.html">Ошибки</a>
+		<a href="../../../../ru/javascript/faq.html">FAQ</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="nodejs">
+		<a href="../../../../ru/javascript/nodejs/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/javascript/nodejs/book/express.html">Express</a>
+		<a href="../../../../ru/javascript/nodejs/book/mongo.html">Mongo</a>
+		<a href="../../../../ru/javascript/nodejs/book/hosting.html">Хостинг</a>
+		<a href="../../../../ru/javascript/nodejs/manual.html">Справочник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="python">
+		<a href="../../../../ru/python/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/python/book/supreme.html">Высший учебник</a>
+		<a href="../../../../ru/python/manual.html">Справочник</a>
+		<a href="../../../../ru/python/faq.html">FAQ</a>
+		<a href="../../../../ru/python/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="java">
+		<a href="../../../../ru/java/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="cpp">
+		<a href="../../../../ru/cpp/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="rust">
+		<a href="../../../../ru/rust/tasker/stager.html">Задачник по уровням</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="sql">
+		<a href="../../../../ru/sql/manual.html">Справочник</a>
+		<a href="../../../../ru/sql/tasker/stager.html">Задачник по уровням</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="typescript">
+		<a href="../../../../ru/javascript/typescript/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/javascript/typescript/book/supreme.html">Высший учебник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="vue">
+		<a href="../../../../ru/javascript/framework/vue/book/prime.html">Основной учебник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="react">
+		<a href="../../../../ru/javascript/framework/react/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/javascript/framework/react/book/supreme.html">Высший учебник</a>
+		<a href="../../../../ru/javascript/framework/react/book/redux.html">Учебник Redux</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="angular">
+		<a href="../../../../ru/javascript/framework/angular/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="jquery">
+		<a href="../../../../ru/javascript/lib/jquery/book/prime.html">Основной учебник</a>
+		<a href="../../../../ru/javascript/lib/jquery/manual.html">Справочник</a>
+	</section>
+
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="laravel">
+		<a href="../../../../ru/php/framework/laravel/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="git">
+		<a href="../../../../ru/git/book/prime.html">Основной учебник</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="terminal">
+		<a href="../../../../ru/tool/terminal.html">Учебник по командной строке</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="webpack">
+		<a href="../../../../ru/tool/webpack.html">Учебник Webpack</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="gulp">
+		<a href="../../../../ru/tool/gulp.html">Учебник Gulp</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="internet">
+		<a href="../../../../ru/internet/protocol/http.html">Протокол HTTP</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="glossary">
+		<a href="../../../../ru/theory/glossary.html">Глоссарий программистских терминов</a>
+	</section>
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="slang">
+		<a href="../../../../ru/theory/slang.html">Сленг программиста</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="social">
+		<a href="https://vk.com/codemu">Паблик сайта code.mu</a>
+		<a href="https://t.me/javascript_tricker">Занимательные задачи JavaScript</a>
+		<a href="https://t.me/php_tricker">Занимательные задачи PHP</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Использование классов внутри других классов в ООП в PHP</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Бывает такое, что мы хотели бы использовать
+	методы одного класса внутри другого, но не
+	хотели бы наследовать от этого класса.
+</p>
+<p>
+	Почему мы не хотим наследовать?
+</p>
+<p>
+	Во-первых, используемый класс может являться
+	вспомогательным и по логике нашего кода может
+	не подходить на роль родителя.
+</p>
+<p>
+	Во-вторых, мы можем захотеть использовать
+	несколько классов внутри другого класса,
+	а с наследованием это не получится, ведь
+	в PHP у класса может быть только
+	один родитель.
+</p>
+<p>
+	Давайте посмотрим на практическом примере.
+	Пусть у нас дан следующий класс <code data-gs="comd/c" data-x>Arr</code>,
+	в объект которого мы можем добавлять числа
+	с помощью метода <code data-gs="comd/c" data-x>add</code>:
+</p>
+<div data-p="bock/pane" data-p-file="Arr.php">
+	<code data-w="bock/code" data-lo="high" data-m-lang="php">&lt;?php
+	class Arr
+	{
+		private $nums = []; // массив чисел
+		
+		// Добавляем число в массив:
+		public function add($num)
+		{
+			$this-&gt;nums[] = $num;
+		}
+	}
+?&gt;</code>
+</div>
+<p>
+	Давайте теперь добавим в наш класс метод,
+	который будет находить сумму квадратов элементов
+	и прибавлять к ней сумму кубов элементов.
+</p>
+<p>
+	Пусть у нас уже существует класс <code data-gs="comd/c" data-x>SumHelper</code>,
+	имеющий методы для нахождения сумм элементов
+	массивов:
+</p>
+<div data-p="bock/pane" data-p-file="SumHelper.php">
+	<code data-w="bock/code" data-lo="high" data-m-lang="php">&lt;?php
+	class SumHelper
+	{
+		// Сумма квадратов:
+		public function getSum2($arr)
+		{
+			return $this-&gt;getSum($arr, 2);
+		}
+		
+		// Сумма кубов:
+		public function getSum3($arr)
+		{
+			return $this-&gt;getSum($arr, 3);
+		}
+		
+		// Вспомогательная функция для нахождения суммы:
+		private function getSum($arr, $power) {
+			$sum = 0;
+			
+			foreach ($arr as $elem) {
+				$sum += pow($elem, $power);
+			}
+			
+			return $sum;
+		}
+	}
+?&gt;</code>
+</div>
+<p>
+	Логично будет не реализовывать нужные нам
+	методы еще раз в классе <code data-gs="comd/c" data-x>Arr</code>, а воспользоваться
+	методами класса <code data-gs="comd/c" data-x>SumHelper</code> внутри класса
+	<code data-gs="comd/c" data-x>Arr</code>.
+</p>
+<p>
+	Для этого в классе <code data-gs="comd/c" data-x>Arr</code> внутри конструктора
+	создадим объект класса <code data-gs="comd/c" data-x>SumHelper</code> и
+	запишем его в свойство <code data-gs="comd/c" data-x>sumHelper</code>:
+</p>
+<div data-p="bock/pane" data-p-file="Arr.php">
+	<code data-w="bock/code" data-lo="high" data-m-lang="php">&lt;?php
+	class Arr
+	{
+		private $nums = []; // массив чисел
+		private $sumHelper; // сюда запишется объект класса SumHelper
+		
+		// Конструктор класса:
+		public function __construct()
+		{
+			// Запишем объект вспомогательного класса в свойство:
+			$this-&gt;sumHelper = new SumHelper;
+		}
+		
+		// Добавляем число в массив:
+		public function add($num)
+		{
+			$this-&gt;nums[] = $num;
+		}
+	}
+?&gt;</code>
+</div>
+<p>
+	Теперь внутри <code data-gs="comd/c" data-x>Arr</code> доступно свойство
+	<code data-gs="comd/c" data-x>$this->sumHelper</code>, в котором хранится
+	объект класса <code data-gs="comd/c" data-x>SumHelper</code> с его публичными
+	методами и свойствами (если бы публичные
+	свойства были, сейчас их там нет, только
+	публичные методы).
+</p>
+<p>
+	Создадим теперь в классе <code data-gs="comd/c" data-x>Arr</code> метод
+	<code data-gs="comd/c" data-x>getSum23</code>, который будет находить сумму
+	квадратов элементов и прибавлять к ней сумму
+	кубов элементов, используя методы класса
+	<code data-gs="comd/c" data-x>SumHelper</code>:
+</p>
+<div data-p="bock/pane" data-p-file="Arr.php">
+	<code data-w="bock/code" data-lo="high" data-m-lang="php">&lt;?php
+	class Arr
+	{
+		private $nums = [];
+		private $sumHelper;
+		
+		public function __construct()
+		{
+			$this-&gt;sumHelper = new SumHelper;
+		}
+		
+		// Находим сумму квадратов и кубов элементов массива:
+		public function getSum23()
+		{
+			// Для краткости запишем $this-&gt;nums в переменную:
+			$nums = $this-&gt;nums;
+			
+			// Найдем описанную сумму:
+			return $this-&gt;sumHelper-&gt;getSum2($nums) + $this-&gt;sumHelper-&gt;getSum3($nums);
+		}
+		
+		public function add($number)
+		{
+			$this-&gt;nums[] = $number;
+		}
+	}
+?&gt;</code>
+</div>
+<p>
+	Давайте воспользуемся созданным классом <code data-gs="comd/c" data-x>Arr</code>:
+</p>
+<div data-p="bock/pane" data-p-file="index.php">
+	<code data-w="bock/code" data-lo="high" data-m-lang="php">&lt;?php
+	$arr = new Arr(); // создаем объект
+	
+	$arr-&gt;add(1); // добавляем в массив число 1
+	$arr-&gt;add(2); // добавляем в массив число 2
+	$arr-&gt;add(3); // добавляем в массив число 3
+	
+	// Находим сумму квадратов и кубов:
+	echo $arr-&gt;getSum23();
+?&gt;</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Самостоятельно повторите описанные мною классы
+		<code data-gs="comd/c" data-x>Arr</code> и <code data-gs="comd/c" data-x>SumHelper</code>.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Создайте класс <code data-gs="comd/c" data-x>AvgHelper</code> с методом
+		<code data-gs="comd/c" data-x>getAvg</code>, который параметром будет принимать
+		массив и возвращать среднее арифметическое
+		этого массива (сумма элементов делить на
+		количество).
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Добавьте в класс <code data-gs="comd/c" data-x>AvgHelper</code> еще и метод
+		<code data-gs="comd/c" data-x>getMeanSquare</code>, который параметром
+		будет принимать массив и возвращать среднее
+		квадратичное этого массива (квадратный корень,
+		извлеченный из суммы квадратов элементов,
+		деленной на количество).
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Добавьте в класс <code data-gs="comd/c" data-x>Arr</code> метод <code data-gs="comd/c" data-x>getAvgMeanSum</code>,
+		который будет находить сумму среднего арифметического
+		и среднего квадратичного из массива <code data-gs="comd/c" data-x>$this->nums</code>.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../ru/php/book/oop/passing-by-reference.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../ru/php/book/oop/passing-objects-by-parameter.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Трепачёв Дмитрий &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	</div>					</div>
+		
+		<script src="../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

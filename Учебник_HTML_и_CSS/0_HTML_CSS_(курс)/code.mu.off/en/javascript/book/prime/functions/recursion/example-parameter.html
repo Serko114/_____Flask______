@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Example with a parameter with recursion in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will analyze example with a parameter in the work with recursion in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmRcEP</span>
+				<span data-e="lofo" data-x>273 of 502</span>
+				<a href="../../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Example with a parameter with recursion in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let's use recursion to sequentially display 
+	the elements of the array. Let the array 
+	be initially passed to the 
+	function parameters:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">func([1, 2, 3]);</code>
+</div>
+<p>
+	For now, without recursion, using the 
+	<a href="../../../../../../en/javascript/manual/array/shift.html"><code data-gs="comd/c" data-x>shift</code></a> 
+	method, we will display all the elements 
+	of the array in turn:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(arr) {
+	console.log(arr.shift()); // shows 1
+	console.log(arr); // shows [2, 3] - array has shrunk
+	
+	console.log(arr.shift()); // shows 2
+	console.log(arr); // shows [3] - array has shrunk
+	
+	console.log(arr.shift()); // shows 3
+	console.log(arr); // shows [] - array is empty
+}
+
+func([1, 2, 3]);</code>
+</div>
+<p>
+	As you can see, the <code data-gs="comd/c" data-x>shift</code> method cuts 
+	and returns the first element of the array, 
+	while the array itself is reduced by that element.
+</p>
+<p>
+	Let's now use recursion:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(arr) {
+	console.log(arr.shift(), arr);
+	
+	if (arr.length != 0) {
+		func(arr);
+	}
+}
+
+func([1, 2, 3]);</code>
+</div>
+<p>
+	In fact, of course, the easiest way is to 
+	loop through the elements of an array. The 
+	examples given so far simply demonstrate 
+	the work of recursion on simple examples 
+	(not real ones). More useful examples of 
+	using recursion are just more complex, we 
+	will analyze them a little later.
+</p>
+<div data-w="cont/task">
+	<p>
+		Given an array:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let arr = [1, 2, 3, 4, 5];</code>
+	</div>
+	<p>
+		Print the elements of this array to 
+		the console using recursion.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../en/javascript/book/prime/functions/recursion/intro.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../en/javascript/book/prime/functions/recursion/array-sum.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../../en/javascript/book/prime/functions/recursion/example-parameter.html" data-m-curr="T">en</a><a href="../../../../../../ru/javascript/book/prime/functions/recursion/example-parameter.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

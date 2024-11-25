@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>exec method in JavaScript regexes | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to work with the exec method in JavaScript regular expressions.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpREME</span>
+				<span data-e="lofo" data-x>124 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>exec method in JavaScript regexes</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The ⁅с⁆exec⁅/с⁆ method performs a 
+	string search. The found substring 
+	and its capturing groups are 
+	returned as a result. In this case, 
+	each subsequent call to this method 
+	will start the search from the 
+	position where the previous found 
+	substring ended.
+</p>
+<p>
+	Let's look at an example. Let's 
+	say we have the following string:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '12 34 56';</code>
+</div>
+<p>
+	And we have the following 
+	regular expression:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let reg = /\d+/g;</code>
+</div>
+<p>
+	Let's sequentially call our 
+	method for our string:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res1 = reg.exec(str);
+console.log(res1[0]); // 12
+
+let res2 = reg.exec(str);
+console.log(res2[0]); // 34
+
+let res3 = reg.exec(str);
+console.log(res3[0]); // 56</code>
+</div>
+<p>
+	After three calls, since there are no 
+	more matches with regex in our string, 
+	the next method call will return 
+	<code data-gs="comd/c" data-x>null</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res4 = reg.exec(str);
+console.log(res4); // null</code>
+</div>
+<p>
+	It is convenient to use this feature 
+	of the method in a loop:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '12 34 56';
+let reg = /\d+/g;
+
+let res;
+while (res = reg.exec(str)) {
+	console.log(res); // [12], [34], [56] 
+}</code>
+</div>
+<p>
+	You can find not only a match, but 
+	also put it in your capturing groups:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '12 34 56';
+let reg = /(\d)(\d)/g;
+
+let res;
+while (res = reg.exec(str)) {
+	console.log(res); // [12, 1, 2], [34, 3, 4], [56, 5, 6] 
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given the following 
+		string:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '12:37:57 15:48:58 17:59:59';</code>
+	</div>
+	<p>
+		Find in it all substrings with the 
+		time and for each found put the hours, 
+		minutes and seconds into capturing groups.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/regular/global-matchAll.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/regular/lastIndex-property.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/regular/method-exec.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/regular/method-exec.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

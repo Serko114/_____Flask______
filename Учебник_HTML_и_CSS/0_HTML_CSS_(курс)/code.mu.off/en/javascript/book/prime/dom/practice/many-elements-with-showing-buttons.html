@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Many elements with show buttons in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to make show buttons for many elements in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmPrMEWShB</span>
+				<span data-e="lofo" data-x>480 of 502</span>
+				<a href="../../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Many elements with show buttons in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let now we have a lot of paragraphs and each has 
+	its own button to hide:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;p&gt;1&lt;/p&gt;&lt;button&gt;toggle&lt;/button&gt;
+&lt;p&gt;2&lt;/p&gt;&lt;button&gt;toggle&lt;/button&gt;
+&lt;p&gt;3&lt;/p&gt;&lt;button&gt;toggle&lt;/button&gt;</code>
+</div>
+<p>
+	Let's make it so that clicking on the button hides 
+	or shows the paragraph corresponding to it.
+</p>
+<p>
+	To do this, we somehow need to associate the buttons 
+	with our paragraphs. There are several ways to do this.
+</p>
+
+<h2>First way</h2>
+<p>
+	Let's link buttons and paragraphs as follows:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;p id="elem1"&gt;1&lt;/p&gt;&lt;button data-elem="elem1"&gt;toggle&lt;/button&gt;
+&lt;p id="elem2"&gt;2&lt;/p&gt;&lt;button data-elem="elem2"&gt;toggle&lt;/button&gt;
+&lt;p id="elem3"&gt;3&lt;/p&gt;&lt;button data-elem="elem3"&gt;toggle&lt;/button&gt;</code>
+</div>
+<p>
+	Now, by clicking on any button, we will read the 
+	contents of its data-elem attribute and look for 
+	a paragraph with that id. We'll toggle it. Let's 
+	implement the described:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let buttons = document.querySelectorAll('button');
+
+for (let button of buttons) {
+	button.addEventListener('click', function() {
+		let elem = document.querySelector('#' + this.dataset.elem);
+		elem.classList.toggle('hidden');
+	});
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Study my solution, and then independently, without 
+		looking at my code, solve this problem.
+	</p>
+</div>
+
+<h2>Second way</h2>
+<p>
+	It is not very convenient to arrange id and data 
+	attributes. Let's make it so that the relationship 
+	is by ordinal number: let the first button hide the 
+	first paragraph, the second button - the second 
+	and so on.
+</p>
+<p>
+	Let's implement the described:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let buttons = document.querySelectorAll('button');
+let elems   = document.querySelectorAll('p');
+
+for (let i = 0; i &lt; buttons.length; i++) {
+	buttons[i].addEventListener('click', function() {
+		elems[i].classList.toggle('hidden');
+	});
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Study my solution, and then independently, without 
+		looking at my code, solve this problem.
+	</p>
+</div>
+
+<h2>Third way</h2>
+<p>
+	As you can see, the paragraph associated with a button 
+	is its left neighbor. This can be used as a link:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let buttons = document.querySelectorAll('button');
+
+for (let button of buttons) {
+	button.addEventListener('click', function() {
+		this.previousElementSibling.classList.toggle('hidden');
+	});
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Study my solution, and then independently, without 
+		looking at my code, solve this problem.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../en/javascript/book/prime/dom/practice/hide-show-button.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../en/javascript/book/prime/dom/practice/elements-activations.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../../en/javascript/book/prime/dom/practice/many-elements-with-showing-buttons.html" data-m-curr="T">en</a><a href="../../../../../../ru/javascript/book/prime/dom/practice/many-elements-with-showing-buttons.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

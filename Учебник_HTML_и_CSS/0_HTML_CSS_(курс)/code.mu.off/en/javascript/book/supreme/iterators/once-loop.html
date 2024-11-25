@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>One-time iterator operation in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will consider the one-time operation of iterators in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpItOL</span>
+				<span data-e="lofo" data-x>65 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>One-time iterator operation in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Each iterator can participate in the loop 
+	only once. This is a bit unexpected, but 
+	logical - after all, the passed iterator 
+	sets its <code data-gs="comd/s" data-x>done</code> to <code data-gs="comd/c" data-x>false</code>, 
+	which means it can no longer be iterated 
+	over.
+</p>
+<p>
+	Let's make sure of this. Let's have the 
+	following generator:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function *func() {
+	yield 1;
+	yield 2;
+	yield 3;
+}</code>
+</div>
+<p>
+	Let's make an iterator:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let iter = func();</code>
+</div>
+<p>
+	And iterate over the iterator 
+	in one loop:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">for (let elem of iter) {
+	console.log(elem); // 1, 2, 3
+}</code>
+</div>
+<p>
+	And now iterate over the iterator 
+	in two loops:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">for (let elem of iter) {
+	console.log(elem); // 1, 2, 3
+}
+for (let elem of iter) {
+	console.log(elem); // doesn't work
+}</code>
+</div>
+<p>
+	To solve the problem, you need to 
+	create your own iterator for each 
+	new loop:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let iter1 = func();
+for (let elem of iter1) {
+	console.log(elem); // 1, 2, 3
+}
+
+let iter2 = func();
+for (let elem of iter2) {
+	console.log(elem); // 1, 2, 3
+}</code>
+</div>
+<p>
+	We can simplify:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">for (let elem of func()) {
+	console.log(elem); // 1, 2, 3
+}
+
+for (let elem of func()) {
+	console.log(elem); // 1, 2, 3
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Fix the error in the 
+		following code:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function *func() {
+	for (let i = 1; i &lt;= 3; i++) {
+		yield i;
+	}
+}
+
+let elems = func();
+
+for (let elem of elems) {
+	console.log(elem);
+}
+for (let elem of elems) {
+	console.log(elem);
+}</code>
+	</div>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/iterators/generators-loops.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/iterators/object.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/iterators/once-loop.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/iterators/once-loop.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

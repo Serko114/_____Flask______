@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Getting the target element when an event is bubbling in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to get the target element through event.target in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmOEBTE</span>
+				<span data-e="lofo" data-x>421 of 502</span>
+				<a href="../../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Getting the target element when an event is bubbling in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let's say we have two elements: a <code data-gs="comd/c" data-x>div</code> and a 
+	paragraph <code data-gs="comd/c" data-x>p</code> lying inside this div:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div&gt;
+	&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;</code>
+</div>
+<p>
+	Get a reference to our div into a variable:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let div = document.querySelector('div');</code>
+</div>
+<p>
+	Let's add some styling to our tags:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">div {
+	padding: 20px;
+	border: 1px solid red;
+}
+
+p {
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+}</code>
+</div>
+<p>
+	Now let the click handler be hung on the div:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">div.addEventListener('click', function() {
+	console.log('click');
+});</code>
+</div>
+<p>
+	Due to the fact that our div has 
+	<a href="../../../../../../en/markup/manual/css/property/padding.html"><code data-gs="comd/c" data-x>padding</code></a>, 
+	when we click on the div, we can hit the paragraph, 
+	and we can get to a place where this paragraph does 
+	not exist, that is, directly on the div.
+</p>
+<p>
+	At the same time, in the click handler, <code data-gs="comd/c" data-x>this</code> 
+	will always point to the element on which the handler 
+	is hung. In our case this is our div:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">div.addEventListener('click', function() {
+	console.log(this); // div
+});</code>
+</div>
+<p>
+	However, we can get exactly the tag in which the 
+	event happened. To do this, we can see what is 
+	in <code data-gs="comd/c" data-x>event.target</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">div.addEventListener('click', function(event) {
+	console.log(event.target); // or div, or paragraph
+});</code>
+</div>
+<p>
+	You can distinguish between these two options 
+	using the conditions:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let div = document.querySelector('div');
+
+div.addEventListener('click', function(event) {
+	if (event.target.tagName === 'DIV') {
+		console.log('clicks exactly on the div');
+	}
+	if (event.target.tagName === 'P') {
+		console.log('clicks exactly on the paragraph');
+	}
+});</code>
+</div>
+<p>
+	You can use 
+	<a href="../../../../../../en/javascript/manual/dom/matches.html"><code data-gs="comd/c" data-x>matches</code></a> 
+	instead of <code data-gs="comd/c" data-x>tagName</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let div = document.querySelector('div');
+
+div.addEventListener('click', function(event) {
+	if (event.target.matches('div')) {
+		console.log('clicks exactly on the div');
+	}
+	if (event.target.matches('p')) {
+		console.log('clicks exactly on the paragraph');
+	}
+});</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given the following elements:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div&gt;
+	&lt;ul&gt;
+		&lt;li&gt;1&lt;/li&gt;
+		&lt;li&gt;2&lt;/li&gt;
+		&lt;li&gt;3&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code>
+		<code data-w="bock/code" data-lo="high" data-m-lang="css">div, ul, li {
+	padding: 20px;
+}
+
+div {
+	border: 1px solid red;
+}
+ul {
+	border: 1px solid orange;
+}
+li {
+	border: 1px solid green;
+}</code>
+	</div>
+	<p>
+		Attach a click handler to the div. In this handler, 
+		determine in which of the tags the event fired.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../en/javascript/book/prime/dom/object-Event/events-bubbling.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../en/javascript/book/prime/dom/object-Event/bubbling/intro.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../../en/javascript/book/prime/dom/object-Event/bubbling-target-element.html" data-m-curr="T">en</a><a href="../../../../../../ru/javascript/book/prime/dom/object-Event/bubbling-target-element.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

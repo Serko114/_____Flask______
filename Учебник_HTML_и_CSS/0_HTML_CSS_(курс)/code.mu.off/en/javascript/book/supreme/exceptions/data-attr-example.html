@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>An example of an exception with data- attributes in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will consider throwing custom exceptions using the example of a task with data- attributes in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpExcDAE</span>
+				<span data-e="lofo" data-x>148 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>An example of an exception with data- attributes in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let the server generate an HTML code when 
+	loading the page, which stores the name, 
+	price and amount of the purchased product:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="product" data-product="apple" data-price="1000" data-amount="5"&gt;&lt;/div&gt;</code>
+</div>
+<p>
+	Let's make a function that will take a 
+	reference to an item with a product and 
+	find the total cost of the product 
+	(multiply the price by the amount):
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function getCost(elem) {
+	return elem.dataset.price * elem.dataset.amount;
+}</code>
+</div>
+<p>
+	We find the cost of our product:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let product = document.querySelector('#product');
+let cost = getCost(product);
+
+alert(cost);</code>
+</div>
+<p>
+	Let's now assume the following situation: 
+	due to some kind of failure on the server, 
+	it sent us a product in which there is no 
+	price or amount (or both at once), for 
+	example, like this:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="product" data-product="apple" data-price="1000"&gt;&lt;/div&gt;</code>
+</div>
+<p>
+	If you now try to calculate the cost of 
+	the goods, the result will be NaN. Agree, 
+	not very informative.
+</p>
+<p>
+	It turns out that we need to somehow 
+	protect ourselves from the fact that 
+	the attributes we need will be 
+	missing. This can be done in two ways. 
+	The first way is to say that this is 
+	normal behavior and simply check with 
+	IF for the presence of the attributes 
+	we need:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function getCost(elem) {
+	if (elem.dataset.price !== undefined && elem.dataset.amount !== undefined) {
+		return elem.dataset.price * elem.dataset.amount;
+	} else {
+		return 0; // let's return something like 0 or null or false
+	}
+}</code>
+</div>
+<p>
+	The second option is to say that the 
+	absence of the <code data-gs="comd/c" data-x>data-price</code> or 
+	<code data-gs="comd/c" data-x>data-amount</code> attribute is an 
+	exception. In this case we will 
+	throw an exception:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function getCost(elem) {
+	if (elem.dataset.price !== undefined && elem.dataset.amount !== undefined) {
+		return elem.dataset.price * elem.dataset.amount;
+	} else {
+		throw {
+			name: 'ProductCostError',
+			message: 'there is no price or amount for the product'
+		};
+	}
+}</code>
+</div>
+<p>
+	Which of the two options is more 
+	appropriate to apply here is the 
+	choice of the programmer. It may 
+	treat the problem as normal script 
+	operation or as an exception.
+</p>
+<p>
+	Let us decide that the situation is 
+	exceptional. Then the code for 
+	retrieving the cost of the goods 
+	will look like this:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let product = document.querySelector('#product');
+
+try {
+	let cost = getCost(product);
+	alert(cost);
+} catch (error) {
+	// we somehow react to an exception
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Modify my code so that the <code data-gs="comd/c" data-x>getCost</code> 
+		function throws two types of exceptions: 
+		if the price is missing and if the amount 
+		is missing. Think carefully about the 
+		names of these exceptions. In a 
+		<code data-gs="comd/c" data-x>catch</code>-block, output different 
+		error messages for different exception 
+		types.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/exceptions/throwing-user-types.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/exceptions/json-structure-example.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/exceptions/data-attr-example.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/exceptions/data-attr-example.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

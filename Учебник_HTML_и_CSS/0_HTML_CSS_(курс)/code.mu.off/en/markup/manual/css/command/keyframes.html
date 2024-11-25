@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The @keyframes at-rule - animation keyframes in CSS | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The @keyframes at-rule - animation keyframes in CSS.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>255 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>@keyframes at-rule</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>@keyframes</code> at-rule sets keyframes
+	(waypoints) for an animation. A keyframe
+	represents various properties of our CSS
+	element, such as position, size, color, etc.,
+	that are applied to the element at a
+	specified time.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes animation name {
+	keyframes
+}</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Setting keyframes:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes anim {
+	from {
+		margin-left: 0px;
+	}
+	to {
+		margin-left: 400px;
+	}
+}
+
+#elem {
+	animation: anim 3s infinite;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			@keyframes anim {
+			from {
+				margin-left: 0px;
+			}
+			to {
+				margin-left: 400px;
+			}
+		}
+		
+		#elem {
+			animation: anim 3s infinite;
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let's move our square
+	using animation from top
+	to bottom:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes anim {
+	from {
+		margin-top: 0%;
+	}
+	to {
+		margin-top: 10%;
+	}
+}
+
+#elem {
+	animation: anim 2s infinite;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			@keyframes anim {
+			from {
+				margin-top: 0%;
+			}
+			to {
+				margin-top: 10%;
+			}
+		}
+		
+		#elem {
+			animation: anim 2s infinite;
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's increase the width of our shape
+	using animation, setting key points
+	in percentages:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes anim {
+	from {
+		width: 10%;
+	}
+	to {
+		width: 40%;
+	}
+}
+
+#elem {
+	animation: anim 2s infinite;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			@keyframes anim {
+			from {
+				width: 10%;
+			}
+			to {
+				width: 40%;
+			}
+		}
+		
+		#elem {
+			animation: anim 2s infinite;
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let's change a transparency
+	of our shape:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="elem"&gt;&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">@keyframes anim {
+	from {
+		background-color: #467CBC;
+	}
+	to {
+		background-color: #C2DDFD;
+	}
+}
+
+#elem {
+	animation: anim 2s infinite;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+}</code>
+</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			@keyframes anim {
+			from {
+				background-color: #467CBC;
+			}
+			to {
+				background-color: #C2DDFD;
+			}
+		}
+		
+		#elem {
+			animation: anim 2s infinite;
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;elem&quot;></div>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			all properties for CSS animation:
+			<a href="../../../../../en/markup/manual/css/property/animation-name.html"><code data-gs="comd/c" data-x>animation-name</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-duration.html"><code data-gs="comd/c" data-x>animation-duration</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-delay.html"><code data-gs="comd/c" data-x>animation-delay</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-timing-function.html"><code data-gs="comd/c" data-x>animation-timing-function</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-iteration-count.html"><code data-gs="comd/c" data-x>animation-iteration-count</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-direction.html"><code data-gs="comd/c" data-x>animation-direction</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-fill-mode.html"><code data-gs="comd/c" data-x>animation-fill-mode</code></a>,
+			<a href="../../../../../en/markup/manual/css/property/animation-play-state.html"><code data-gs="comd/c" data-x>animation-play-state</code></a>,
+			<a href="../../../../../en/markup/manual/css/command/keyframes.html"><code data-gs="comd/c" data-x>keyframes</code></a>
+		</li>
+		<li>
+			<a href="../../../../../en/markup/manual/css/property/transition.html"><code data-gs="comd/c" data-x>transition</code></a> -
+			smooth transitions (an animation when hovering over an element)
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/property/transition.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/property/animation-name.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/command/keyframes.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/command/keyframes.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

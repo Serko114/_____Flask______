@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Exception with JSON example in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will consider throwing custom exceptions using the example of the task with checking JSON fields in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpExcJSE</span>
+				<span data-e="lofo" data-x>149 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Exception with JSON example in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let JSON with a product come 
+	to us from somewhere:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let json = '{"product": "apple", "price": 1000, "amount": 5}';
+let product = JSON.parse(json);
+alert(product.price * product.amount);</code>
+</div>
+<p>
+	You already know that the <code data-gs="comd/c" data-x>JSON.parse</code> 
+	method will throw an exception if the JSON 
+	is invalid. Let's catch this exception:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">try {
+	let json = '{"product": "apple", "price": 1000, "amount": 5}';
+	let product = JSON.parse(json);
+	alert(product.price * product.amount);
+} catch (error) {
+	// we somehow react to an exception
+}</code>
+</div>
+<p>
+	However, it may be that the JSON itself 
+	is correct, but doesn't contain the fields 
+	we need, for example, there is no price field:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let json = '{"product": "apple", "amount": 5}'; // no price</code>
+</div>
+<p>
+	Let's say that this is also an exception 
+	and in this case we will throw our custom 
+	exception:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">try {
+	let json = '{"product": "apple", "amount": 5}';
+	let product = JSON.parse(json);
+	
+	if (product.price !== undefined && product.amount !== undefined) {
+		alert(product.price * product.amount);
+	} else {
+		throw {
+			name: 'ProductCostError',
+			message: 'there is no price or amount for the product'
+		};
+	}
+} catch (error) {
+	// we somehow react to an exception
+}</code>
+</div>
+<p>
+	Now the <code data-gs="comd/c" data-x>catch</code>-block will receive two 
+	types of exceptions: either the JSON is not 
+	correct at all, in which case there will be 
+	an exception like <code data-gs="comd/c" data-x>SyntaxError</code>, or the 
+	JSON is correct, but does not contain the 
+	fields we need, in which case there will 
+	be an exception like <code data-gs="comd/c" data-x>ProductCostError</code>.
+</p>
+<p>
+	Let's catch these types of exceptions 
+	in the <code data-gs="comd/c" data-x>catch</code>-block:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">try {
+	let json = '{"product": "apple", "amount": 5}';
+	let product = JSON.parse(json);
+	
+	if (product.price !== undefined && product.amount !== undefined) {
+		alert(product.price * product.amount);
+	} else {
+		throw {
+			name: 'ProductCostError',
+			message: 'there is no price or amount for the product'
+		};
+	}
+} catch (error) {
+	if (error.name == 'SyntaxError') {
+		alert('Invalid JSON of the product');
+	} else if (error.name == 'ProductCostError') {
+		alert('Product has no price or amount');
+	}
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Let JSON come to you like this:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let json = `[
+	{
+		"name": "user1",
+		"age": 25,
+		"salary": 1000
+	},
+	{
+		"name": "user2",
+		"age": 26,
+		"salary": 2000
+	},
+	{
+		"name": "user3",
+		"age": 27,
+		"salary": 3000
+	}
+]`;</code>
+	</div>
+	<p>
+		Check this JSON for the correctness as a 
+		whole when parsing, and after parsing - check 
+		that the result is an array and not something 
+		else. If the result is not an array, throw 
+		an exception.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/exceptions/data-attr-example.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/exceptions/probing.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/exceptions/json-structure-example.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/exceptions/json-structure-example.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

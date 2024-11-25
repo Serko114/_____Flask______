@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Callback in the replace method in JavaScript regexes | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to use a callback in the JavaScript replace method.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpRERMC</span>
+				<span data-e="lofo" data-x>127 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Callback in the replace method in JavaScript regexes</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The replace method as the second parameter 
+	can take not only a string, but also a 
+	<a href="../../../../../en/javascript/book/prime/functions/nested/callbacks.html"><code data-gs="comd/c" data-x>callback function</code></a>,
+	which will be applied for each match 
+	found. Each substring that the regex 
+	has found will be replaced by what 
+	the function returns for this 
+	particular substring.
+</p>
+<p>
+	You can pass parameters to this 
+	function: the first parameter will 
+	contain the found string, the second 
+	parameter - the first capturing group, 
+	the third parameter - the second 
+	capturing group, and so on - you 
+	can pass as many parameters as 
+	there are capturing groups in 
+	the regular expression.
+</p>
+<p>
+	The second-to-last parameter will contain 
+	the position of the found match, and the 
+	last parameter will contain the entire 
+	string to search.
+</p>
+<p>
+	How it all works - let's look at 
+	practical examples.
+</p>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let there be a string 
+	with numbers:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '2 3 4 5';</code>
+</div>
+<p>
+	Let's replace these numbers with their 
+	squares. To get started, let's just 
+	output our numbers one by one to the 
+	console in a callback function:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">str.replace(/\d+/g, function(match) {
+	console.log(match);
+});</code>
+</div>
+<p>
+	Our code will output <code data-gs="comd/s" data-x>'2'</code> first, 
+	then <code data-gs="comd/s" data-x>'3'</code>, <code data-gs="comd/s" data-x>'4'</code> and 
+	<code data-gs="comd/s" data-x>'5'</code>. That is, the strings 
+	found by the regex sequentially 
+	fall into the variable <code data-gs="comd/c" data-x>match</code>.
+</p>
+<p>
+	Let's solve the task to the end - we 
+	will square the <code data-gs="comd/c" data-x>match</code> and 
+	return it with <code data-gs="comd/c" data-x>return</code>. It 
+	turns out that for the found <code data-gs="comd/n" data-x>2</code>, 
+	<code data-gs="comd/n" data-x>4</code> will be returned and the 
+	two will be replaced by this four, 
+	for the three found, <code data-gs="comd/n" data-x>9</code> will 
+	be returned and the three will 
+	be replaced by this nine - and 
+	so on:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let result = str.replace(/\d+/g, function (match) {
+	return match**2; 
+});
+
+console.log(result); // shows '4 9 16 25'</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Now let a string contain constructions 
+	of the form <code data-gs="comd/s" data-x>'2+3='</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '2+3= 4+5= 6+7=';</code>
+</div>
+<p>
+	Let's make it so that the sums of the 
+	corresponding numbers are inserted after 
+	the equal sign. That is, our string 
+	should turn into the following:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'2+3=5 4+5=9 6+7=13'</code>
+</div>
+<p>
+	To solve the problem, let's experiment 
+	again - put the first and second terms 
+	into separate capturing groups:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">str.replace(/(\d+)\+(\d+)=/g, function (match0, match1, match2) {
+	console.log(match0, match1, match2);
+});</code>
+</div>
+<p>
+	And now let's finally solve the problem: for 
+	each found substring, sum the first and second 
+	capturing groups, take the zero capturing group 
+	(the found string, for example <code data-gs="comd/s" data-x>'2+3='</code>), 
+	add the result to it and return all this 
+	through <code data-gs="comd/c" data-x>return</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let result = str.replace(/(\d+)\+(\d+)=/g, function(match0, match1, match2) {
+	let sum = Number(match1) + Number(match2);
+	return match0 + sum;
+});
+
+console.log(result);</code>
+</div>
+
+<h2>Practical tasks</h2>
+<div data-w="cont/task">
+	<p>
+		Given a string:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = 'aaa [2] bbb [3] ccc [12] ddd';</code>
+	</div>
+	<p>
+		Find the numbers in brackets and double 
+		them. That is, from our string we should 
+		get the following:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'aaa [4] bbb [6] ccc [24] ddd'</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a string:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '123 456 789';</code>
+	</div>
+	<p>
+		Find all the numbers and put their digits 
+		in reverse order. That is, from our string 
+		we should get the following:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'321 654 987'</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a string 
+		with dates:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '31.12.2025 30.11.2024 29.10.2023';</code>
+	</div>
+	<p>
+		Find all dates and convert them to another 
+		format so that you get the following string:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'2025-12-31 2024-11-30 2023-10-29'</code>
+	</div>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/regular/replace-pockets.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/regular/replace-default-pockets.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/regular/replace-method-callback.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/regular/replace-method-callback.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

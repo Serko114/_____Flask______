@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Using Libraries in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will consider the usage of ready-made libraries in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpLbUs</span>
+				<span data-e="lofo" data-x>177 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Using Libraries in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Let's look at the general principle of using 
+	libraries. Suppose we needed a library with 
+	necessary functions for working with arrays. 
+	Suppose we've googled the <a href="https://lodash.com/">lodash</a> 
+	library.
+</p>
+<p>
+	We go to the library website and look for 
+	links to download the library. As a rule, 
+	libraries are provided in two versions: 
+	regular and minified. The regular one is 
+	useful if you want to examine the source 
+	code of a library. The minimized version 
+	is convenient because it takes up less space.
+</p>
+<p>
+	So, we are looking for a download 
+	link and downloading the library. Sometimes 
+	it happens that the documentation provides 
+	the link to a JavaScript file. In this case, 
+	this file, instead of being downloaded, 
+	will simply open in the browser. In this case, 
+	you need to select save in the browser menu 
+	or press <code data-gs="comd/k" data-x>Ctrl + S</code> and save the library 
+	as a file.
+</p>
+<p>
+	The downloaded library must be 
+	connected to your HTML file:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;script src="lodash.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	
+	&lt;/body&gt;
+&lt;/html&gt;</code>
+</div>
+<p>
+	The connected library creates one or more 
+	variables in a global scope. In the case of 
+	lodash, this variable is called <code data-gs="comd/c" data-x>_</code>. Let's 
+	now connect our file below the library 
+	connection, in which we will write the 
+	code of our site:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;script src="lodash.js"&gt;&lt;/script&gt;
+		&lt;script src="test.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	
+	&lt;/body&gt;
+&lt;/html&gt;</code>
+</div>
+<p>
+	In this file, a global variable will be 
+	available, which is created by the 
+	previously included lodash library:
+</p>
+<div data-p="bock/pane" data-p-file="test.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">console.log(_); // there is lodash library in this variable</code>
+</div>
+<p>
+	Let's use one of the included 
+	library methods:
+</p>
+<div data-p="bock/pane" data-p-file="test.js">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = _.chunk(['a', 'b', 'c', 'd'], 2);
+console.log([['a', 'b'], ['c', 'd']]);</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Download the library 
+		<a href="http://underscorejs.ru/">underscorejs</a>. Connect 
+		it to your HTML file. Try out some 
+		functions from this library.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/libs/intro.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/libs/cdn.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/libs/using.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/libs/using.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

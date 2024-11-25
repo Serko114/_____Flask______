@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universal event delegation in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this tutorial, we will learn how to create a generic event delegation in JavaScript..">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmOEUED</span>
+				<span data-e="lofo" data-x>429 of 502</span>
+				<a href="../../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Universal event delegation in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The code in the previous lesson is working,
+	however, not without flaws. Let's analyze
+	these disadvantages and 
+	find a more universal solution.
+</p>
+<p>
+	The disadvantage of our code will manifest itself 
+	when there are some nested tags inside <code data-gs="comd/c" data-x>li</code>. 
+	In our case, let these be the <code data-gs="comd/c" data-x>i</code> tags:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;ul&gt;
+	&lt;li&gt;item &lt;i&gt;italic&lt;/i&gt; item&lt;/li&gt;
+	&lt;li&gt;item &lt;i&gt;italic&lt;/i&gt; item&lt;/li&gt;
+	&lt;li&gt;item &lt;i&gt;italic&lt;/i&gt; item&lt;/li&gt;
+	&lt;li&gt;item &lt;i&gt;italic&lt;/i&gt; item&lt;/li&gt;
+	&lt;li&gt;item &lt;i&gt;italic&lt;/i&gt; item&lt;/li&gt;
+&lt;/ul&gt;</code>
+</div>
+<p>
+	In this case, clicking on the <code data-gs="comd/c" data-x>i</code> tag will add 
+	an exclamation mark to the <i>end of the tag</i> <code data-gs="comd/c" data-x>i</code>
+	, and not the <code data-gs="comd/c" data-x>li</code> tag, as we would like - after all, 
+	exactly the tag in which the event occurred gets into 
+	<code data-gs="comd/c" data-x>event.target</code>.
+</p>
+<p>
+	You can solve the problem using the method 
+	<a href="../../../../../../en/javascript/manual/dom/closest.html"><code data-gs="comd/c" data-x>closest</code></a>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">list.addEventListener('click', function(event) {
+	let li = event.target.closest('li');
+	
+	if (li) {
+		li.innerHTML = li.innerHTML + '!';
+	}
+});</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Repeat the above solution.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../../en/javascript/book/prime/dom/object-Event/events-delegation.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../../en/javascript/book/prime/context/intro.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../../en/javascript/book/prime/dom/object-Event/universal-events-delegation.html" data-m-curr="T">en</a><a href="../../../../../../ru/javascript/book/prime/dom/object-Event/universal-events-delegation.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

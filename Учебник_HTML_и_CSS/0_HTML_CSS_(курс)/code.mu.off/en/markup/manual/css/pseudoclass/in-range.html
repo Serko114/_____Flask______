@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The in-range pseudo-class - elements style with a given range of values ​​in CSS | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The in-range pseudo-class specifies how an element whose values ​​are within a specified range will appear in CSS.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>116 of 298</span>
+				<a href="../../../../../en/markup/manual/css.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>in-range pseudo-class</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>in-range</code> pseudo-class sets a style
+	for elements whose values ​​are set in a specified
+	range. The range of values ​​must be specified with
+	the <code data-gs="comd/v" data-x>min</code> and <code data-gs="comd/v" data-x>max</code> attributes.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="css">selector:in-range {
+
+}</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's set a blue color for the background of
+	the input, which contains numbers that fall
+	in the range from <code data-gs="comd/n" data-x>1</code> to <code data-gs="comd/n" data-x>5</code>. We
+	will also set a pink background when the
+	entered value does not fall within the
+	selected range:
+</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;form&gt;
+	&lt;p&gt;Enter number from 1 to 5&lt;/p&gt;
+	&lt;p&gt;
+		&lt;input type="number" min="1" max="5" value="1"&gt;
+	&lt;/p&gt;
+&lt;/form&gt;</code>
+		<code data-w="bock/code" data-lo="high" data-m-lang="css">input:in-range {
+	background: #C2DDFD;
+}
+input:out-of-range {
+	background: #E37D76;
+}</code>
+	</div>
+	<p>
+		<span data-lo="torc" data-m-kest="code-result"></span>:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			
+		</style>
+		<style>
+			input:in-range {
+				background: #C2DDFD;
+			}
+			input:out-of-range {
+				background: #E37D76;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<form>
+				<p>Enter number from 1 to 5</p>
+				<p>
+					<input type=&quot;number&quot; min=&quot;1&quot; max=&quot;5&quot; value=&quot;1&quot;>
+				</p>
+			</form>
+		
+		<script>
+			
+			
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/pseudoclass/out-of-range.html"><code data-gs="comd/c" data-x>:out-of-range</code></a> pseudo-class <br>
+			that styles elements whose values ​​are out of range
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/pseudoclass/valid.html"><code data-gs="comd/c" data-x>:valid</code></a> pseudo-class <br>
+			that sets a style for the input into which a valid value was entered
+		</li>
+		<li>
+			the <a href="../../../../../en/markup/manual/css/pseudoclass/invalid.html"><code data-gs="comd/c" data-x>:invalid</code></a> pseudo-class <br>
+			that sets a style for the input into which an invalid value was entered
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/markup/manual/css/pseudoclass/fullscreen.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/markup/manual/css/pseudoclass/indeterminate.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/markup/manual/css/pseudoclass/in-range.html" data-m-curr="T">en</a><a href="../../../../../ru/markup/manual/css/pseudoclass/in-range.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

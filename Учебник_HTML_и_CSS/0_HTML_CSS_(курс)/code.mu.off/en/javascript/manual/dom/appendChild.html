@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The appendChild method - inserting an element at the end in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="The appendChild method allows you to insert another element at the end of an element in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+				<span data-e="lofo" data-x>173 of 264</span>
+				<a href="../../../../en/javascript/manual.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>appendChild method</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The <code data-gs="comd/c" data-x>appendChild</code> method allows you
+	to insert some other element at the end.
+	Most commonly it used after creating an
+	element with
+	<a href="../../../../en/javascript/manual/dom/createElement.html"><code data-gs="comd/c" data-x>createElement</code></a>.
+</p>
+
+<h2>Syntax</h2>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">parent.appendChild(element);</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's create a paragraph, set its text
+	and place it on a page at the end of
+	the <code data-gs="comd/z" data-x>#parent</code> block:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;1&lt;/p&gt;
+	&lt;p&gt;2&lt;/p&gt;
+	&lt;p&gt;3&lt;/p&gt;
+&lt;/div&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('#parent');
+
+let p = document.createElement('p');
+p.textContent = '!';
+
+parent.appendChild(p);</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;div id="parent"&gt;
+	&lt;p&gt;1&lt;/p&gt;
+	&lt;p&gt;2&lt;/p&gt;
+	&lt;p&gt;3&lt;/p&gt;
+	&lt;p&gt;!&lt;/p&gt;
+&lt;/div&gt;</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	<a href="../../../../en/markup/manual/html/tag/ul.html"><code data-gs="comd/c" data-x>ul</code></a>
+	is given. Let's place <code data-gs="comd/n" data-x>9</code>
+	<a href="../../../../en/markup/manual/html/tag/li.html"><code data-gs="comd/c" data-x>li</code></a>
+	tags in it, while setting serial numbers as
+	their text:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;ul id="parent"&gt;&lt;/ul&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('#parent');
+
+for (let i = 1; i &lt;= 9; i++) {
+	let li = document.createElement('li');
+	li.textContent = i;
+	parent.appendChild(li);
+}</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;ul id="parent"&gt;
+	&lt;li&gt;1&lt;/li&gt;
+	&lt;li&gt;2&lt;/li&gt;
+	&lt;li&gt;3&lt;/li&gt;
+	&lt;li&gt;4&lt;/li&gt;
+	&lt;li&gt;5&lt;/li&gt;
+	&lt;li&gt;6&lt;/li&gt;
+	&lt;li&gt;7&lt;/li&gt;
+	&lt;li&gt;8&lt;/li&gt;
+	&lt;li&gt;9&lt;/li&gt;
+&lt;/ul&gt;</code>
+</div>
+
+<h2>Example <span data-gn="sect"></span></h2>
+<p>
+	Let's populate a table with
+	<a href="../../../../en/markup/manual/html/tag/tr.html">tr</a>'s
+	and <a href="../../../../en/markup/manual/html/tag/td.html">td</a>'s:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;table id="table"&gt;&lt;/table&gt;</code>
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let parent = document.querySelector('#parent');
+
+for (let i = 1; i &lt;= 3; i++) {
+	let tr = document.createElement('tr'); // we create a tr
+	
+	// We populate tr with td's:
+	for (let j = 1; j &lt;= 3; j++) {
+		let td = document.createElement('td'); // we create a td
+		td.textContent = j; // write a text in it
+		
+		tr.appendChild(td); // add the created td to the end of the tr
+	}
+	
+	table.appendChild(tr); // add the created tr to the end of the table
+}</code>
+</div>
+<p>
+	The code execution result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="html">&lt;table id="table"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;1&lt;/td&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;1&lt;/td&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;1&lt;/td&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</code>
+</div>
+
+<h2>See also</h2>
+<div data-w="cont/also">
+	<ul>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/append.html"><code data-gs="comd/c" data-x>append</code></a> method <br>
+			that inserts elements at the end
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/insertBefore.html"><code data-gs="comd/c" data-x>insertBefore</code></a> method <br>
+			that inserts an element before an element
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/insertAdjacentElement.html"><code data-gs="comd/c" data-x>insertAdjacentElement</code></a> method <br>
+			that inserts an element at the given location
+		</li>
+		<li>
+			the <a href="../../../../en/javascript/manual/dom/insertAdjacentHTML.html"><code data-gs="comd/c" data-x>insertAdjacentHTML</code></a>, <br>
+			that inserts tags at the given location
+		</li>
+	</ul>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../en/javascript/manual/dom/append.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../en/javascript/manual/dom/insertBefore.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../en/javascript/manual/dom/appendChild.html" data-m-curr="T">en</a><a href="../../../../ru/javascript/manual/dom/appendChild.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

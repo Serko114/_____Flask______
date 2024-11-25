@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Creation of an fulfilled promise in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to create already fulfilled promises in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpPrmFC</span>
+				<span data-e="lofo" data-x>171 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Creation of an fulfilled promise in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Sometimes you may need to create an already 
+	fulfilled promise. There are two methods 
+	for this: the <code data-gs="comd/c" data-x>Promise.resolve</code> method 
+	creates a resolved promise, <code data-gs="comd/c" data-x>Promise.reject</code> 
+	creates a rejected promise. As a parameter, 
+	these methods receive what will become 
+	the result or error of the promise, 
+	respectively.
+</p>
+<p>
+	When might we need an already fulfilled 
+	promise? Let's look at an example. Suppose 
+	we have some function that takes a number 
+	as a parameter, does something with it 
+	asynchronously and returns a promise 
+	with the result:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(num) {
+	return new Promise(function(resolve) {
+		setTimeout(function() {
+			resolve(num * num);
+		}, 3000);
+	});
+}</code>
+</div>
+<p>
+	We will use our function as follows:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">func(5).then(function(res) {
+	console.log(res); // shows 25
+});</code>
+</div>
+<p>
+	Let us now decide that we will perform our 
+	asynchronous operation only if a number 
+	greater than zero is passed. Otherwise, 
+	the result of the function must be zero:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(num) {
+	if (num &gt; 0) {
+		return new Promise(function(resolve) {
+			setTimeout(function() {
+				resolve(num * num);
+			}, 3000);
+		});
+	} else {
+		return 0; // a result is 0
+	}
+}</code>
+</div>
+<p>
+	However, now it turns out that the function 
+	returns either a promise or a number. Because 
+	of this, we can no longer apply the <code data-gs="comd/c" data-x>then</code> 
+	method to the result of the function, since 
+	if the function returns a number, we will get 
+	an error:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">func(0).then(function(res) { // an error, we apply the then method to 0
+	
+});</code>
+</div>
+<p>
+	<code data-gs="comd/c" data-x>Promise.resolve</code> will help 
+	us fix the problem:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(num) {
+	if (num &gt; 0) {
+		return new Promise(function(resolve) {
+			setTimeout(function() {
+				resolve(num * num);
+			}, 3000);
+		});
+	} else {
+		return Promise.resolve(0); // returns a promise, not a number
+	}
+}</code>
+</div>
+<p>
+	Let us now decide that for the passed zero 
+	we should return zero, and for numbers less 
+	than zero - an exception. The <code data-gs="comd/c" data-x>Promise.reject</code> 
+	method will help us with this:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(num) {
+	if (num &gt; 0) {
+		return new Promise(function(resolve) {
+			setTimeout(function() {
+				resolve(num * num);
+			}, 3000);
+		});
+	} else if (num === 0) {
+		return Promise.resolve(0);
+	} else {
+		return Promise.reject('incorrect number'); // returns a rejected promise
+	}
+}</code>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/promises/arrays.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/promises/promisification.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/promises/fulfilled-creation.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/promises/fulfilled-creation.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

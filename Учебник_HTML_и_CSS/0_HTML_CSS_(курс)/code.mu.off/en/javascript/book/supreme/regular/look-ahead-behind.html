@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Positive and negative lookaround in JavaScript regexes | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we'll learn positive and negative lookaround in JavaScript regexes.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpRELAB</span>
+				<span data-e="lofo" data-x>133 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Positive and negative lookaround in JavaScript regexes</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Sometimes you need to solve a problem 
+	of this type: find the string <code data-gs="comd/s" data-x>'aaa'</code> 
+	and replace it with <code data-gs="comd/s" data-x>'!'</code>, <dfn data-gs="comd/d" data-x>but only 
+	if after <code data-gs="comd/s" data-x>'aaa'⁅/s ⁆ is <code data-gs="comd/s" data-x>'x'</code></dfn>, 
+	while <code data-gs="comd/s" data-x>'x'</code> itself is not replaced. If 
+	we try to solve the problem <code data-gs="comd/s" data-x>'head-on'</code>, 
+	then nothing will come of it:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'aaax baaa'.replace(/aaax/g, '!'); // returns '! baaa', but we wanted '!x baaa'</code>
+</div>
+
+<h2>Lookahead</h2>
+<p>
+	To solve the problem, we need a way 
+	to say that <code data-gs="comd/s" data-x>'x'</code> should not 
+	be replaced. This is done with the 
+	special parentheses <code data-gs="comd/c" data-x>(?= )</code>, 
+	which just look at, but don't take 
+	with them.
+</p>
+<p>
+	These parentheses are called 
+	<dfn data-gs="comd/d" data-x>positive lookahead</dfn>. Positive 
+	- since <code data-gs="comd/s" data-x>'x'</code> (in our case) 
+	should be - only then replacement 
+	will occur.
+</p>
+<p>
+	Let's use these parentheses to 
+	solve our problem:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'aaax aaab'.replace(/aaa(?=x)/g, '!'); // returns '!x aaab'</code>
+</div>
+<p>
+	There is also <dfn data-gs="comd/d" data-x>negative lookahead</dfn> 
+	- <code data-gs="comd/c" data-x>(?! )</code> - on the contrary, it 
+	says that something should not be. In 
+	the following example, the replacement 
+	will only occur if <code data-gs="comd/s" data-x>'aaa'</code> is 
+	NOT followed by <code data-gs="comd/s" data-x>'x'</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'aaax aaab'.replace(/aaa(?!x)/g, '!'); // returns 'aaax !b'</code>
+</div>
+
+<h2>Lookbehind</h2>
+<p>
+	Similarly, there is 
+	<dfn data-gs="comd/d" data-x>positive lookbehind</dfn> - <code data-gs="comd/c" data-x>(?&lt;= )</code>. In 
+	the following example, the replacement 
+	will only occur if <code data-gs="comd/s" data-x>'aaa'</code> is 
+	preceded by <code data-gs="comd/s" data-x>'x'</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'xaaa'.replace(/(?&lt;=x)aaa/g, '!'); // returns 'x!'</code>
+</div>
+<p>
+	And there is also 
+	<dfn data-gs="comd/d" data-x>negative lookbehind</dfn> - <code data-gs="comd/c" data-x>(?&lt;! )</code>. In 
+	the following example, the replacement 
+	will only occur if <code data-gs="comd/s" data-x>'aaa'</code> is 
+	not preceded by <code data-gs="comd/s" data-x>'x'</code>:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">'baaa'.replace(/(?&lt;!x)aaa/g, '!'); // returns 'b!'</code>
+</div>
+
+<h2>Practical tasks</h2>
+<div data-w="cont/task">
+	<p>
+		Given a string containing 
+		function names:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = 'func1() func2() func3()';</code>
+	</div>
+	<p>
+		Get an array of the function 
+		names from the string.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a string with a tag:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '&lt;a href="" class="eee" id="zzz"&gt;';</code>
+	</div>
+	<p>
+		Get an array of attribute 
+		names for this tag.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a string with 
+		variables:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = '$aaa $bbb $ccc xxxx';</code>
+	</div>
+	<p>
+		Get substrings preceded 
+		by a dollar sign.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/regular/non-preserving-brackets.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/regular/string.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/regular/look-ahead-behind.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/regular/look-ahead-behind.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

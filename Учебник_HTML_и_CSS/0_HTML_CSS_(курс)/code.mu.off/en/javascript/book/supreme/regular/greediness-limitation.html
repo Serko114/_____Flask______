@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Limitaion of greediness in JavaScript regex | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to limit the greediness of regular expressions in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpREGL</span>
+				<span data-e="lofo" data-x>101 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Limitaion of greediness in JavaScript regex</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	The default regular expressions are <dfn data-gs="comd/d" data-x>greedy</dfn>. 
+	This means that they capture the maximum possible 
+	number of characters. Let's take a look at an example. 
+	Let's say we have this string:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = 'aeeex zzz x kkk';</code>
+</div>
+<p>
+	Suppose we want to find the substring <code data-gs="comd/s" data-x>'aeeex'</code> in 
+	this string using the following pattern: <span data-gs="comd/r" data-x>letter 
+	<code data-gs="comd/s" data-x>'a'</code>, then any character one or more times, 
+	then letter <code data-gs="comd/s" data-x>'x'</code></span>.
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = str.replace(/a.+x/g, '!');</code>
+</div>
+<p>
+	We expect the string <code data-gs="comd/s" data-x>'! zzz x kkk'</code> to be 
+	written to the variable as a result. However, 
+	this is not the case - the string <code data-gs="comd/s" data-x>'! kkk'</code> 
+	gets into the variable.
+</p>
+<p>
+	The thing is that our regex searches for all 
+	characters from the letter <code data-gs="comd/s" data-x>'a'</code> to the 
+	letter <code data-gs="comd/s" data-x>'x'</code>. But our string has two 
+	letters <code data-gs="comd/s" data-x>'x'</code>! Because of greed, it turns 
+	out that the regex searches until the very last 
+	<code data-gs="comd/s" data-x>'x'</code>, thereby capturing not what we expected.
+</p>
+<p>
+	Of course, often we want this behavior. But 
+	specifically in this case, we would like to 
+	cancel the greed and tell the regex to search 
+	until the first <code data-gs="comd/s" data-x>'x'</code>.
+</p>
+<p>
+	To limit greed, you need to put a question mark 
+	after the repetition operator:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = str.replace(/a.+?x/g, '!');</code>
+</div>
+<div data-w="cont/nott">
+	<p>
+		Greediness can be limited for all repetition 
+		operators: <code data-gs="comd/c" data-x>*</code>, and <code data-gs="comd/c" data-x>?</code>, and 
+		<code data-gs="comd/c" data-x>{}</code> - like this: <code data-gs="comd/c" data-x>*?</code>, <code data-gs="comd/c" data-x>??</code> 
+		and <code data-gs="comd/c" data-x>{}?</code>.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a string:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let str = 'aba accca azzza wwwwa';</code>
+	</div>
+	<p>
+		Write a regex that will find all strings with 
+		the letters <code data-gs="comd/s" data-x>'a'</code> at the edges and replace 
+		each of them with <code data-gs="comd/s" data-x>'!'</code>. Between the letters 
+		<code data-gs="comd/s" data-x>'a'</code> there can be any character 
+		(except <code data-gs="comd/s" data-x>'a'</code>).
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/regular/curly-braces.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/regular/characters-groups.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/regular/greediness-limitation.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/regular/greediness-limitation.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

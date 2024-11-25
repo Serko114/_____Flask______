@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Working with URLSearchParams in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will analyze the work with the URLSearchParams class in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpHPUSP</span>
+				<span data-e="lofo" data-x>222 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Working with URLSearchParams in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	As you already know, when working with forms 
+	and GET requests in JavaScript, you can meet 
+	such strings:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let paramsString = 'a=1&b=2&c=3';</code>
+</div>
+<p>
+	Sometimes you need to programmatically change 
+	the value of some parameter from this 
+	string. Writing code that make this is 
+	not very convenient. Therefore, the special 
+	<code data-gs="comd/c" data-x>URLSearchParams</code> class is built into 
+	JavaScript to work with such strings.
+</p>
+<p>
+	Let's create an object of this class by 
+	passing our string with parameters as a 
+	parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let paramsString = 'a=1&b=2&c=3';
+let searchParams = new URLSearchParams(paramsString);</code>
+</div>
+<p>
+	Let's see what methods the 
+	created object has.
+</p>
+
+<h2>Getting a parameter value</h2>
+<p>
+	Using the <code data-gs="comd/c" data-x>get</code> method, you can 
+	get the value of a parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.get('a');
+console.log(res);</code>
+</div>
+<p>
+	Let's try to get the value of 
+	a non-existent parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.get('x');
+console.log(res); // shows null</code>
+</div>
+
+<h2>Checking if a parameter exists</h2>
+<p>
+	Using the <code data-gs="comd/c" data-x>has</code> method, you can 
+	check for the presence of a parameter. We 
+	check an existing parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.has('a');
+console.log(res); // shows true</code>
+</div>
+<p>
+	And check the non-existent one:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.has('x');
+console.log(res); // shows false</code>
+</div>
+
+<h2>To string conversion</h2>
+<p>
+	Using the <code data-gs="comd/c" data-x>toString</code> method, we 
+	can convert our object back to a string:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.toString();
+console.log(res); // shows 'a=1&b=2&c=3'</code>
+</div>
+
+<h2>Modifying a parameter</h2>
+<p>
+	Using the <code data-gs="comd/c" data-x>set</code> method, you can 
+	change the value of a parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">searchParams.set('b', 'x');</code>
+</div>
+<p>
+	Let's check the changes:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.toString();
+console.log(res); // shows 'a=1&b=x&c=3'</code>
+</div>
+
+<h2>Adding a parameter with set</h2>
+<p>
+	You can also add a new parameter 
+	using the <code data-gs="comd/c" data-x>set</code> method:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">searchParams.set('d', '4');</code>
+</div>
+<p>
+	Let's check the changes:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.toString();
+console.log(res); // shows 'a=1&b=2&c=3&d=4'</code>
+</div>
+
+<h2>Adding a parameter with append</h2>
+<p>
+	You can also add a new parameter 
+	using the <code data-gs="comd/c" data-x>append</code> method:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">searchParams.append('d', '4');</code>
+</div>
+<p>
+	Let's check the changes:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.toString();
+console.log(res); // shows 'a=1&b=2&c=3&d=4'</code>
+</div>
+<p>
+	Let's try to add an already 
+	existing parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">searchParams.append('a', '4');</code>
+</div>
+<p>
+	In this case, our method will simply 
+	add the parameter of the same name 
+	to the end:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.toString();
+console.log(res); // shows 'a=1&b=2&c=3&a=4'</code>
+</div>
+<p>
+	This shows the difference between the 
+	<code data-gs="comd/c" data-x>set</code> and <code data-gs="comd/c" data-x>append</code> methods. The 
+	first one will change the existing parameter, 
+	and the second will simply add its duplicate 
+	to the end.
+</p>
+
+<h2>Deleting a parameter</h2>
+<p>
+	Using the <code data-gs="comd/c" data-x>delete</code> method, you 
+	can delete parameters:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">searchParams.delete('b');</code>
+</div>
+<p>
+	Let's check the changes:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.toString();
+console.log(res); // shows 'a=1&c=3'</code>
+</div>
+
+<h2>Iterating over parameters in a loop</h2>
+<p>
+	Parameters can be looped through:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">for (let p of searchParams) {
+	console.log(p);
+}</code>
+</div>
+
+<h2>Several identical parameters</h2>
+<p>
+	Let our string have several 
+	identical parameters:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let paramsString = 'a=1&a=2b=2&c=3';</code>
+</div>
+<p>
+	Using the <code data-gs="comd/c" data-x>getAll</code> method, you 
+	can get an array of values of these 
+	parameters:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let res = searchParams.getAll('a');
+console.dir(res); // shows [1, 2]</code>
+</div>
+
+<h2>Practical tasks</h2>
+<p>
+	Let the following string with 
+	parameters be given:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let paramsString = 'test1=param1&test2=param2&test3=param3';</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Add another <code data-gs="comd/c" data-x>test3</code> parameter 
+		to this string.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Delete the <code data-gs="comd/c" data-x>test2</code> parameter 
+		from this string.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Change the <code data-gs="comd/c" data-x>test1</code> parameter 
+		value to a new one.
+	</p>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/http/book.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/http/URL.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/http/URLSearchParams.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/http/URLSearchParams.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

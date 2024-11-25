@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Function parameters destructuring in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will study the destructuring of function parameters in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmDstFP</span>
+				<span data-e="lofo" data-x>308 of 502</span>
+				<a href="../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Function parameters destructuring in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Destructuring has another very important 
+	application area - passing function 
+	parameters. The bottom line is this: 
+	if a function takes an array as a 
+	parameter, we can set directly in 
+	the function declaration how to 
+	destructure this array.
+</p>
+<p>
+	Let's look at an example. Suppose we have 
+	a function that takes an array with a year, 
+	month and day as a parameter:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">func([2025, 12, 31]);</code>
+</div>
+<p>
+	Let's specify directly in the function 
+	parameter which variables this array 
+	should be split into:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func([year, month, day]) {
+	console.log(year);  // shows 2025
+	console.log(month); // shows 12
+	console.log(day);   // shows 31
+}</code>
+</div>
+<p>
+	The above construction should be considered 
+	as a single function parameter. You can 
+	add more parameters if you want:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">func('str1', [2025, 12, 31], 'str2');
+
+function func(param1, [year, month, day], param2) {
+	console.log(param1); // shows 'str1'
+	
+	console.log(year);   // shows 2025
+	console.log(month);  // shows 12
+	console.log(day);    // shows 31
+	
+	console.log(param2); // shows 'str2'
+}</code>
+</div>
+<p>
+	And in the following example, arrays are 
+	passed as the first and second parameters 
+	to the function, and we destructure 
+	both of them:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">func([2025, 12, 31], [2026, 11, 30]);
+
+function func([year1, month1, day1], [year2, month2, day2]) {
+	console.log(year1);  // shows 2025
+	console.log(month1); // shows 12
+	console.log(day1);   // shows 31
+	
+	console.log(year2);  // shows 2026
+	console.log(month2); // shows 11
+	console.log(day2);   // shows 30
+}</code>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rework the following code through 
+		destructuring according to the 
+		theory you learned:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(employee) {
+	let name       = employee[0];
+	let surname    = employee[1];
+	let department = employee[2];
+	let position   = employee[3];
+	let salary     = employee[4];
+}
+
+func( ['John', 'Smit', 'development', 'programmer', 2000] );</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rework the following code through 
+		destructuring according to the 
+		theory you learned:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(employee) {
+	let name     = employee[0];
+	let surname  = employee[1];
+	let info     = employee[2];
+}
+
+func( ['John', 'Smit', 'development', 'programmer', 2000] );</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rework the following code through 
+		destructuring according to the 
+		theory you learned:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(employee) {
+	let name       = employee[0];
+	let surname    = employee[1];
+	let department = employee[2];
+	
+	let position;
+	if (arr[3] !== undefined) {
+		position = arr[3];
+	} else {
+		position = 'junior';
+	}
+}
+
+func( ['John', 'Smit', 'development'] );</code>
+	</div>
+</div>
+<div data-w="cont/task">
+	<p>
+		Rework the following code through 
+		destructuring according to the 
+		theory you learned:
+	</p>
+	<div data-p="bock/pane">
+		<code data-w="bock/code" data-lo="high" data-m-lang="javascript">function func(department, employee, hired) {
+	let name     = employee[0];
+	let surname  = employee[1];
+	
+	let year  = hired[0];
+	let month = hired[1];
+	let day   = hired[2];
+}
+
+func( 'development', ['John', 'Smit'], [2018, 12, 31] );</code>
+	</div>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/prime/destructuring/objects/variables-declaration.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/prime/destructuring/function-parameters-objects.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/prime/destructuring/function-parameters.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/prime/destructuring/function-parameters.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

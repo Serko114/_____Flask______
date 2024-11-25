@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Practice on timers and working with the DOM in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will learn how to change DOM elements while the timer is running in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsPmTmrPr</span>
+				<span data-e="lofo" data-x>449 of 502</span>
+				<a href="../../../../../en/javascript/book/prime.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Practice on timers and working with the DOM in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<div data-w="cont/task">
+	<p>
+		Given a button. Given a paragraph whose text is a number. By clicking on the button, start a timer that every second will increase the text of the paragraph by <code data-gs="comd/n" data-x>1</code>.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a button. Given a paragraph whose text is a number, for example, <code data-gs="comd/n" data-x>10</code>. By pressing the button, start the timer, which every second will decrease the text of the paragraph by <code data-gs="comd/n" data-x>1</code>. As soon as the value of the paragraph becomes zero - stop the timer.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given an input with a number. Make it so that every second the square of the number that is written in it appears in it.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given an input. A number is entered into it. When focus is lost, set the paragraph below to start counting down from the number entered. When the countdown reaches zero, it must end.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given an input, a button, and a paragraph. A number is entered into the input. By pressing the button, write the entered number into the text of the paragraph and start the countdown in the paragraph: let the number in the paragraph decrease by one every second until it reaches zero.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a paragraph and two buttons. Make it so that when you click on the first button in the paragraph, the timer starts ticking from <code data-gs="comd/n" data-x>1</code> to infinity, and when you click on the second button, the timer stops.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		Given a paragraph. Make it so that every second it changes its color from red to green and vice versa.
+	</p>
+</div>
+<div data-w="cont/task">
+	<p>
+		If you display the current moment of time on the screen every second, you can make a ticking clock. Implement the same clock as shown in the sample below:
+	</p>
+	<div data-p="bock/pane">
+					<div data-w="bock/tain">
+						<iframe data-e="iframe" data-x srcdoc="<!DOCTYPE html>
+	<head>
+		<base target=&quot;_blank&quot;>
+		<meta charset=&quot;utf-8&quot;>
+		<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+		
+		<style>
+			#clock {
+				height: 16px;
+			}
+		</style>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id=&quot;clock&quot;></div>
+		
+		<script>
+			
+			let clock = document.querySelector('#clock');
+			
+			setInterval(function() {
+				let date = new Date();
+				
+				let h = addZero(date.getHours());
+				let m = addZero(date.getMinutes());
+				let s = addZero(date.getSeconds())
+				
+				clock.innerHTML = h + ':' + m + ':' + s;
+			}, 1000);
+			
+			function addZero(num) {
+				if (num <= 9) {
+					return '0' + num;
+				} else {
+					return num;
+				}
+			}
+		</script>
+	</body>
+</html>"></iframe>
+					</div>
+				</div>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/prime/timers/timers-context-losing.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/prime/timers/delay.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/prime/timers/practicum.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/prime/timers/practicum.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>

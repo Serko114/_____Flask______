@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Exceptions in promise chain in JavaScript | </title>
+		
+		<link rel="stylesheet" href="../../../../../tore/@/fonts/listΣ.css?v=1">
+<link rel="stylesheet" href="../../../../../tore/layd/deff/&/aefb44b7dac371a3860e9079298a950e.ructΣ.css">
+<link rel="stylesheet" href="../../../../../tore/&/2290bf7aeadc4261337d6f570a3cf0c5.apprΣ.css">
+
+<script src="../../../../../tore/&/77748427269d1c81490f5acb6ce46fc1.apprΣ.js" defer></script>
+
+
+<meta name="yandex-verification" content="00eb45b7559e5c68">
+<meta name="google-site-verification" content="Af0TM2OrwIEtjoQXxYz2-1C-21E1m7DB23_kWpE9sLg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<meta name="description" content="In this lesson, we will look at catching exceptions in promise chain in JavaScript.">
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico">
+	</head>
+	<body id="top" data-gq="D">
+		<div data-r="ruct/wrap">
+			<header>
+				<div data-r="ruct/topp">
+	<div data-r="topp/left">
+		<div data-w="nict/logo">
+	<img data-e="img" data-x src="" alt="">
+</div>	</div>
+	<div data-r="topp/righ">
+		offline version v3	</div>
+	<div data-r="topp/cent">
+		<br><br>	</div>
+</div>								
+				<div data-r="ruct/navi">
+					<div data-w="nict/over">
+			<span data-e="hash" data-x>⊗jsSpPrmChE</span>
+				<span data-e="lofo" data-x>169 of 281</span>
+				<a href="../../../../../en/javascript/book/supreme.html" data-e="link" data-x>menu</a>
+	</div>					<nav data-w="nict/mainmenu">
+	<section data-e="main" data-x data-gm-acte="T">
+		<span data-q-href="/en/markup/" data-e="open" data-x data-m-targ="markup">Markup</span>
+		<span data-q-href="/en/javascript/" data-e="open" data-x data-m-targ="javascript">JavaScript</span>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="markup">
+		<a href="../../../../../en/markup/manual/html.html">HTML manual</a>
+		<a href="../../../../../en/markup/manual/css.html">CSS manual</a>
+	</section>
+	
+	<section data-e="subb" data-x data-gm-acte="F" data-m-tabb="javascript">
+		<a href="../../../../../en/javascript/book/prime.html">Prime book</a>
+		<a href="../../../../../en/javascript/book/practice.html">Practice book</a>
+		<a href="../../../../../en/javascript/book/supreme.html">Supreme book</a>
+		<a href="../../../../../en/javascript/manual.html">Manual</a>
+	</section>
+</nav>									</div>
+			</header>
+			<main>
+				<div data-w="nict/hett">
+	<h1>Exceptions in promise chain in JavaScript</h1>
+</div>				<div data-p="cont/pane">
+<p>
+	Suppose for some reason our promise 
+	will end with an error:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">let promise = new Promise(function(resolve, reject) {
+	setTimeout(function() {
+		reject('error');
+	}, 3000);
+});</code>
+</div>
+<p>
+	In this case, the execution of the code 
+	will immediately jump to <code data-gs="comd/c" data-x>then</code>, 
+	which has an error handler function, 
+	or to the first <code data-gs="comd/c" data-x>catch</code>, whichever 
+	comes first.
+</p>
+<p>
+	Here is an example of 
+	the first situation:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">promise.then(
+	function(result) {
+		return result + '1';
+	}
+).then(
+	function(result) {
+		return result + '2';
+	},
+	function(error) {
+		// an execution jumps to here
+	}
+).then(
+	function(result) {
+		console.log(result);
+	}
+);</code>
+</div>
+<p>
+	Here is an example of 
+	the second situation:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">promise.then(
+	function(result) {
+		return result + '1';
+	}
+).then(
+	function(result) {
+		return result + '2';
+	}
+).catch(
+	function(error) {
+		// an execution jumps to here
+	}
+).then(
+	function(result) {
+		console.log(result);
+	}
+);</code>
+</div>
+<p>
+	The handler function has two options: if 
+	it handled the exception, it can return 
+	a result via <code data-gs="comd/c" data-x>return</code> and execution 
+	will continue further down the chain. If 
+	it didn't cope with the error, then it 
+	can either return nothing, or throw an 
+	exception via <code data-gs="comd/c" data-x>throw</code>. In this case, 
+	execution will jump to the next error 
+	hook (at <code data-gs="comd/c" data-x>then</code> or <code data-gs="comd/c" data-x>catch</code>, 
+	whichever comes first).
+</p>
+<p>
+	As a rule, all chain errors are caught 
+	in one place: <code data-gs="comd/c" data-x>catch</code> is placed 
+	at the end of the chain:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">promise.then(
+	function(result) {
+		return result + '1';
+	}
+).then(
+	function(result) {
+		return result + '2';
+	}
+).catch(
+	function(error) {
+		// we get here in case of an error
+	}
+);</code>
+</div>
+<p>
+	In this case, an exception can occur in 
+	the promise itself, or thrown via 
+	<code data-gs="comd/c" data-x>throw</code> in any link in the chain:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">promise.then(
+	function(result) {
+		return result + '1';
+	}
+).then(
+	function(result) {
+		if (everythingIsFine) {
+			return result + '2';
+		} else {
+			throw new Error('an error'); // we go to the nearest interceptor
+		}
+	}
+)
+.then(
+	function(result) {
+		return result + '3';
+	}
+).catch(
+	function(error) {
+		// the nearest interceptor
+	}
+);</code>
+</div>
+<p>
+	Keep in mind that <code data-gs="comd/c" data-x>catch</code> is needed 
+	specifically for diagnosing an error: is 
+	it solvable or not. If the error is 
+	solvable, then <code data-gs="comd/c" data-x>catch</code> must pass 
+	its solution to the next <code data-gs="comd/c" data-x>then</code>. And 
+	if it isn't solvable (or the given 
+	<code data-gs="comd/c" data-x>catch</code> simply doesn't know how 
+	to resolve it), then we must either 
+	return nothing or throw an exception:
+</p>
+<div data-p="bock/pane">
+	<code data-w="bock/code" data-lo="high" data-m-lang="javascript">promise.then(
+	function(result) {
+		return result + '1';
+	}
+).then(
+	function(result) {
+		return result + '2';
+	}
+).catch(
+	function(error) {
+		if (errorIsSolvable) {
+			return 'data'; // we send it to the next then
+		} else {
+			// we return nothing or throw an exception
+		}
+	}
+).then(
+	function(result) {
+		// we solve an error here
+	}
+);</code>
+</div>
+</div>			</main>
+				<div data-w="nict/nebr">
+					<a href="../../../../../en/javascript/book/supreme/promises/promise-inside-chain.html" data-e="prev" data-x>
+				<span data-e="arow" data-x>&larr;</span>
+			</a>
+							<a href="../../../../../en/javascript/book/supreme/promises/arrays.html" data-e="next" data-x>
+				<span data-e="arow" data-x>&rarr;</span>
+			</a>
+			</div>
+			<footer data-w="ruct/foot">
+				<div data-w="nict/finf">
+	<span data-e="text" data-x>
+		Trepachev Dmitry &copy; 2012-2024	</span>
+	<br>
+	<a data-e="link" data-x href="https://t.me/trepachev_dmitry">t.me/trepachev_dmitry</a>
+</div>							</footer>
+			<div data-w="nict/jump">
+	<a href="#top"><span>&uarr;</span></a>
+</div>			<div data-w="nict/lagr">
+	<a href="../../../../../en/javascript/book/supreme/promises/chain-exceptions.html" data-m-curr="T">en</a><a href="../../../../../ru/javascript/book/supreme/promises/chain-exceptions.html" data-m-curr="F">ru</a></div>					</div>
+		
+		<script src="../../../../../tore/@/metrikaΣ.js?v=1"></script>	</body>
+</html>
