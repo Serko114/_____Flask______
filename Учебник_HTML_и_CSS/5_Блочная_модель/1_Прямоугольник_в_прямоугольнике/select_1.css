@@ -1,0 +1,22 @@
+body {
+	background-attachment: fixed;
+	background-image: url("bg.png");
+}
+
+#elem {
+	width: 400px;
+	margin: 0 auto;
+	text-align: justify;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#parent {
+	width: 500px;
+	border: 2px solid red;
+}
+#child {
+	height: 300px;
+	border: 2px solid green;
+	margin: 10px 20px 30px 40px;
+} # в margin можно 2 значения , тогда будет симметрия

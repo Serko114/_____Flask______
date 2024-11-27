@@ -1,0 +1,25 @@
+body {
+	background-attachment: fixed;
+	background-image: url("bg.png");
+}
+
+#elem {
+	width: 400px;
+	margin: 0 auto;
+	text-align: justify;
+	font-weight: bold;
+	font-size: 20px;
+}
+#text {
+	padding: 30px;
+	width: 500px;
+	border: 2px solid rgb(136, 242, 65);
+	text-align: justify;
+}
+
+#text_2 {
+	padding: 30px;
+	width: 300px;
+	border: 2px solid red;
+	text-align: justify;
+}
