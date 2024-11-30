@@ -1,0 +1,19 @@
+body {
+	background-attachment: fixed;
+	background-image: url("bg.png");
+}
+
+#elem {
+	width: 400px;
+	margin: 0 auto;
+	text-align: justify;
+	font-weight: bold;
+	font-size: 20px;
+}
+.header {
+	position: sticky;
+	top: 0;
+	padding: 10px 16px;
+	background: #555;
+	color: #f1f1f1;
+	}
