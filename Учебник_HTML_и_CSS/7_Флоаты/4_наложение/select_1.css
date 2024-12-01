@@ -1,0 +1,47 @@
+body {
+	background-attachment: fixed;
+	background-image: url("bg.png");
+}
+
+#elem {
+	width: 400px;
+	margin: 0 auto;
+	text-align: justify;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#elem1 {
+	position: relative;
+	top: 150px;
+	left: 100px;
+	
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	background-color: #FF8888;
+	z-index: 1;
+}
+#elem2 {
+	position: relative;
+	top: 100px;
+	left: 170px;
+
+
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	background-color: #7E89EB;
+	z-index: 2;
+}
+#elem3 {
+	position: relative;
+	top: 50px;
+	left: 240px;
+
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	background-color: #4DEE99;
+	z-index: 1;
+}
